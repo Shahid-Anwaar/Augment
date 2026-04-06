@@ -10,6 +10,32 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Primary */
+  --color-primary-50: #f9ffe1;
+  --color-primary-100: #f2ffbf;
+  --color-primary-200: #ebff9d;
+  --color-primary-300: #e4ff7b;
+  --color-primary-400: #ddfe59;
+  --color-primary-500: #d6fd3a;
+  --color-primary-600: #c1e434;
+  --color-primary-700: #93b017;
+  --color-primary-800: #6e840f;
+  --color-primary-900: #495807;
+  --color-primary: #d6fd3a;
+
+  /* Secondary */
+  --color-secondary-50: #e7f3ff;
+  --color-secondary-100: #cfe7ff;
+  --color-secondary-200: #9fd0ff;
+  --color-secondary-300: #6fb8ff;
+  --color-secondary-400: #3fa0ff;
+  --color-secondary-500: #0f88ff;
+  --color-secondary-600: #0c6dcc;
+  --color-secondary-700: #095299;
+  --color-secondary-800: #063766;
+  --color-secondary-900: #031c33;
+  --color-secondary: #0f88ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +49,112 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.stylish-family {
+  font-family: MNKY-Banana-Grotesk, serif;
+}
+
+
+@layer components {
+  /* =========================================================
+   BUTTONS
+   Reusable button styles used across the website
+   ========================================================= */
+
+  /* Primary rounded CTA button */
+  .contained-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-black bg-primary px-[34px] py-[13px] text-[15px] font-bold uppercase leading-none tracking-[0.02em] text-black transition-opacity duration-200 hover:bg-primary-600 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 font-serif;
+  }
+
+  /* Danger / delete action button */
+  .delete-btn {
+    @apply inline-flex items-center justify-center rounded-lg bg-red-700 px-4 py-2 font-semibold text-white transition-colors hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* Secondary outlined action button */
+  .secondary-btn {
+    @apply inline-flex items-center justify-center rounded-lg border border-secondary-600 px-3 py-1 font-semibold text-secondary-600 transition-colors hover:bg-secondary-100 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* Neutral close / cancel button */
+  .close-btn {
+    @apply rounded-lg border border-gray-200 bg-gray-100 px-4 py-2 text-gray-700 transition-colors hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-500;
+  }
+
+  .section-container {
+    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  /* Small uppercase label above titles */
+  .section-label {
+    @apply mb-3 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-primary;
+  }
+
+  .section-title {
+    @apply text-[28px] sm:text-[36px] md:text-[40px] lg:text-[44px] font-extralight leading-[1.06] tracking-[-0.055em] text-black;
+  }
+
+  .section-title-wrap {
+    @apply mx-auto mb-10 max-w-[760px] text-center;
+  }
+
+  .section-description {
+    @apply mx-auto max-w-[760px] text-center text-[15px] leading-[1.7] text-gray-600 sm:text-[16px];
+  }
+
+  .section-card {
+    @apply rounded-[24px] bg-white shadow-sm;
+  }
+
+  /* Hero section wrapper */
+  .hero-section {
+    @apply overflow-hidden rounded-[28px] bg-black text-white;
+  }
+
+  /* Hero main heading */
+  .hero-title {
+    @apply text-[34px] font-bold leading-[1.05] tracking-[-0.03em] sm:text-[48px] lg:text-[64px];
+  }
+
+  /* Hero supporting text */
+  .hero-description {
+    @apply max-w-[640px] text-[15px] leading-[1.7] text-white/75 sm:text-[17px];
+  }
+
+
+  /* Default input field */
+  .input-field {
+    @apply w-full rounded-full border border-gray-300 bg-white px-5 py-3 text-[15px] text-black outline-none transition-colors placeholder:text-gray-400 focus:border-black;
+  }
+
+  /* Default textarea field */
+  .textarea-field {
+    @apply w-full rounded-[20px] border border-gray-300 bg-white px-5 py-4 text-[15px] text-black outline-none transition-colors placeholder:text-gray-400 focus:border-black;
+  }
+
+  /* Field label */
+  .field-label {
+    @apply mb-2 block text-[14px] font-semibold text-black;
+  }
+
+  /* CTA form wrapper */
+  .cta-form {
+    @apply rounded-[24px] border border-gray-200 bg-white p-5 shadow-sm sm:p-7;
+  }
+
+
+  /* Light divider line */
+  .divider {
+    @apply h-px w-full  bg-black;
+  }
+
+
+  .hover-lift {
+    @apply transition duration-300 hover:-translate-y-1;
+  }
 }
