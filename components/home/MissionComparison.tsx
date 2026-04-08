@@ -53,7 +53,7 @@ function ComparisonCard({
           <li
             key={item.text}
             className={[
-              "flex items-center gap-4 py-[15px]",
+              "flex items-center gap-4 py-3.75",
               index !== items.length - 1
                 ? isDark
                   ? "border-b border-white/20"
@@ -61,7 +61,7 @@ function ComparisonCard({
                 : "",
             ].join(" ")}
           >
-            <span className="mt-[1px] shrink-0">
+            <span className="mt-px shrink-0">
               {isDark ? (
                 <Icon
                   icon="lucide:x"
@@ -108,8 +108,8 @@ function ComparisonCard({
 export default function MissionComparisonSection() {
   return (
     <section className="bg-black">
-      <div className="mx-auto w-full max-w-[1130px] px-6 pb-3 pt-16 sm:px-8 md:px-10 md:pb-4 md:pt-20 lg:px-12 lg:pb-12 lg:pt-22">
-        <div className="mx-auto max-w-[1060px] text-center">
+      <div className="mx-auto w-full max-w-282.5 px-6 pb-3 pt-16 sm:px-8 md:px-10 md:pb-4 md:pt-20 lg:px-12 lg:pb-12 lg:pt-22">
+        <div className="mx-auto max-w-265 text-center">
           <p className="section-label">
             Our Mission
           </p>
@@ -119,7 +119,7 @@ export default function MissionComparisonSection() {
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 items-start gap-9 lg:mt-[72px] lg:grid-cols-2 lg:gap-9">
+        <div className="mt-14 grid grid-cols-1 items-start gap-9 lg:mt-18 lg:grid-cols-2 lg:gap-9">
           <ComparisonCard
             title="Traditional MBAs"
             items={traditionalMbaItems}

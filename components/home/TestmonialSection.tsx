@@ -116,7 +116,7 @@ export default function StudentTestimonialsSection() {
 
   return (
     <section className="bg-[#f3f4f6]">
-      <div className="mx-auto w-full max-w-[1280px] px-4 pb-14 pt-14 sm:px-6 md:px-8 lg:px-10 lg:pb-[72px] lg:pt-[68px]">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-14 pt-14 sm:px-6 md:px-8 lg:px-10 lg:pb-[72px] lg:pt-[68px]">
         <div className="text-center">
           <p className="section-label text-black">
             Our Community

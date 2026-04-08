@@ -7,7 +7,7 @@ const TEASER_WISTIA_ID = "2cf0n0g1bd";
 export default function TeaserSection() {
   return (
     <section className="overflow-hidden bg-black px-4 pb-20 pt-10 md:px-6 md:pb-24 md:pt-12">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-7xl">
         <div className="text-center">
           {/* <p className="text-[14px] font-medium uppercase tracking-[0.06em] text-white">
             TEASER
@@ -25,7 +25,7 @@ export default function TeaserSection() {
           </h2>
         </div>
 
-        <div className="mx-auto mt-12 max-w-[1120px]">
+        <div className="mx-auto mt-12 max-w-280">
           <div className="overflow-hidden rounded-[28px] bg-[#111] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
             <iframe
               className="aspect-video w-full overflow-hidden rounded-[28px]"

@@ -28,7 +28,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
           icon="mdi:chevron-down"
           width="28"
           height="28"
-          className={`mt-[1px] shrink-0 text-gray-600 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+          className={`mt-px shrink-0 text-gray-600 transition-transform duration-200 ${isOpen ? "rotate-180" : ""
             }`}
         />
       </button>
