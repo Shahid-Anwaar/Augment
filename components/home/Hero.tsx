@@ -171,7 +171,7 @@ export default function HeroSection() {
     <section className="hero-carousel relative z-[1] overflow-hidden bg-black">
       <div className="relative mx-auto flex max-w-full flex-col bg-black pb-6 lg:flex-row lg:items-center lg:pb-1 lg:pt-2 2xl:max-w-[86em]">
         <div className="relative z-30 mx-auto px-4 pb-8 pt-4 text-center text-white sm:px-6 lg:absolute lg:left-0 lg:w-[50%] lg:px-0 lg:pb-4 lg:pl-10 lg:pr-0 lg:text-left xl:mx-24 xl:max-w-[464px] xl:pl-0">
-          <h1 className="max-w-[15ch] text-[50px] font-normal leading-[1.25] tracking-tight text-white sm:text-[58px] md:text-[66px] lg:max-w-[500px] section-title">
+          <h1 className="max-w-[15ch] text-[50px] font-normal leading-tight tracking-tight text-white sm:text-[58px] md:text-[66px] lg:max-w-[500px] section-title">
             The MBA for Entrepreneurs
           </h1>
 

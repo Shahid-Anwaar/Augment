@@ -147,7 +147,7 @@ export default function HeaderSection() {
 
             <nav
               aria-label="Mobile navigation"
-              className="mt-[68px] flex-1 overflow-y-auto pb-40 sm:mt-[86px] md:mt-[96px]"
+              className="mt-17 flex-1 overflow-y-auto pb-40 sm:mt-[86px] md:mt-[96px]"
             >
               <ul className="space-y-8 sm:space-y-9 md:space-y-10">
                 {DESKTOP_NAV_ITEMS.map((item) => (

@@ -28,9 +28,9 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
   const { shorText, truncated } = clampText(item.text, 240);
 
   return (
-    <article className="break-inside-avoid rounded-[10px] border border-black/[0.04] bg-white px-4 pb-4 pt-4 shadow-[0_0_0_1px_rgba(0,0,0,0.015)] sm:px-[15px] sm:pb-[14px] sm:pt-[15px]">
+    <article className="break-inside-avoid rounded-[10px] border border-black/4 bg-white px-4 pb-4 pt-4 shadow-[0_0_0_1px_rgba(0,0,0,0.015)] sm:px-3.75 sm:pb-3.5 sm:pt-3.5">
       <div className="flex items-start gap-3">
-        <div className="relative h-[42px] w-[42px] shrink-0 overflow-hidden rounded-full bg-[#d9d9d9]">
+        <div className="relative h-10.5 w-10.5 shrink-0 overflow-hidden rounded-full bg-[#d9d9d9]">
           <Image
             src={item.avatar}
             alt={item.name}
@@ -46,7 +46,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
               <h3 className="truncate text-[13px] font-medium leading-[1.2] tracking-[-0.02em] text-[#374151] sm:text-[15px] mb-1">
                 {item.name}
               </h3>
-              <p className="truncate text-[11px] font-normal leading-[1.25] tracking-[-0.015em] text-[#708098] sm:text-[12px]">
+              <p className="truncate text-[11px] font-normal leading-tight tracking-[-0.015em] text-[#708098] sm:text-[12px]">
                 {item.role}
               </p>
             </div>
@@ -56,7 +56,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
                 icon="logos:linkedin-icon"
                 width="18"
                 height="18"
-                className="mt-[2px] shrink-0"
+                className="mt-0.5 shrink-0"
               />
             ) : null}
           </div>
@@ -64,7 +64,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
       </div>
 
       <div className="mt-3">
-        <p className="text-[13px] font-normal leading-[1.5] tracking-[-0.02em] text-[#374151] sm:text-[14px]">
+        <p className="text-[13px] font-normal leading-normal tracking-[-0.02em] text-[#374151] sm:text-[14px]">
           {shownFullTextIds.includes(item.id) ? item?.text : shorText}
         </p>
 
@@ -116,7 +116,7 @@ export default function StudentTestimonialsSection() {
 
   return (
     <section className="bg-[#f3f4f6]">
-      <div className="mx-auto w-full max-w-7xl px-4 pb-14 pt-14 sm:px-6 md:px-8 lg:px-10 lg:pb-[72px] lg:pt-[68px]">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-14 pt-14 sm:px-6 md:px-8 lg:px-10 lg:pb-18 lg:pt-17">
         <div className="text-center">
           <p className="section-label text-black">
             Our Community
@@ -161,7 +161,7 @@ export default function StudentTestimonialsSection() {
                   Math.min(prev + LOAD_MORE_COUNT, testimonials.length)
                 )
               }
-              className="inline-flex h-[52px] min-w-[256px] items-center justify-center rounded-full border border-black bg-[#f4f4f1] px-10 text-[15px] font-bold uppercase tracking-[0.08em] text-black transition-all duration-200 hover:scale-[1.01] hover:bg-white"
+              className="inline-flex h-13 min-w-[256px] items-center justify-center rounded-full border border-black bg-[#f4f4f1] px-10 text-[15px] font-bold uppercase tracking-[0.08em] text-black transition-all duration-200 hover:scale-[1.01] hover:bg-white"
             >
               Load More
             </button>
