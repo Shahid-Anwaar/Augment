@@ -95,14 +95,8 @@ function FooterColumn({ links }: { links: FooterLink[] }) {
 
 export default function Footer() {
     return (
-        <footer className="bg-[#F3F4F6] pt-52 relative">
-            <div className=" bg-black text-white">
-                <div className="mx-auto w-full max-w-[1330px] px-6 pb-8 sm:px-8 md:px-10 md:pb-12 pt-64 lg:px-12">
-                    <BookCallSection 
-                    title="Book a Call with a Program Advisor" 
-                    icon="solar:phone-linear"
-                    subTitle="Discuss your business goals and find out if Augment is a fit for you."
-                    />
+            <footer className=" bg-black text-white ">
+                <div className="section-container pb-8 pt-12 md:pb-12 md:pt-28">
                     <div className="grid grid-cols-1 gap-y-12 md:grid-cols-[1.08fr_0.95fr_0.95fr] md:gap-x-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1fr] lg:gap-x-14">
                         <div>
                             <Link
@@ -190,7 +184,6 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
+            </footer>
     );
 }

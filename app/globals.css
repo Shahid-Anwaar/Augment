@@ -64,7 +64,7 @@ body {
 
   /* Primary rounded CTA button */
   .contained-btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-black bg-primary px-[34px] py-[13px] text-[15px] font-bold uppercase leading-none tracking-[0.02em] text-black transition-opacity duration-200 hover:bg-primary-600 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 font-serif;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-black bg-primary px-[34px] py-[13px] text-[15px] font-bold uppercase leading-none tracking-[0.02em] text-black transition-opacity duration-200 hover:bg-primary-600 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   /* Danger / delete action button */
@@ -74,16 +74,16 @@ body {
 
   /* Secondary outlined action button */
   .secondary-btn {
-    @apply inline-flex items-center justify-center rounded-lg border border-secondary-600 px-3 py-1 font-semibold text-secondary-600 transition-colors hover:bg-secondary-100 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply inline-flex rounded-full items-center uppercase justify-center border border-black px-4 py-3 font-semibold text-black transition-colors bg-white hover:bg-gray-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   /* Neutral close / cancel button */
   .close-btn {
-    @apply rounded-lg border border-gray-200 bg-gray-100 px-4 py-2 text-gray-700 transition-colors hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-500 dark:bg-gray-600 dark:text-gray-300 dark:hover:bg-gray-500;
+    @apply  bg-transparent py-3.5 disabled:cursor-not-allowed disabled:opacity-50 inline-flex items-center justify-center rounded-full border border-white px-16 text-[14px] font-semibold uppercase tracking-[0.04em] text-white transition-all duration-200 hover:bg-white hover:text-black;
   }
 
   .section-container {
-    @apply mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8;
+    @apply mx-auto w-full max-w-[1330px] px-6 py-8 sm:px-8 md:px-10 md:py-12 lg:px-12;
   }
 
   .section-spacing {
@@ -92,7 +92,7 @@ body {
 
   /* Small uppercase label above titles */
   .section-label {
-    @apply mb-3 inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-primary;
+    @apply text-[15px] font-normal uppercase tracking-[0.02em] text-white/95;
   }
 
   .section-title {
@@ -150,7 +150,7 @@ body {
 
   /* Light divider line */
   .divider {
-    @apply h-px w-full  bg-black;
+    @apply h-px w-full bg-black;
   }
 
 

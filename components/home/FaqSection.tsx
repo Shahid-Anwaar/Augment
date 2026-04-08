@@ -51,14 +51,9 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-[#000000] pt-52 relative">
-      <div className="bg-[#f3f4f6]">
-        <div className="mx-auto w-full max-w-[1280px] px-7 pb-14 sm:px-8 md:px-10 md:pb-20 lg:px-12 lg:pb-[88px] pt-64">
-          <BookCallSection
-            title="15-Day Money-Back Guarantee"
-            btnText="Enroll Now"
-            subTitle="Try Augment for 15 days and if you are not completely satisfied, you can claim a full refund - no questions asked."
-          />
+      <section className="bg-[#f3f4f6]">
+        <div className="section-container py-10 md:py-14 lg:pb-16 lg:pt-24 ">
+
           <div className="grid grid-cols-1 gap-y-10 md:grid-cols-[300px_minmax(0,1fr)] md:gap-x-16 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-x-[78px]">
             <div>
               <h2 className="max-w-[230px] section-title">
@@ -84,7 +79,6 @@ export default function FAQSection() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }

@@ -1,274 +1,414 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
+import { Icon } from "@iconify/react";
+import { useEffect, useMemo, useState } from "react";
 
-const logos = [
-  "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fdc89bc3cd7724a2aaf01a829033b7459&w=128",
-  "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fdc89bc3cd7724a2aaf01a829033b7459&w=128",
-  "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fdc89bc3cd7724a2aaf01a829033b7459&w=128",
-  "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fdc89bc3cd7724a2aaf01a829033b7459&w=128",
-  "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252F06bef9fc17084d87acf59d651c6943b6&w=1920",
-  "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fdc89bc3cd7724a2aaf01a829033b7459&w=128",
+type FeatureItem = {
+  label: string;
+  icon: string;
+};
+
+type HeroSlide = {
+  id: number;
+  name: string;
+  company: string;
+  role: string;
+  image: string;
+  video?: string;
+};
+
+const AUTOPLAY_MS = 3000;
+
+const FEATURES: FeatureItem[] = [
+  { label: "Online", icon: "ph:play-circle-fill" },
+  { label: "Bite-Sized Lessons", icon: "ph:clock-fill" },
+  { label: "Certificate", icon: "ph:certificate-fill" },
 ];
 
-const mentorCards = [
+const HERO_SLIDES: HeroSlide[] = [
   {
-    name: "Founder",
-    role: "Wikipedia",
+    id: 1,
+    name: "Jimmy Wales",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F3a370c96d97b4942b42ad70f3382c000",
+    role: "Founder of Wikipedia",
     image:
-      "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fa0e282e92c21426cb72a9d5c27a9178e&w=3840",
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F234946f583ab4a7e98dd9bba047775d2",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F52f0105d32714e168307b5da0a27b4fc%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=52f0105d32714e168307b5da0a27b4fc&alt=media&optimized=true",
   },
   {
-    name: "Founder",
-    role: "Waze",
+    id: 2,
+    name: "Georgia Lewis",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fad8c245895824a339ee40830d041c26c",
+    role: "Former Prompt Engineer at Meta",
     image:
-      "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252F5d4d10c4587c4840beaaf4e40c00bfa2&w=3840",
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F7835a8f882ef450b84d1c16324fc8d75",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F7cfe202a016644adb4552d366932c01c%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=7cfe202a016644adb4552d366932c01c&alt=media&optimized=true",
   },
   {
-    name: "Founder",
-    role: "Siri",
+    id: 3,
+    name: "Steve Chen",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fa2bab8fba2434d09b01c553d115e3fbe",
+    role: "Founder of Youtube",
     image:
-      "https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252F62ad1505398547cabae48191fe09f1f2&w=3840",
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F47dbb563aed44486b28b4631c8833235",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F509807a034044fd0b3aff3c3a6c3266a%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=509807a034044fd0b3aff3c3a6c3266a&alt=media&optimized=true",
+  },
+  {
+    id: 4,
+    name: "Zack Kass",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F56f4f4ee156f43b3847270e2669fd324",
+    role: "Former Head of Go-To-Market at OpenAI",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F513af209523041388c737f66336e62e5",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F7c887e35c3a54751a8b7d63c2eb59f28%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=7c887e35c3a54751a8b7d63c2eb59f28&alt=media&optimized=true",
+  },
+  {
+    id: 5,
+    name: "Ann Hiatt",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fc33f8dc7073c4e65ad88bb99143e721a",
+    role: "Chief of Staff",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F03323b1302d94d50a9bba04594d829ac",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fbc1c38b516ad4255bfb4cbfd2e6a0627%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=bc1c38b516ad4255bfb4cbfd2e6a0627&alt=media&optimized=true",
+  },
+  {
+    id: 6,
+    name: "Morin Oluwole",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fad8c245895824a339ee40830d041c26c",
+    role: "Ex-Director at Meta",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F2e7ee683820648d9ab0ded82e21402de",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F4d37000288bc4898afba44b5568d0d7c%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=4d37000288bc4898afba44b5568d0d7c&alt=media&optimized=true",
+  },
+  {
+    id: 7,
+    name: "Chris Barton",
+    company: "",
+    role: "Founder of Shazam",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fb4bfaa5158ac467ebda01fc7802240d8",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F92eef86c59e44cb9bf88943ee46097eb%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=92eef86c59e44cb9bf88943ee46097eb&alt=media&optimized=true",
+  },
+  {
+    id: 8,
+    name: "Caen Contee",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F6a1f6df1d2d44b5fb5212174b1afcc41",
+    role: "Founder of Lime",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fc115f60499c24833971a20af6d253375",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F734172ad92114e84ab3a068f9722cdfa%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=734172ad92114e84ab3a068f9722cdfa&alt=media&optimized=true",
+  },
+  {
+    id: 9,
+    name: "Uri Levine",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fb5387309aa2842f2b27b60f26a397778",
+    role: "Founder of Waze",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F3c1232896777476e9b5704d580aec96f",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fe9701219a7e743408c14fa27cc8edd3a%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=e9701219a7e743408c14fa27cc8edd3a&alt=media&optimized=true",
+  },
+  {
+    id: 10,
+    name: "Kelly Richmond Pope",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F31d24bcfe549491f971d154458d493ab",
+    role: "Best-Selling Author",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F27cc610e575c4478bc245cc94889dc15",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F80aee6543c4946ec854dc7c019eaf8c8%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=80aee6543c4946ec854dc7c019eaf8c8&alt=media&optimized=true",
   },
 ];
 
-export default function Page() {
+function getVisibleSlides(startIndex: number, count: number) {
+  return Array.from({ length: count }, (_, index) => {
+    return HERO_SLIDES[(startIndex + index) % HERO_SLIDES.length];
+  });
+}
+
+export default function HeroSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    // if (paused) return;
+
+    const interval = window.setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, AUTOPLAY_MS);
+
+    return () => window.clearInterval(interval);
+  }, []);
+
+  const desktopSlides = useMemo(
+    () => getVisibleSlides(activeIndex, 4),
+    [activeIndex]
+  );
+
+  const mobileSlides = useMemo(
+    () => getVisibleSlides(activeIndex, 3),
+    [activeIndex]
+  );
+
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
-      {/* =====================================================
-          PAGE WRAPPER
-          Full black background like the live Augment homepage
-          ===================================================== */}
-      <div className="mx-auto w-full max-w-[1440px] px-3 pb-12 pt-3 sm:px-4 lg:px-5">
-        {/* =====================================================
-            HERO SHELL
-            Large rounded outer frame that contains header + hero
-            ===================================================== */}
-        <section className="overflow-hidden rounded-[30px] border border-white/10 bg-[#080808] shadow-[0_30px_80px_rgba(0,0,0,0.45)] sm:rounded-[34px] lg:rounded-[38px]">
-          {/* =====================================================
-              HEADER
-              Same style: logo left, nav center, CTA right
-              Mobile switches to hamburger button
-              ===================================================== */}
-          <header className="relative z-20 px-4 pt-4 sm:px-6 sm:pt-5 lg:px-8 lg:pt-6">
-            <div className="flex h-[64px] items-center justify-between rounded-full border border-white/10 bg-black/55 px-4 backdrop-blur-xl sm:h-[68px] sm:px-5 lg:h-[72px] lg:px-6">
-              {/* Logo */}
-              <Link href="/" className="flex shrink-0 items-center">
-                <Image
-                  src="https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fdc89bc3cd7724a2aaf01a829033b7459&w=128"
-                  alt="Augment"
-                  width={118}
-                  height={28}
-                  className="h-auto w-[96px] sm:w-[108px] lg:w-[118px]"
-                  priority
-                />
-              </Link>
+    <section className="hero-carousel relative z-[1] overflow-hidden bg-black">
+      <div className="relative mx-auto flex max-w-full flex-col bg-black pb-6 lg:flex-row lg:items-center lg:pb-1 lg:pt-2 2xl:max-w-[86em]">
+        <div className="relative z-30 mx-auto px-4 pb-8 pt-4 text-center text-white sm:px-6 lg:absolute lg:left-0 lg:w-[50%] lg:px-0 lg:pb-4 lg:pl-10 lg:pr-0 lg:text-left xl:mx-24 xl:max-w-[464px] xl:pl-0">
+          <h1 className="max-w-[15ch] text-[50px] font-normal leading-[1.25] tracking-tight text-white sm:text-[58px] md:text-[66px] lg:max-w-[500px] section-title">
+            The MBA for Entrepreneurs
+          </h1>
 
-              {/* Desktop nav */}
-              <nav className="hidden items-center gap-7 xl:flex">
-                {/* Navigation links matching the website structure */}
-                {[
-                  "Home",
-                  "Curriculum",
-                  "Faculty",
-                  "Community",
-                  "Free Classes",
-                  "For Teams",
-                  "About",
-                  "Log in",
-                ].map((item) => (
-                  <Link
-                    key={item}
-                    href="#"
-                    className="text-[13px] font-medium tracking-[0.02em] text-white/78 transition-colors duration-200 hover:text-white"
-                  >
-                    {item}
-                  </Link>
-                ))}
-              </nav>
+          <p className="mx-auto mt-3 max-w-[36ch] text-[15px] font-normal leading-[1.45] tracking-[-0.02em] text-white/90 sm:text-[20px] lg:mx-0 lg:mt-4 lg:max-w-[450px]">
+            Join the Business School for Entrepreneurs. Built by the founders
+            of YouTube, Waze, Siri and Wikipedia. For the founders of tomorrow.
+          </p>
 
-              {/* Right side CTA desktop */}
-              <div className="hidden xl:flex">
-                <Link
-                  href="#"
-                  className="inline-flex h-[44px] items-center justify-center rounded-full bg-[#D9FF3F] px-6 text-[12px] font-extrabold uppercase tracking-[0.08em] text-black transition-transform duration-200 hover:scale-[1.02]"
-                >
-                  Enroll Now
-                </Link>
-              </div>
-
-              {/* Mobile menu button */}
-              <button
-                type="button"
-                aria-label="Open menu"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-colors hover:bg-white/10 xl:hidden"
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-3 gap-y-3 md:gap-x-5 lg:mt-[2.625rem] lg:justify-start">
+            {FEATURES.map((item) => (
+              <li
+                key={item.label}
+                className="flex items-center gap-1.5 md:gap-2"
               >
-                {/* <Menu className="h-5 w-5" /> */}
-              </button>
-            </div>
-          </header>
+                <Icon
+                  icon={item.icon}
+                  className="h-[18px] w-[18px] shrink-0 text-white"
+                />
+                <span className="whitespace-nowrap text-[14px] font-normal uppercase tracking-[0.02em] text-white md:text-[16px]">
+                  {item.label}
+                </span>
+              </li>
+            ))}
+          </ul>
 
-          {/* =====================================================
-              HERO CONTENT AREA
-              Two-column layout on desktop, stacked on mobile/tablet
-              ===================================================== */}
-          <div className="relative px-4 pb-5 pt-7 sm:px-6 sm:pb-6 sm:pt-10 lg:px-8 lg:pb-8 lg:pt-12">
-            {/* Soft glow backgrounds to mimic premium hero lighting */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(circle_at_18%_22%,rgba(190,90,60,0.30),transparent_28%),radial-gradient(circle_at_55%_18%,rgba(255,255,255,0.06),transparent_20%),radial-gradient(circle_at_82%_18%,rgba(90,60,40,0.28),transparent_24%)]" />
+          <div className="mx-auto mt-8 flex items-start flex-col gap-3 lg:mx-0 lg:mt-[2.625rem]">
+            <Link
+              href="https://augment.school/sHK7SoG?"
+              className="group px-6 contained-btn min-w-65"
+            >
+              Enroll Now
+              <Icon
+                icon={"mingcute:arrow-right-fill"}
+                width="19"
+                height="19"
+                className="shrink-0"
+              />
+            </Link>
 
-            <div className="relative grid items-stretch gap-5 lg:grid-cols-[minmax(0,1.08fr)_390px] xl:grid-cols-[minmax(0,1.08fr)_420px] xl:gap-6">
-              {/* =================================================
-                  LEFT HERO PANEL
-                  Main heading, description, features, CTAs, logos
-                  ================================================= */}
-              <div className="overflow-hidden rounded-[26px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-5 sm:rounded-[30px] sm:p-7 lg:min-h-[650px] lg:p-8 xl:min-h-[690px] xl:p-10">
-                {/* Eyebrow */}
-                <div className="mb-4 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70 sm:mb-5">
-                  Entrepreneur Education
-                </div>
+            <Link
+              href="https://s13rwwhxhl9.typeform.com/to/lmPnaKUF?utm_source=website&"
+              className="px-6 close-btn min-w-65"
+            >
+              Watch Free Class
+            </Link>
+          </div>
+        </div>
 
-                {/* Headline */}
-                <h1 className="max-w-[760px] text-[34px] font-black leading-[0.95] tracking-[-0.045em] text-white sm:text-[46px] md:text-[58px] lg:text-[72px] xl:text-[82px]">
-                  The MBA for
-                  <br />
-                  Entrepreneurs
-                </h1>
-
-                {/* Description */}
-                <p className="mt-5 max-w-[720px] text-[14px] leading-[1.65] text-white/72 sm:mt-6 sm:text-[15px] md:text-[16px] lg:max-w-[680px] lg:text-[17px]">
-                  Join the Business School for Entrepreneurs. Built by the
-                  founders of YouTube, Waze, Siri and Wikipedia. For the
-                  founders of tomorrow.
-                </p>
-
-                {/* Feature pills */}
-                <div className="mt-6 flex flex-wrap gap-2.5 sm:mt-7 sm:gap-3">
-                  {[
-                    "Online",
-                    "Bite-sized Lessons",
-                    "Certificate",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-2.5 text-[12px] font-semibold uppercase tracking-[0.08em] text-white/88 sm:px-5"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA buttons */}
-                <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center">
-                  <Link
-                    href="#"
-                    className="inline-flex h-[52px] items-center justify-center rounded-full bg-[#D9FF3F] px-7 text-[13px] font-extrabold uppercase tracking-[0.08em] text-black transition-transform duration-200 hover:scale-[1.02] sm:h-[56px] sm:px-8"
-                  >
-                    Enroll Now
-                  </Link>
-                  <Link
-                    href="#"
-                    className="inline-flex h-[52px] items-center justify-center rounded-full border border-white/12 bg-white/5 px-7 text-[13px] font-bold uppercase tracking-[0.08em] text-white transition-colors duration-200 hover:bg-white/10 sm:h-[56px] sm:px-8"
-                  >
-                    Watch Free Class
-                  </Link>
-                </div>
-
-                {/* Logo strip */}
-                <div className="mt-9 rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-4 sm:mt-10 sm:px-5 sm:py-5 lg:mt-12">
-                  <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/45 sm:mb-5">
-                    Built by founders of
-                  </p>
-                  <div className="grid grid-cols-2 items-center gap-x-5 gap-y-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-4">
-                    {logos.map((logo, index) => (
-                      <div
-                        key={logo + index}
-                        className="flex h-[28px] items-center justify-start opacity-80 grayscale transition-opacity duration-200 hover:opacity-100"
-                      >
-                        <Image
-                          src={logo}
-                          alt="brand logo"
-                          width={120}
-                          height={28}
-                          className="h-auto max-h-[22px] w-auto object-contain"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom preview video frame */}
-                <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10 bg-[#111111] sm:mt-7 lg:mt-8">
-                  <div className="relative aspect-[16/8.2] w-full">
-                    <Image
-                      src="https://augment.org/_next/image?q=75&url=https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F20c9f56ee0104a98bd873ddbe200463a%252Fb5af1d4b8da24517ac97335c5a3e1fb8&w=3840"
-                      alt="Preview video"
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/18" />
-                    <button
-                      type="button"
-                      aria-label="Play video"
-                      className="absolute left-1/2 top-1/2 inline-flex h-[72px] w-[72px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-black/45 backdrop-blur-md transition-transform duration-200 hover:scale-105"
-                    >
-                      <span className="ml-1 inline-block h-0 w-0 border-b-[12px] border-l-[18px] border-t-[12px] border-b-transparent border-l-white border-t-transparent" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* =================================================
-                  RIGHT HERO STACK
-                  Portrait mentor cards like the original homepage
-                  ================================================= */}
-              <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1 lg:gap-5">
-                {mentorCards.map((card, index) => (
-                  <article
-                    key={card.name + index}
-                    className={`group relative overflow-hidden rounded-[26px] border border-white/10 bg-[#101010] ${
+        <div
+          className="relative flex w-full justify-end"
+        >
+          <div className="w-full max-w-[901px]">
+            <div className="hidden w-full overflow-hidden lg:block">
+              <div className="flex h-[620px] items-stretch gap-3 xl:h-[700px]">
+                {desktopSlides.map((slide, index) => (
+                  <HeroCard
+                    key={`${slide.id}-${index}`}
+                    slide={slide}
+                    variant={
                       index === 0
-                        ? "sm:col-span-2 lg:col-span-1"
-                        : "sm:col-span-1 lg:col-span-1"
-                    }`}
-                  >
-                    <div className="relative aspect-[0.85/1] min-h-[250px] sm:min-h-[320px] lg:min-h-[210px] xl:min-h-[220px]">
-                      <Image
-                        src={card.image}
-                        alt={card.role}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.18)_35%,rgba(0,0,0,0.76)_100%)]" />
+                        ? "primary"
+                        : index === 3
+                          ? "peek"
+                          : "secondary"
+                    }
+                  />
+                ))}
+              </div>
+            </div>
 
-                      {/* Top tag */}
-                      <div className="absolute left-3 top-3 rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-white/90 backdrop-blur-md sm:left-4 sm:top-4">
-                        Instructor
-                      </div>
-
-                      {/* Bottom content */}
-                      <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                        <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-white/60">
-                          {card.name}
-                        </p>
-                        <h3 className="mt-1 text-[24px] font-black leading-[0.95] tracking-[-0.04em] text-white sm:text-[28px] xl:text-[30px]">
-                          {card.role}
-                        </h3>
-                        <div className="mt-4 flex items-center justify-between gap-3">
-                          <span className="text-[13px] leading-none text-white/70">
-                            Learn from industry-leading founders
-                          </span>
-                          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D9FF3F] text-[20px] font-light text-black">
-                            ↗
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
+            <div className="block overflow-hidden px-4 sm:px-6 lg:hidden">
+              <div className="flex items-stretch gap-3 overflow-hidden">
+                {mobileSlides.map((slide, index) => (
+                  <HeroCard
+                    key={`${slide.id}-mobile-${index}`}
+                    slide={slide}
+                    variant={index === 0 ? "mobilePrimary" : "mobileSecondary"}
+                  />
                 ))}
               </div>
             </div>
           </div>
-        </section>
+        </div>
+
+        <div
+          className="pointer-events-none absolute inset-0 z-10 hidden lg:flex"
+          aria-hidden="true"
+        >
+          {/* <div className="mr-[-1px] h-full w-full min-w-[380px] bg-black lg:min-w-[460px]" /> */}
+          {/* <div className="h-full w-full bg-linear-to-tr from-black via-black/84 to-transparent" /> */}
+        </div>
+
+        <div
+          className="pointer-events-none absolute right-[-1px] top-0 z-10 hidden h-full w-[15%] bg-gradient-to-l from-black via-black/88 to-transparent xl:block xl:w-[20%]"
+          aria-hidden="true"
+        />
       </div>
-    </main>
+    </section>
+  );
+}
+
+
+
+function HeroCard({
+  slide,
+  variant,
+}: {
+  slide: HeroSlide;
+  variant:
+  | "primary"
+  | "secondary"
+  | "peek"
+  | "mobilePrimary"
+  | "mobileSecondary";
+}) {
+  const isPrimary = variant === "primary" || variant === "mobilePrimary";
+  const isPeek = variant === "peek";
+  const showVideo = Boolean(slide.video) && isPrimary;
+
+  return (
+    <article
+      className={[
+        "group relative shrink-0 overflow-hidden bg-black text-white transition-all duration-700 ease-out",
+        variant === "primary" &&
+        "basis-[56%] rounded-[18px] xl:basis-[58%] xl:rounded-[24px]",
+        variant === "secondary" &&
+        "basis-[17.5%] rounded-[18px] opacity-[0.94] xl:basis-[15.5%] xl:rounded-[22px]",
+        variant === "peek" &&
+        "basis-[8.5%] rounded-[18px] opacity-[0.5] xl:basis-[9%] xl:rounded-[22px]",
+        variant === "mobilePrimary" &&
+        "min-w-[72%] rounded-[18px] h-[280px] sm:min-w-[76%] sm:h-[340px]",
+        variant === "mobileSecondary" &&
+        "min-w-[24%] rounded-[18px] h-[280px] opacity-[0.78] sm:min-w-[26%] sm:h-[340px]",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
+      <div className="absolute inset-0 bg-black">
+        <img
+          src={slide.image}
+          alt={slide.name}
+          className={[
+            "h-full w-full object-cover transition-all duration-700 ease-out",
+            showVideo ? "opacity-0" : "opacity-100",
+            isPeek ? "scale-[1.06]" : "scale-100 group-hover:scale-[1.02]",
+          ].join(" ")}
+        />
+
+        {showVideo && (
+          <video
+            key={slide.video}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={slide.image}
+          >
+            <source src={slide.video} type="video/mp4" />
+          </video>
+        )}
+      </div>
+
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_12%,rgba(0,0,0,0.08)_42%,rgba(0,0,0,0.92)_100%)]" />
+      <div className="absolute inset-y-0 left-0 w-[28%] bg-gradient-to-r from-black/50 to-transparent" />
+      <div className="absolute inset-y-0 right-0 w-[20%] bg-gradient-to-l from-black/32 to-transparent" />
+
+      <div
+        className={[
+          "absolute bottom-0 left-0 right-0 z-[2]",
+          isPrimary
+            ? "px-5 pb-6 lg:px-5 lg:pb-7 xl:px-6 xl:pb-8"
+            : "px-4 pb-5 lg:px-4 lg:pb-6",
+        ].join(" ")}
+      >
+        <div className="mb-3">
+          {slide.company ? (
+            <figure
+              className={[
+                "relative overflow-hidden",
+                isPrimary
+                  ? "h-8 w-[132px] sm:h-9 sm:w-[148px] lg:h-9 lg:w-[148px] xl:h-10 xl:w-[164px]"
+                  : "h-5 w-[78px] sm:h-6 sm:w-[92px] lg:h-6 lg:w-[96px] xl:h-7 xl:w-[108px]",
+              ].join(" ")}
+            >
+              <img
+                src={slide.company}
+                alt={`${slide.name} company logo`}
+                className="h-full w-full object-contain object-left"
+                loading="lazy"
+              />
+            </figure>
+          ) : (
+            <div
+              className={[
+                "font-medium tracking-[-0.05em] text-white/88",
+                isPrimary
+                  ? "text-[20px] sm:text-[22px] lg:text-[22px] xl:text-[24px]"
+                  : "text-[16px] sm:text-[17px] lg:text-[18px] xl:text-[20px]",
+              ].join(" ")}
+            >
+              {slide.name}
+            </div>
+          )}
+
+          {!isPeek && (
+            <div
+              className={[
+                "mt-3 h-px bg-white/75",
+                isPrimary ? "w-[98px] xl:w-[106px]" : "w-[64px] xl:w-[72px]",
+              ].join(" ")}
+            />
+          )}
+        </div>
+
+        {!isPeek && (
+          <>
+            {isPrimary && (
+              <p className="mb-1 tracking-[-0.05em] text-white text-[17px] font-medium leading-[1.02] sm:text-[20px] lg:text-[18px] xl:text-[21px]">
+                {slide.role}
+              </p>
+            )}
+
+            <h3
+              className={[
+                "tracking-[-0.05em] text-white",
+                isPrimary
+                  ? "text-[26px] font-medium leading-[1.02] sm:text-[30px] lg:text-[38px] xl:text-[42px]"
+                  : "text-[17px] font-medium leading-[1.02] sm:text-[20px] lg:text-[18px] xl:text-[21px]",
+              ].join(" ")}
+            >
+              {slide.name}
+            </h3>
+          </>
+        )}
+      </div>
+    </article>
   );
 }
