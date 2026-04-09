@@ -42,20 +42,20 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
         <div className="min-w-0 flex-1">
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
-              <h3 className="truncate text-[13px] font-medium leading-[1.2] tracking-[-0.02em] text-[#374151] sm:text-[15px] mb-1">
+              <h3 className="truncate text-[13px] font-medium leading-[1.2] tracking-[-0.02em] text-[#374151] sm:text-[16px] mb-1">
                 {item.name}
               </h3>
-              <p className="truncate text-[11px] font-normal leading-tight tracking-[-0.015em] text-[#708098] sm:text-[12px]">
+              <p className="truncate text-[11px] font-normal leading-tight tracking-[-0.015em] text-[#708098] sm:text-[14px]">
                 {item.role}
               </p>
             </div>
 
             {item.linkedin ? (
               <Icon
-                icon="logos:linkedin-icon"
-                width="18"
-                height="18"
-                className="mt-0.5 shrink-0"
+                icon="entypo-social:linkedin-with-circle"
+                width="22"
+                height="22"
+                className="mt-0.5 shrink-0 text-blue-600"
               />
             ) : null}
           </div>
@@ -63,7 +63,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
       </div>
 
       <div className="mt-3">
-        <p className="text-[13px] font-normal leading-normal tracking-[-0.02em] text-[#374151] sm:text-[14px]">
+        <p className="text-[13px] font-normal leading-normal tracking-[-0.02em] text-gray-600 sm:text-[16px]">
           {shownFullTextIds.includes(item.id) ? item?.text : shorText}
         </p>
 
@@ -73,7 +73,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
             onClick={() => {
               setShownFullTextIds(shownFullTextIds.filter((id: any) => id !== item.id));
             }}
-            className="mt-1 cursor-pointer text-[12px] font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
+            className="mt-1 cursor-pointer text-[14px] font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
           >
             Read Less
           </button> : <button
@@ -81,7 +81,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
             onClick={() => {
               setShownFullTextIds((prev: any) => [...prev, item.id]);
             }}
-            className="mt-1 text-[12px] cursor-pointer font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
+            className="mt-1 text-[14px] cursor-pointer font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
           >
             Read more
           </button>}

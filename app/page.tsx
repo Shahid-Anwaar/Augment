@@ -11,6 +11,7 @@ import TestimonialsSliderSection from "@/components/home/TestmonialSlider";
 import WhyAugmentSection from "@/components/home/WhyAugment";
 import HeroSection from "@/components/home/Hero";
 import Chats from "@/components/home/Chats";
+import EmblaCarousel from "@/components/home/EmblaCarosal";
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
       <FeaturedInSection />
       <TeaserVideoSection />
       <FacultySection />
-      <TestimonialsSliderSection />
+      {/* <TestimonialsSliderSection /> */}
+      <EmblaCarousel />
       <WhyAugmentSection />
       <StudentTestimonialsSection />
       <BookCallSection
