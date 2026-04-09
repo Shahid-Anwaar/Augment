@@ -83,7 +83,7 @@ function FooterColumn({ links }: { links: FooterLink[] }) {
                 <li key={item.label}>
                     <Link
                         href={item.href}
-                        className="inline-block text-[18px] font-medium leading-none tracking-[-0.03em] text-white transition-opacity duration-200 hover:opacity-70 md:text-[19px] lg:text-[20px]"
+                        className="inline-block text-[18px] font-medium leading-none tracking-[-0.03em] text-white transition-opacity duration-200 hover:text-primary md:text-[19px] lg:text-[20px]"
                     >
                         {item.label}
                     </Link>
@@ -151,7 +151,7 @@ export default function Footer() {
                                     key={item.label}
                                     href={item.href}
                                     aria-label={item.label}
-                                    className="inline-flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85"
+                                    className="inline-flex items-center justify-center transition-all duration-200 hover:scale-125 hover:opacity-85"
                                 >
                                     <Icon
                                         icon={item.icon}
@@ -176,7 +176,7 @@ export default function Footer() {
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    className="text-[12px] font-medium tracking-[-0.02em] text-white/75 transition-opacity duration-200 hover:opacity-100 md:text-[14px]"
+                                    className="text-[12px] cursor-pointer font-medium tracking-[-0.02em] text-white/75 transition-opacity duration-200 hover:text-primary md:text-[14px]"
                                 >
                                     {item.label}
                                 </Link>

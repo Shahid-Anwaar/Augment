@@ -35,12 +35,12 @@ export default function HeaderSection() {
 
   return (
     <>
-      <header className="relative z-40 bg-black text-white">
+      <header className="fixed top-0 w-full z-40 bg-black text-white">
         <div className="mx-auto max-w-[1560px] px-6 sm:px-8 md:px-10 xl:px-12 py-6 md:py-8">
           <div className="relative flex items-center justify-between ">
             <Link
               href="/"
-              className=" hidden min-[1345px]:inline-flex"
+              className=" hidden min-[1280px]:inline-flex"
               aria-label="Augment Business School"
             >
               <Image
@@ -54,7 +54,7 @@ export default function HeaderSection() {
 
             <Link
               href="/"
-              className="inline-flex min-[1345px]:hidden"
+              className="inline-flex min-[1280px]:hidden"
               aria-label="Augment Business School"
             >
               <Image
@@ -66,10 +66,10 @@ export default function HeaderSection() {
               />
             </Link>
 
-            <div className="hidden min-[1345px]:flex items-baseline-last justify-end gap-x-8">
+            <div className="hidden min-[1280px]:flex items-center justify-end gap-x-8">
               <nav
                 aria-label="Primary navigation"
-                className=""
+                className="mt-3"
               >
                 <ul className="flex items-center gap-6 xl:gap-8">
                   {DESKTOP_NAV_ITEMS.map((item, index) => (
@@ -78,10 +78,10 @@ export default function HeaderSection() {
                         href={item.href}
                         className="group inline-flex flex-col items-start text-[15px] font-medium tracking-[-0.02em] text-white/96 transition-colors duration-200 text-nowrap hover:text-white xl:text-[16px]"
                       >
-                        <span className="group-hover:text-[#D9F72B]">{item.label}</span>
+                        <span className="group-hover:text-primary">{item.label}</span>
                         <span
-                          className={`mt-[11px] h-[2px] rounded-full bg-[#D9F72B] transition-all duration-300 ${index === 0
-                            ? "w-[34px] opacity-100"
+                          className={`mt-1.5 h-px rounded-full bg-primary transition-all duration-300 ${index === 0
+                            ? "w-10.5 opacity-100"
                             : "w-0 opacity-0"
                             }`}
                         />
@@ -98,7 +98,7 @@ export default function HeaderSection() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="inline-flex h-11 w-11 items-center justify-center text-white transition-opacity duration-200 hover:opacity-80 min-[1345px]:hidden"
+              className="inline-flex h-11 w-11 items-center justify-center text-white transition-opacity duration-200 hover:opacity-80 min-[1280px]:hidden"
             >
               <Icon icon="mdi:menu" className="h-[30px] w-[30px]" />
             </button>
@@ -107,8 +107,8 @@ export default function HeaderSection() {
       </header>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-black text-white min-[1345px]:hidden">
-          <div className="relative mx-auto flex min-h-screen max-w-[1560px] flex-col px-7 pb-7 pt-7 sm:px-10 sm:pb-8 md:px-14 md:pt-8">
+        <div className="fixed inset-0 z-50 bg-black text-white min-[1280px]:hidden">
+          <div className="relative mx-auto flex min-h-screen max-w-[1560px] flex-col px-4 pb-7 pt-7 sm:px-6 sm:pb-8 md:px-8 md:pt-8">
             <div className="flex items-start justify-between">
               {/* <Link
                 href="#"
@@ -123,7 +123,7 @@ export default function HeaderSection() {
               </Link> */}
               <Link
                 href="/"
-                className="inline-flex min-[1345px]:hidden"
+                className="inline-flex min-[1280px]:hidden"
                 aria-label="Augment Business School"
               >
                 <Image
@@ -147,9 +147,9 @@ export default function HeaderSection() {
 
             <nav
               aria-label="Mobile navigation"
-              className="mt-17 flex-1 overflow-y-auto pb-40 sm:mt-[86px] md:mt-[96px]"
+              className="mt-8 overflow-y-auto mb-16 sm:mt-10 md:mt-12"
             >
-              <ul className="space-y-8 sm:space-y-9 md:space-y-10">
+              <ul className="space-y-3 sm:space-y-4 md:space-y-5">
                 {DESKTOP_NAV_ITEMS.map((item) => (
                   <li key={item.label}>
                     <Link
@@ -164,20 +164,11 @@ export default function HeaderSection() {
               </ul>
             </nav>
 
-            <div className="pointer-events-none absolute inset-x-0 bottom-7 flex items-end justify-center px-7 sm:bottom-8 sm:px-10 md:px-14">
+            <div className="pointer-events-none  inset-x-0 bottom-7 flex items-end justify-center px-7 sm:bottom-8 sm:px-10 md:px-14">
               <div className="pointer-events-auto">
                 <PrimaryCta href="#" mobile />
               </div>
 
-              <div className="pointer-events-auto absolute bottom-[2px] right-7 sm:right-10 md:right-14">
-                <button
-                  type="button"
-                  aria-label="Open support chat"
-                  className="inline-flex h-[50px] w-[50px] items-center justify-center rounded-full bg-white text-black shadow-[0_8px_24px_rgba(0,0,0,0.28)] transition-transform duration-300 hover:-translate-y-[1px] sm:h-[54px] sm:w-[54px]"
-                >
-                  <Icon icon="ph:chat-circle-dots-fill" className="h-[24px] w-[24px]" />
-                </button>
-              </div>
             </div>
           </div>
         </div>

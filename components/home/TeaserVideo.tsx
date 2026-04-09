@@ -25,7 +25,7 @@ export default function TeaserSection() {
           </h2>
         </div>
 
-        <div className="mx-auto mt-12 max-w-280">
+        <div className="mx-auto mt-12 max-w-225">
           <div className="overflow-hidden rounded-[28px] bg-[#111] shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
             <iframe
               className="aspect-video w-full overflow-hidden rounded-[28px]"

@@ -12,7 +12,7 @@ export default function FeaturedInSection() {
           </p>
 
           <div className="mt-6 flex justify-center sm:mt-7 lg:mt-6">
-            <div className="relative w-full max-w-[940px]">
+            <div className="relative w-full max-w-235">
               <Image
                 src="/companies.svg"
                 alt="TechCrunch, Forbes and Bloomberg logos"

@@ -108,7 +108,7 @@ function ComparisonCard({
 export default function MissionComparisonSection() {
   return (
     <section className="bg-black">
-      <div className="mx-auto w-full max-w-282.5 px-6 pb-3 pt-16 sm:px-8 md:px-10 md:pb-4 md:pt-20 lg:px-12 lg:pb-12 lg:pt-22">
+      <div className="mx-auto w-full max-w-282.5 px-6 pb-3 pt-16 sm:px-8 md:px-10 md:pb-4 md:pt-20 lg:px-12 lg:pb-16 lg:pt-28">
         <div className="mx-auto max-w-265 text-center">
           <p className="section-label">
             Our Mission

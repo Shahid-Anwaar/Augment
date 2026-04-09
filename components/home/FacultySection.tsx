@@ -67,7 +67,7 @@ function InstructorCard({ item }: { item: InstructorItem }) {
             {item.name}
           </h3>
 
-          <p className="mt-2 line-clamp-2 text-[12px] font-semibold uppercase leading-[1.2] tracking-[0.04em] text-white/82">
+          <p className="mt-2 line-clamp-2 text-[12px] font-semibold uppercase leading-[1.2] tracking-[0.04em] text-white">
             {item.role}
           </p>
         </div>

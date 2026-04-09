@@ -169,7 +169,7 @@ export default function HeroSection() {
 
   return (
     <section className="hero-carousel relative z-[1] overflow-hidden bg-black">
-      <div className="relative mx-auto flex max-w-full flex-col bg-black pb-6 lg:flex-row lg:items-center lg:pb-1 lg:pt-2 2xl:max-w-[86em]">
+      <div className="relative mx-auto flex max-w-full flex-col bg-black pb-10 lg:flex-row lg:items-center lg:pb-18 pt-28 2xl:max-w-[86em]">
         <div className="relative z-30 mx-auto px-4 pb-8 pt-4 text-center text-white sm:px-6 lg:absolute lg:left-0 lg:w-[50%] lg:px-0 lg:pb-4 lg:pl-10 lg:pr-0 lg:text-left xl:mx-24 xl:max-w-[464px] xl:pl-0">
           <h1 className="max-w-[15ch] text-[50px] font-normal leading-tight tracking-tight text-white sm:text-[58px] md:text-[66px] lg:max-w-[500px] section-title">
             The MBA for Entrepreneurs
@@ -224,7 +224,8 @@ export default function HeroSection() {
           className="relative flex w-full justify-end"
         >
           <div className="w-full max-w-[901px]">
-            <div className="hidden w-full overflow-hidden lg:block">
+            <div className="hidden w-full overflow-hidden lg:block relative">
+              <div className="absolute z-10 right-0 h-full w-full bg-linear-to-r from-black via-transparent to-transparent" />
               <div className="flex h-[620px] items-stretch gap-3 xl:h-[700px]">
                 {desktopSlides.map((slide, index) => (
                   <HeroCard
@@ -261,7 +262,7 @@ export default function HeroSection() {
           aria-hidden="true"
         >
           {/* <div className="mr-[-1px] h-full w-full min-w-[380px] bg-black lg:min-w-[460px]" /> */}
-          {/* <div className="h-full w-full bg-linear-to-tr from-black via-black/84 to-transparent" /> */}
+          {/* <div className="h-full w-full bg-linear-to-r from-black via-black/84 to-transparent" /> */}
         </div>
 
         <div
@@ -381,8 +382,8 @@ function HeroCard({
           {!isPeek && (
             <div
               className={[
-                "mt-3 h-px bg-white/75",
-                isPrimary ? "w-[98px] xl:w-[106px]" : "w-[64px] xl:w-[72px]",
+                "mt-3 h-0.5 bg-white/75",
+                isPrimary ? "w-[98px] xl:w-[200px]" : "w-[64px] xl:w-[72px]",
               ].join(" ")}
             />
           )}
@@ -399,9 +400,9 @@ function HeroCard({
             <h3
               className={[
                 "tracking-[-0.05em] text-white",
-                isPrimary
+            false
                   ? "text-[26px] font-medium leading-[1.02] sm:text-[30px] lg:text-[38px] xl:text-[42px]"
-                  : "text-[17px] font-medium leading-[1.02] sm:text-[20px] lg:text-[18px] xl:text-[21px]",
+                  : "section-title",
               ].join(" ")}
             >
               {slide.name}

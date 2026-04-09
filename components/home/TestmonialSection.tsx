@@ -6,7 +6,6 @@ import { Icon } from "@iconify/react";
 import { testimonials, type TestimonialItem } from "@/data/home";
 
 const INITIAL_VISIBLE = 12;
-const LOAD_MORE_COUNT = 8;
 
 function splitIntoColumns(items: TestimonialItem[], columns: number) {
   const result: TestimonialItem[][] = Array.from({ length: columns }, () => []);
@@ -74,7 +73,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
             onClick={() => {
               setShownFullTextIds(shownFullTextIds.filter((id: any) => id !== item.id));
             }}
-            className="mt-1 text-[12px] font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
+            className="mt-1 cursor-pointer text-[12px] font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
           >
             Read Less
           </button> : <button
@@ -82,7 +81,7 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
             onClick={() => {
               setShownFullTextIds((prev: any) => [...prev, item.id]);
             }}
-            className="mt-1 text-[12px] font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
+            className="mt-1 text-[12px] cursor-pointer font-normal leading-[1.3] tracking-[-0.015em] text-[#788596] transition-opacity duration-200 hover:opacity-70"
           >
             Read more
           </button>}
@@ -94,13 +93,13 @@ function TestimonialCard({ item, setShownFullTextIds, shownFullTextIds }: { item
 }
 
 export default function StudentTestimonialsSection() {
-  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
+  const [showAll, setShowAll] = useState(false);
   const [shownFullTextIds, setShownFullTextIds] = useState([]);
 
   console.log("ids.....", shownFullTextIds);
 
 
-  const visibleItems = testimonials.slice(0, visibleCount);
+  const visibleItems = showAll ? testimonials : testimonials.slice(0, INITIAL_VISIBLE);
 
   const desktopColumns = useMemo(
     () => splitIntoColumns(visibleItems, 4),
@@ -112,11 +111,10 @@ export default function StudentTestimonialsSection() {
     [visibleItems]
   );
 
-  const canLoadMore = visibleCount < testimonials.length;
 
   return (
     <section className="bg-[#f3f4f6]">
-      <div className="mx-auto w-full max-w-7xl px-4 pb-14 pt-14 sm:px-6 md:px-8 lg:px-10 lg:pb-18 lg:pt-17">
+      <div className="mx-auto w-full max-w-7xl px-4 pb-10 pt-14 sm:px-6 md:px-8 lg:px-10 lg:pb-14 lg:pt-17">
         <div className="text-center">
           <p className="section-label text-black">
             Our Community
@@ -126,42 +124,43 @@ export default function StudentTestimonialsSection() {
           </h2>
         </div>
 
-        <div className="mt-10 hidden lg:grid lg:grid-cols-4 lg:gap-3">
-          {desktopColumns.map((column, columnIndex) => (
-            <div key={columnIndex} className="space-y-3">
-              {column.map((item) => (
-                <TestimonialCard key={item.id} item={item} setShownFullTextIds={setShownFullTextIds} shownFullTextIds={shownFullTextIds} />
-              ))}
-            </div>
-          ))}
+        <div className="relative">
+          {!showAll && <div className="absolute h-full w-full bg-linear-to-t from-[#f3f4f6] via-transparent to-transparent" />}
+          <div className="mt-10 hidden lg:grid lg:grid-cols-4 lg:gap-3">
+            {desktopColumns.map((column, columnIndex) => (
+              <div key={columnIndex} className="space-y-3">
+                {column.map((item) => (
+                  <TestimonialCard key={item.id} item={item} setShownFullTextIds={setShownFullTextIds} shownFullTextIds={shownFullTextIds} />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 hidden sm:grid lg:hidden sm:grid-cols-3 sm:gap-3">
+            {mobileColumns.map((column, columnIndex) => (
+              <div key={columnIndex} className="space-y-3">
+                {column.map((item) => (
+                  <TestimonialCard key={item.id} item={item} setShownFullTextIds={setShownFullTextIds} shownFullTextIds={shownFullTextIds} />
+                ))}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 space-y-3 sm:hidden">
+            {visibleItems.map((item) => (
+              <TestimonialCard key={item.id} item={item} setShownFullTextIds={setShownFullTextIds} shownFullTextIds={shownFullTextIds} />
+            ))}
+          </div>
         </div>
 
-        <div className="mt-10 hidden sm:grid lg:hidden sm:grid-cols-3 sm:gap-3">
-          {mobileColumns.map((column, columnIndex) => (
-            <div key={columnIndex} className="space-y-3">
-              {column.map((item) => (
-                <TestimonialCard key={item.id} item={item} setShownFullTextIds={setShownFullTextIds} shownFullTextIds={shownFullTextIds} />
-              ))}
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 space-y-3 sm:hidden">
-          {visibleItems.map((item) => (
-            <TestimonialCard key={item.id} item={item} setShownFullTextIds={setShownFullTextIds} shownFullTextIds={shownFullTextIds} />
-          ))}
-        </div>
-
-        {canLoadMore ? (
-          <div className="mt-8 flex justify-center lg:mt-10">
+        {!showAll ? (
+          <div className="relative bottom-7 flex justify-center lg:mt-0">
             <button
               type="button"
               onClick={() =>
-                setVisibleCount((prev) =>
-                  Math.min(prev + LOAD_MORE_COUNT, testimonials.length)
-                )
+                setShowAll(true)
               }
-              className="inline-flex h-13 min-w-[256px] items-center justify-center rounded-full border border-black bg-[#f4f4f1] px-10 text-[15px] font-bold uppercase tracking-[0.08em] text-black transition-all duration-200 hover:scale-[1.01] hover:bg-white"
+              className=" px-20 text-[15px] secondary-btn"
             >
               Load More
             </button>
