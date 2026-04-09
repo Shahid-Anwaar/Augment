@@ -117,10 +117,10 @@ function ReviewCard({
             className="
         flex flex-none flex-col rounded-[15px] bg-white
         w-[calc(100vw-32px)] max-w-full
-        min-h-[320px]
+        min-h-80
         px-5 pt-5 pb-5
-        sm:w-[36rem] sm:min-h-[360px] sm:px-6 sm:pt-6 sm:pb-6
-        md:w-[48rem] md:min-h-[300px] md:px-7 md:pt-7 md:pb-7
+        sm:w-xl sm:min-h-90 sm:px-6 sm:pt-6 sm:pb-6
+        md:w-3xl md:min-h-75 md:px-7 md:pt-7 md:pb-7
         lg:h-75 lg:w-205 lg:px-8 lg:pt-7 lg:pb-7
       "
         >
@@ -132,7 +132,7 @@ function ReviewCard({
           font-thin font-[Georgia] text-[#2f2f2f]/90
           text-[20px] leading-[1.15] tracking-[-0.03em]
           sm:mt-5 sm:text-[22px]
-          md:mt-6 md:max-w-[42rem] md:text-[24px]
+          md:mt-6 md:max-w-2xl md:text-[24px]
           lg:max-w-180 lg:text-[26px] lg:leading-[1.1]
         "
             >

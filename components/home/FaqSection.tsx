@@ -18,7 +18,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
         type="button"
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="flex w-full items-start justify-between gap-6 py-[18px] text-left md:py-[20px]"
+        className="flex w-full items-start justify-between gap-6 py-4.5 text-left md:py-5"
       >
         <span className="pr-4 text-[18px] font-semibold leading-[1.28] tracking-[-0.035em] stylish-family text-black md:text-[20px]">
           {item.question}
@@ -38,7 +38,7 @@ function FAQRow({ item, isOpen, onToggle }: FAQRowProps) {
           }`}
       >
         <div className="overflow-hidden">
-          <div className="max-w-[1020px] pb-[20px] pr-8 text-[18px] font-normal leading-[1.45] tracking-[-0.03em] text-black md:pb-[22px] md:text-[19px] lg:text-[20px]">
+          <div className="max-w-255 pb-5 pr-8 text-[18px] font-normal leading-[1.45] tracking-[-0.03em] text-black md:pb-5.5 md:text-[19px] lg:text-[20px]">
             {item.answer}
           </div>
         </div>
@@ -54,9 +54,9 @@ export default function FAQSection() {
       <section className="bg-[#f3f4f6]">
         <div className="section-container py-10 md:py-14 lg:pb-16 lg:pt-24 ">
 
-          <div className="grid grid-cols-1 gap-y-10 md:grid-cols-[300px_minmax(0,1fr)] md:gap-x-16 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-x-[78px]">
+          <div className="grid grid-cols-1 gap-y-10 md:grid-cols-[300px_minmax(0,1fr)] md:gap-x-16 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-x-19.5">
             <div>
-              <h2 className="max-w-[230px] section-title">
+              <h2 className="max-w-57.5 section-title">
                 Frequently
                 <br />
                 Asked
@@ -65,7 +65,7 @@ export default function FAQSection() {
               </h2>
             </div>
 
-            <div className="pt-[2px]">
+            <div className="pt-0.5">
               {faqs.map((item, index) => (
                 <FAQRow
                   key={item.question}

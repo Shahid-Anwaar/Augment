@@ -21,26 +21,26 @@ function InstructorLogo({
 }) {
   if (logoIcon) {
     return (
-      <div className="flex h-[44px] items-end text-white">
+      <div className="flex h-11 items-end text-white">
         <Icon icon={logoIcon} width="44" height="44" />
       </div>
     );
   }
 
   return company ? (
-    <div className="flex h-[44px] items-end">
+    <div className="flex h-11 items-end">
       <span className="text-[22px] font-semibold tracking-[-0.03em] text-white">
         {company}
       </span>
     </div>
   ) : (
-    <div className="h-[44px]" />
+    <div className="h-11" />
   );
 }
 
 function InstructorCard({ item }: { item: InstructorItem }) {
   return (
-    <article className="group relative h-[420px] w-[292px] shrink-0 overflow-hidden rounded-[18px] bg-[#111]">
+    <article className="group relative h-105 w-73 shrink-0 overflow-hidden rounded-[18px] bg-[#111]">
       <Image
         src={item.image}
         alt={item.name}
@@ -54,7 +54,7 @@ function InstructorCard({ item }: { item: InstructorItem }) {
       {/* <div className="absolute inset-y-0 right-0 w-[18%] bg-[linear-gradient(270deg,rgba(0,0,0,0.28)_0%,rgba(0,0,0,0)_100%)]" /> */}
 
       {item.badge ? (
-        <div className="absolute left-4 right-4 top-4 rounded-[12px] border border-white/15 bg-black/35 px-4 py-2 text-center text-[14px] font-medium uppercase tracking-[0.06em] text-white/95 backdrop-blur-md">
+        <div className="absolute left-4 right-4 top-4 rounded-xl border border-white/15 bg-black/35 px-4 py-2 text-center text-[14px] font-medium uppercase tracking-[0.06em] text-white/95 backdrop-blur-md">
           {item.badge}
         </div>
       ) : null}
@@ -88,7 +88,7 @@ function ArrowButton({
       type="button"
       onClick={onClick}
       aria-label={direction === "left" ? "Previous instructors" : "Next instructors"}
-      className="flex h-[64px] w-[64px] items-center justify-center rounded-full border border-white/65 bg-[#5a5a5a]/55 text-white backdrop-blur-sm transition-all duration-200 hover:bg-[#6a6a6a]/70"
+      className="flex h-16 w-16 items-center justify-center rounded-full border border-white/65 bg-[#5a5a5a]/55 text-white backdrop-blur-sm transition-all duration-200 hover:bg-[#6a6a6a]/70"
     >
       <Icon
         icon={direction === "left" ? "lucide:arrow-left" : "lucide:arrow-right"}
