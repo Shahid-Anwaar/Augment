@@ -59,6 +59,138 @@ export type ReviewItem = {
   role: string;
 };
 
+export type FeatureItem = {
+  label: string;
+  icon: string;
+};
+
+export const FEATURES: FeatureItem[] = [
+  { label: "Online", icon: "ph:play-circle-fill" },
+  { label: "Bite-Sized Lessons", icon: "ph:clock-fill" },
+  { label: "Certificate", icon: "ph:certificate-fill" },
+];
+
+export type HeroSlide = {
+  id: number;
+  name: string;
+  company: string;
+  role: string;
+  image: string;
+  video?: string;
+};
+
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: 1,
+    name: "Jimmy Wales",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F3a370c96d97b4942b42ad70f3382c000",
+    role: "Founder of Wikipedia",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F234946f583ab4a7e98dd9bba047775d2",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F52f0105d32714e168307b5da0a27b4fc%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=52f0105d32714e168307b5da0a27b4fc&alt=media&optimized=true",
+  },
+  {
+    id: 2,
+    name: "Georgia Lewis",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fad8c245895824a339ee40830d041c26c",
+    role: "Former Prompt Engineer at Meta",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F7835a8f882ef450b84d1c16324fc8d75",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F7cfe202a016644adb4552d366932c01c%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=7cfe202a016644adb4552d366932c01c&alt=media&optimized=true",
+  },
+  {
+    id: 3,
+    name: "Steve Chen",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fa2bab8fba2434d09b01c553d115e3fbe",
+    role: "Founder of Youtube",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F47dbb563aed44486b28b4631c8833235",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F509807a034044fd0b3aff3c3a6c3266a%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=509807a034044fd0b3aff3c3a6c3266a&alt=media&optimized=true",
+  },
+  {
+    id: 4,
+    name: "Zack Kass",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F56f4f4ee156f43b3847270e2669fd324",
+    role: "Former Head of Go-To-Market at OpenAI",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F513af209523041388c737f66336e62e5",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F7c887e35c3a54751a8b7d63c2eb59f28%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=7c887e35c3a54751a8b7d63c2eb59f28&alt=media&optimized=true",
+  },
+  {
+    id: 5,
+    name: "Ann Hiatt",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fc33f8dc7073c4e65ad88bb99143e721a",
+    role: "Chief of Staff",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F03323b1302d94d50a9bba04594d829ac",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fbc1c38b516ad4255bfb4cbfd2e6a0627%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=bc1c38b516ad4255bfb4cbfd2e6a0627&alt=media&optimized=true",
+  },
+  {
+    id: 6,
+    name: "Morin Oluwole",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fad8c245895824a339ee40830d041c26c",
+    role: "Ex-Director at Meta",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F2e7ee683820648d9ab0ded82e21402de",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F4d37000288bc4898afba44b5568d0d7c%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=4d37000288bc4898afba44b5568d0d7c&alt=media&optimized=true",
+  },
+  {
+    id: 7,
+    name: "Chris Barton",
+    company: "",
+    role: "Founder of Shazam",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fb4bfaa5158ac467ebda01fc7802240d8",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F92eef86c59e44cb9bf88943ee46097eb%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=92eef86c59e44cb9bf88943ee46097eb&alt=media&optimized=true",
+  },
+  {
+    id: 8,
+    name: "Caen Contee",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F6a1f6df1d2d44b5fb5212174b1afcc41",
+    role: "Founder of Lime",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fc115f60499c24833971a20af6d253375",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F734172ad92114e84ab3a068f9722cdfa%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=734172ad92114e84ab3a068f9722cdfa&alt=media&optimized=true",
+  },
+  {
+    id: 9,
+    name: "Uri Levine",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fb5387309aa2842f2b27b60f26a397778",
+    role: "Founder of Waze",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F3c1232896777476e9b5704d580aec96f",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2Fe9701219a7e743408c14fa27cc8edd3a%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=e9701219a7e743408c14fa27cc8edd3a&alt=media&optimized=true",
+  },
+  {
+    id: 10,
+    name: "Kelly Richmond Pope",
+    company:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F31d24bcfe549491f971d154458d493ab",
+    role: "Best-Selling Author",
+    image:
+      "https://cdn.builder.io/api/v1/image/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F27cc610e575c4478bc245cc94889dc15",
+    video:
+      "https://cdn.builder.io/o/assets%2F20c9f56ee0104a98bd873ddbe200463a%2F80aee6543c4946ec854dc7c019eaf8c8%2Fcompressed?apiKey=20c9f56ee0104a98bd873ddbe200463a&token=80aee6543c4946ec854dc7c019eaf8c8&alt=media&optimized=true",
+  },
+];
+
 export const instructors: InstructorItem[] = [
   {
     id: 1,
@@ -294,159 +426,159 @@ export const whyAugmentSlides: WhyAugmentSlide[] = [
 ];
 
 export const reviews: ReviewItem[] = [
-  // {
-  //   id: 1,
-  //   quote:
-  //     "This was a goal I have wanted to accomplish to further my knowledge and understanding as I continue to grow my business and continue my journey as an entrepreneur!",
-  //   name: "Anwar Molette",
-  //   role: "Executive Chef",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/19579b7f-13ac-4b0f-84b9-c8345980ad33_a054ae06-e274-4f49-92c0-ec2e5ee931bc_c-AnwarMolette__62CAAD5443E64C7D86B1E9C108EDDCFD_1663889156012.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 2,
-  //   quote:
-  //     "Augment is the future of learning for business-minded people looking to gain real, practical knowledge about starting a business and developing in a successful way.",
-  //   name: "Simon Lee Maryiah",
-  //   role: "Founder",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/d4461c1b-ef42-4846-9e34-78a7e716e50d_634b1196-1666-478d-991c-e0878299b2f1_1708357355889.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 3,
-  //   quote:
-  //     "I think Augment is a game changer. It's a brilliant concept and the contents, program and interface are just great. As soon as you start a module it becomes hard to stop. Also there is a human contact and great support from the orientation to graduation.",
-  //   name: "Ivan Nappo",
-  //   role: "Financial Regulation Specialist",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/1e94f3b8-6b05-4c30-bba2-18b801d2f71b_35706b17-b7fb-459c-95e1-7a7df87795e9_1721121911975.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 4,
-  //   quote:
-  //     "This was the most enjoyable program I have completed. I could feel the impact of their perspectives and enjoy how the course allows you to continue learning as part of the community.",
-  //   name: "Heather D. Whelan",
-  //   role: "Business Coach",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/638a23de-6410-44cd-a303-082ca0626542_590cd49f-9b96-478b-9c4c-e4dd6e53f7e3_1759273290357.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 5,
-  //   quote:
-  //     "The instructors incorporating their own experiences in the lesson made learning very easy on my part as it kept my interest level high. I wish Augment will continue adding more lectures as these are all gold!",
-  //   name: "Delise Mutuc",
-  //   role: "Sales & Marketing Strategist",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/6302d82b-4d1e-405d-9e5a-7e2e5a7db96e_e761f846-19ea-40f6-95bc-15593eb0758c_1645047645371.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 6,
-  //   quote:
-  //     "I found the course really straightforward, a positive experience! The micro units are suited around busy lifestyles and meant I could jump on as a break or even sitting in the coffee shop!",
-  //   name: "Johabh Muldoogh",
-  //   role: "Managing Director",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/e643a944-708a-4b21-9fd0-f43f6951d1a5_2c2b3852-2f50-4d1a-a848-f0d7903d9651_1727294476692.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 7,
-  //   quote:
-  //     "A valuable content that is accessible as a self-passed format. Beloved entrepreneurs and equally famous and highly respected creators and CEOs share their personal insights and journeys.",
-  //   name: "Iloha Z.",
-  //   role: "Self Employed",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/b4d547ec-8818-42b9-9a5e-3360170e5ec5_7609080a-0e9d-4e58-93dd-31ea2ad62e05_1700770061020.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 8,
-  //   quote:
-  //     "The content was very professionally presented and engaging. I also loved having the handbook takeaways for each model to be able to reference and refresh when needed.",
-  //   name: "Matt Marsh",
-  //   role: "Business Owner",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/1c647c47-6181-4ae7-bb07-2c2905def07d_fd7e0340-9629-435d-98a9-07bffb44b0ea_1638380870191.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 9,
-  //   quote:
-  //     "Flexibility, incredible resources, and inspiring live classes, I loved the Augment MBA Program. It taught me so much about the industry, helped me understand key things I’d never considered, and gave me the freedom to learn on my own time.",
-  //   name: "Daisy White",
-  //   role: "Senior Talent Manager",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/ec11df5f-a26f-4bf0-8e0d-20899d34aa1b_c736df24-6a01-49b5-bb1a-d4e184c44de5_1719262805462.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 10,
-  //   quote:
-  //     "This has been the most life-changing business course I’ve taken. Great lessons from people with real experience. There is support from staff but knowledge is the biggest touch that it works.",
-  //   name: "Arthur Shaba",
-  //   role: "Finance",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/4267d4da-6c01-4a9f-98a2-526f45f27fee_fbdcd35a-844f-457c-a338-db41ae5e8e5e_1655971000970.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 11,
-  //   quote:
-  //     "When I started this course, I got asked the question ‘how are you going to fit it in?’ However, what I’ve found is that it’s easy to fit the learning into my life.",
-  //   name: "Hester Scotton",
-  //   role: "Strategic CFO",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/3a33864d-9dc8-4424-a092-c7614df9e489_avatar.png?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 12,
-  //   quote:
-  //     "I’ve learned so much here that it feels like I could’ve spent 4 years in college and still not retained as much.",
-  //   name: "Donavon Flegeance",
-  //   role: "Business Consultant",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/00ea40b3-588e-421b-95e2-f8d0e3678612_71e63fc0-c30e-4bbf-8172-15224a0a317b_1525798117586.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 13,
-  //   quote:
-  //     "The idea behind Augment is one I truly stand for. I LOVED this course and its structure. I’ll definitely keep coming back to its content because it’s that valuable.",
-  //   name: "Mikhail Sieni",
-  //   role: "Sales Director",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/4a407c0b-0a42-471e-a997-3ed9aaa8bbd3_8de82ba6-2e69-47b7-8586-7296435440e2_1756214871399.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 14,
-  //   quote:
-  //     "The course touches on a lot of key areas most classes don't discuss that are paramount to success in business. I found the Augment program very accommodating to busy schedules.",
-  //   name: "June Burton",
-  //   role: "Financial Services Advisor",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/e06ce752-5618-4418-b7ea-bd9d705d455d_85ef1206-d9a6-4445-93fe-e4d051b9fcbf_1707946558049.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 15,
-  //   quote:
-  //     "Augment is not just another program; it’s built by founders, for founders, designed to give entrepreneurs the practical insights, network, and mindset they need to scale.",
-  //   name: "Oren Broshi",
-  //   role: "Entrepreneur | Founder of Stealth Mode Startup",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/KpWRnRxiS7skl0e6yOfcO0VV.jpeg?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 16,
-  //   quote:
-  //     "From developing a deep understanding of emerging technologies to exploring new business models, the program equipped me with the skills and knowledge necessary to take on new challenges in the industry.",
-  //   name: "Gary Lamach II",
-  //   role: "Director @ AICPA",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/37691754-9e62-4885-a7d8-c2d13dbfd448_640eb926-bfce-4154-9728-837745e75c68_Screenshot%202023-11-20%20at%2012.27.48.png?width=63&height=63&format=webp",
-  // },
-  // {
-  //   id: 17,
-  //   quote:
-  //     "In a world where traditional MBA teachings often revolve around academic research, Augment.org offers a modern and innovative approach to business education.",
-  //   name: "Mubarak AlBahar",
-  //   role: "Trade Relations Officer at The C Holding",
-  //   avatar:
-  //     "https://cdn.senja.io/public/media/lNTQ2RuqGaYj2tw98bAM0TAz.jpeg?width=63&height=63&format=webp",
-  // },
+  {
+    id: 1,
+    quote:
+      "This was a goal I have wanted to accomplish to further my knowledge and understanding as I continue to grow my business and continue my journey as an entrepreneur!",
+    name: "Anwar Molette",
+    role: "Executive Chef",
+    avatar:
+      "https://cdn.senja.io/public/media/19579b7f-13ac-4b0f-84b9-c8345980ad33_a054ae06-e274-4f49-92c0-ec2e5ee931bc_c-AnwarMolette__62CAAD5443E64C7D86B1E9C108EDDCFD_1663889156012.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 2,
+    quote:
+      "Augment is the future of learning for business-minded people looking to gain real, practical knowledge about starting a business and developing in a successful way.",
+    name: "Simon Lee Maryiah",
+    role: "Founder",
+    avatar:
+      "https://cdn.senja.io/public/media/d4461c1b-ef42-4846-9e34-78a7e716e50d_634b1196-1666-478d-991c-e0878299b2f1_1708357355889.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 3,
+    quote:
+      "I think Augment is a game changer. It's a brilliant concept and the contents, program and interface are just great. As soon as you start a module it becomes hard to stop. Also there is a human contact and great support from the orientation to graduation.",
+    name: "Ivan Nappo",
+    role: "Financial Regulation Specialist",
+    avatar:
+      "https://cdn.senja.io/public/media/1e94f3b8-6b05-4c30-bba2-18b801d2f71b_35706b17-b7fb-459c-95e1-7a7df87795e9_1721121911975.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 4,
+    quote:
+      "This was the most enjoyable program I have completed. I could feel the impact of their perspectives and enjoy how the course allows you to continue learning as part of the community.",
+    name: "Heather D. Whelan",
+    role: "Business Coach",
+    avatar:
+      "https://cdn.senja.io/public/media/638a23de-6410-44cd-a303-082ca0626542_590cd49f-9b96-478b-9c4c-e4dd6e53f7e3_1759273290357.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 5,
+    quote:
+      "The instructors incorporating their own experiences in the lesson made learning very easy on my part as it kept my interest level high. I wish Augment will continue adding more lectures as these are all gold!",
+    name: "Delise Mutuc",
+    role: "Sales & Marketing Strategist",
+    avatar:
+      "https://cdn.senja.io/public/media/6302d82b-4d1e-405d-9e5a-7e2e5a7db96e_e761f846-19ea-40f6-95bc-15593eb0758c_1645047645371.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 6,
+    quote:
+      "I found the course really straightforward, a positive experience! The micro units are suited around busy lifestyles and meant I could jump on as a break or even sitting in the coffee shop!",
+    name: "Johabh Muldoogh",
+    role: "Managing Director",
+    avatar:
+      "https://cdn.senja.io/public/media/e643a944-708a-4b21-9fd0-f43f6951d1a5_2c2b3852-2f50-4d1a-a848-f0d7903d9651_1727294476692.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 7,
+    quote:
+      "A valuable content that is accessible as a self-passed format. Beloved entrepreneurs and equally famous and highly respected creators and CEOs share their personal insights and journeys.",
+    name: "Iloha Z.",
+    role: "Self Employed",
+    avatar:
+      "https://cdn.senja.io/public/media/b4d547ec-8818-42b9-9a5e-3360170e5ec5_7609080a-0e9d-4e58-93dd-31ea2ad62e05_1700770061020.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 8,
+    quote:
+      "The content was very professionally presented and engaging. I also loved having the handbook takeaways for each model to be able to reference and refresh when needed.",
+    name: "Matt Marsh",
+    role: "Business Owner",
+    avatar:
+      "https://cdn.senja.io/public/media/1c647c47-6181-4ae7-bb07-2c2905def07d_fd7e0340-9629-435d-98a9-07bffb44b0ea_1638380870191.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 9,
+    quote:
+      "Flexibility, incredible resources, and inspiring live classes, I loved the Augment MBA Program. It taught me so much about the industry, helped me understand key things I’d never considered, and gave me the freedom to learn on my own time.",
+    name: "Daisy White",
+    role: "Senior Talent Manager",
+    avatar:
+      "https://cdn.senja.io/public/media/ec11df5f-a26f-4bf0-8e0d-20899d34aa1b_c736df24-6a01-49b5-bb1a-d4e184c44de5_1719262805462.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 10,
+    quote:
+      "This has been the most life-changing business course I’ve taken. Great lessons from people with real experience. There is support from staff but knowledge is the biggest touch that it works.",
+    name: "Arthur Shaba",
+    role: "Finance",
+    avatar:
+      "https://cdn.senja.io/public/media/4267d4da-6c01-4a9f-98a2-526f45f27fee_fbdcd35a-844f-457c-a338-db41ae5e8e5e_1655971000970.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 11,
+    quote:
+      "When I started this course, I got asked the question ‘how are you going to fit it in?’ However, what I’ve found is that it’s easy to fit the learning into my life.",
+    name: "Hester Scotton",
+    role: "Strategic CFO",
+    avatar:
+      "https://cdn.senja.io/public/media/3a33864d-9dc8-4424-a092-c7614df9e489_avatar.png?width=63&height=63&format=webp",
+  },
+  {
+    id: 12,
+    quote:
+      "I’ve learned so much here that it feels like I could’ve spent 4 years in college and still not retained as much.",
+    name: "Donavon Flegeance",
+    role: "Business Consultant",
+    avatar:
+      "https://cdn.senja.io/public/media/00ea40b3-588e-421b-95e2-f8d0e3678612_71e63fc0-c30e-4bbf-8172-15224a0a317b_1525798117586.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 13,
+    quote:
+      "The idea behind Augment is one I truly stand for. I LOVED this course and its structure. I’ll definitely keep coming back to its content because it’s that valuable.",
+    name: "Mikhail Sieni",
+    role: "Sales Director",
+    avatar:
+      "https://cdn.senja.io/public/media/4a407c0b-0a42-471e-a997-3ed9aaa8bbd3_8de82ba6-2e69-47b7-8586-7296435440e2_1756214871399.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 14,
+    quote:
+      "The course touches on a lot of key areas most classes don't discuss that are paramount to success in business. I found the Augment program very accommodating to busy schedules.",
+    name: "June Burton",
+    role: "Financial Services Advisor",
+    avatar:
+      "https://cdn.senja.io/public/media/e06ce752-5618-4418-b7ea-bd9d705d455d_85ef1206-d9a6-4445-93fe-e4d051b9fcbf_1707946558049.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 15,
+    quote:
+      "Augment is not just another program; it’s built by founders, for founders, designed to give entrepreneurs the practical insights, network, and mindset they need to scale.",
+    name: "Oren Broshi",
+    role: "Entrepreneur | Founder of Stealth Mode Startup",
+    avatar:
+      "https://cdn.senja.io/public/media/KpWRnRxiS7skl0e6yOfcO0VV.jpeg?width=63&height=63&format=webp",
+  },
+  {
+    id: 16,
+    quote:
+      "From developing a deep understanding of emerging technologies to exploring new business models, the program equipped me with the skills and knowledge necessary to take on new challenges in the industry.",
+    name: "Gary Lamach II",
+    role: "Director @ AICPA",
+    avatar:
+      "https://cdn.senja.io/public/media/37691754-9e62-4885-a7d8-c2d13dbfd448_640eb926-bfce-4154-9728-837745e75c68_Screenshot%202023-11-20%20at%2012.27.48.png?width=63&height=63&format=webp",
+  },
+  {
+    id: 17,
+    quote:
+      "In a world where traditional MBA teachings often revolve around academic research, Augment.org offers a modern and innovative approach to business education.",
+    name: "Mubarak AlBahar",
+    role: "Trade Relations Officer at The C Holding",
+    avatar:
+      "https://cdn.senja.io/public/media/lNTQ2RuqGaYj2tw98bAM0TAz.jpeg?width=63&height=63&format=webp",
+  },
   {
     id: 18,
     quote:
