@@ -12,11 +12,13 @@ import WhyAugmentSection from "@/components/home/WhyAugment";
 import HeroSection from "@/components/home/Hero";
 import Chats from "@/components/home/Chats";
 import EmblaCarousel from "@/components/home/EmblaCarosal";
+import AugmentHeroSection from "@/components/home/HeroSection";
 
 export default function Home() {
   return (
     <main className="bg-white text-black relative">
       <HeaderSection />
+      {/* <AugmentHeroSection /> */}
       <HeroSection />
       <FeaturedInSection />
       <TeaserVideoSection />
