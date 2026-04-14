@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useState, type ComponentType } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { EmblaOptionsType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
-import { NextButton, PrevButton, usePrevNextButtons } from "./CarosalButtons";
-import { Icon } from "@iconify/react";
+import Autoplay from "embla-carousel-autoplay";
 
 type EmblaCarouselProps = {
     options?: EmblaOptionsType;
@@ -20,17 +19,15 @@ export default function CustomEmblaCarousel({
     const [selectedSnap, setSelectedSnap] = useState(0);
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: true,
-        align: "start",
-        duration: 25,
+        align: "center",
         ...options,
-    });
-
-    const {
-        prevBtnDisabled,
-        nextBtnDisabled,
-        onPrevButtonClick,
-        onNextButtonClick,
-    } = usePrevNextButtons(emblaApi);
+    }, [
+        Autoplay({
+            delay: 2500,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+        }),
+    ]);
 
     // const CustomCard = customCard;
 
@@ -60,38 +57,22 @@ export default function CustomEmblaCarousel({
 
     return (
         <div className="w-full relative">
-            <div className={`overflow-hidden  ${wrapperClassName}`} ref={emblaRef}>
-                <div className=" flex items-stretch h-full">
+            <div
+                className={`overflow-hidden lg:mr-14 ${wrapperClassName}`}
+                ref={emblaRef}
+            >
+                <div className="flex h-full bg-black -ml-2">
                     {items.map((review, index) => (
-                        <div key={`${review?.id ?? index}-${index}`} className={`min-w-0 shrink-0 grow-0 transition-all duration-1000 ${selectedSnap === index ? "" : ""}`}>
+                        <div
+                            key={`${review?.id ?? index}-${index}`}
+                            className={`min-h-105 sm:min-h-130 lg:min-h-170 min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-2 ${selectedSnap === index ? "" : ""
+                                }`}
+                        >
                             {CustomCard(review, index, selectedSnap)}
                         </div>
                     ))}
                 </div>
             </div>
-            <button
-                className={
-                    "embla__button embla__button--prev flex h-6 w-6 items-center justify-center rounded-full bg-red-400 text-white transition disabled:cursor-not-allowed disabled:opacity-40"
-                }
-                type="button"
-                onClick={onPrevButtonClick}
-                disabled={prevBtnDisabled}
-                aria-label="Previous slide"
-            >
-                <Icon icon="mingcute:left-fill" className="h-4 w-4" />
-            </button>
-
-            <button
-                className={
-                    "embla__button embla__button--next flex h-6 w-6 items-center justify-center rounded-full bg-red-400 text-white transition disabled:cursor-not-allowed disabled:opacity-40"
-                }
-                type="button"
-                onClick={onNextButtonClick}
-                disabled={nextBtnDisabled}
-                aria-label="Next slide"
-            >
-                <Icon icon="mingcute:right-fill" className="h-4 w-4" />
-            </button>
         </div>
     );
 }

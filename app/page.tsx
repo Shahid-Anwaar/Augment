@@ -7,9 +7,7 @@ import MissionComparisonSection from "@/components/home/MissionComparison";
 import HeaderSection from "@/components/home/Header";
 import TeaserVideoSection from "@/components/home/TeaserVideo";
 import StudentTestimonialsSection from "@/components/home/TestmonialSection";
-import TestimonialsSliderSection from "@/components/home/TestmonialSlider";
 import WhyAugmentSection from "@/components/home/WhyAugment";
-import HeroSection from "@/components/home/Hero";
 import Chats from "@/components/home/Chats";
 import EmblaCarousel from "@/components/home/EmblaCarosal";
 import AugmentHeroSection from "@/components/home/HeroSection";
@@ -18,8 +16,7 @@ export default function Home() {
   return (
     <main className="bg-white text-black relative">
       <HeaderSection />
-      {/* <AugmentHeroSection /> */}
-      <HeroSection />
+      <AugmentHeroSection />
       <FeaturedInSection />
       <TeaserVideoSection />
       <FacultySection />
