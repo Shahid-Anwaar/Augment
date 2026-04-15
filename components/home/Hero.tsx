@@ -27,19 +27,19 @@ export default function HeroSection() {
   }, []);
 
   const desktopSlides = useMemo(
-    () => getVisibleSlides(activeIndex, 4),
+    () => getVisibleSlides(activeIndex, 5),
     [activeIndex]
   );
 
   const mobileSlides = useMemo(
-    () => getVisibleSlides(activeIndex, 3),
+    () => getVisibleSlides(activeIndex, 4),
     [activeIndex]
   );
 
   return (
     <section className="hero-carousel relative z-1 overflow-hidden bg-black">
-      <div className="relative mx-auto flex max-w-full flex-col bg-black pb-10 lg:flex-row lg:items-center lg:pb-18 pt-28 2xl:max-w-[86em]">
-        <div className="relative z-30 mx-auto px-4 pb-8 pt-4 text-center text-white sm:px-6 lg:absolute lg:left-0 lg:w-[50%] lg:px-0 lg:pb-4 lg:pl-10 lg:pr-0 lg:text-left xl:mx-24 xl:max-w-116 xl:pl-0">
+      <div className="relative mx-auto flex max-w-full flex-col bg-black pb-10 lg:flex-row lg:items-center lg:pb-18 pt-28 2xl:max-w-420">
+        <div className="relative z-30 mx-auto px-4 pb-8 pt-4 text-center text-white sm:px-6 lg:absolute lg:left-0 lg:w-[50%] lg:px-0 lg:pb-4 lg:pl-10 lg:pr-0 lg:text-left xl:mx-14 xl:max-w-116 xl:pl-0">
           <h1 className="max-w-[15ch] text-[50px] font-normal leading-tight tracking-tight text-white sm:text-[58px] md:text-[66px] lg:max-w-125 section-title">
             The MBA for Entrepreneurs
           </h1>
@@ -82,7 +82,7 @@ export default function HeroSection() {
 
             <Link
               href="https://s13rwwhxhl9.typeform.com/to/lmPnaKUF?utm_source=website&"
-              className="px-6 close-btn min-w-65"
+              className="px-6 closed-btn min-w-65"
             >
               Watch Free Class
             </Link>
@@ -92,7 +92,7 @@ export default function HeroSection() {
         <div
           className="relative flex w-full justify-end"
         >
-          <div className="w-full max-w-225.5">
+          <div className="w-full max-w-265.5">
             <div className="hidden w-full overflow-hidden lg:block relative">
               <div className="absolute z-10 right-0 h-full w-full bg-linear-to-r from-black via-transparent to-transparent" />
               <div className="flex h-155 items-stretch gap-3 xl:h-175">
@@ -103,8 +103,6 @@ export default function HeroSection() {
                     variant={
                       index === 0
                         ? "primary"
-                        : index === 3
-                          ? "peek"
                           : "secondary"
                     }
                   />
@@ -166,7 +164,7 @@ function HeroCard({
       className={[
         "group relative shrink-0 overflow-hidden bg-black text-white transition-all duration-700 ease-out",
         variant === "primary" &&
-        "basis-[56%] rounded-[18px] xl:basis-[58%] xl:rounded-3xl",
+        "basis-[56%] rounded-[18px] xl:basis-[38%] xl:rounded-3xl",
         variant === "secondary" &&
         "basis-[17.5%] rounded-[18px] opacity-[0.94] xl:basis-[15.5%] xl:rounded-[22px]",
         variant === "peek" &&

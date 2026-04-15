@@ -128,12 +128,8 @@ function ReviewCard({
 
             <p
                 className="
-          mt-4 max-w-full
-          font-thin font-[Georgia] text-[#2f2f2f]/90
-          text-[20px] leading-[1.15] tracking-[-0.03em]
-          sm:mt-5 sm:text-[22px]
-          md:mt-6 md:max-w-2xl md:text-[24px]
-          lg:max-w-180 lg:text-[26px] lg:leading-[1.1]
+          mt-4 sm:mt-5 md:mt-6 max-w-full md:max-w-2xl lg:max-w-180
+          quote-text
         "
             >
                 “{item.quote}”

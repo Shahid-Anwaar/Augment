@@ -67,14 +67,14 @@ function TextBlock({
                 {title}
             </h2>
 
-            <p className="mt-8 max-w-117.5 text-[18px] font-normal leading-[1.4] tracking-[-0.03em] text-black sm:text-[20px] md:text-[21px]">
+            <p className="mt-8 max-w-117.5 paragraph-text">
                 {description}
             </p>
 
             <div className="mt-16">
                 <Link
                     href={buttonHref}
-                    className=" px-12 text-[15px] secondary-btn"
+                    className=" px-12 text-[15px] outlined-btn"
                 >
                     {buttonLabel}
                 </Link>

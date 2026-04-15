@@ -68,18 +68,26 @@ body {
   }
 
   /* Danger / delete action button */
-  .delete-btn {
+  .deleted-btn {
     @apply inline-flex items-center justify-center rounded-lg bg-red-700 px-4 py-2 font-semibold text-white transition-colors hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   /* Secondary outlined action button */
-  .secondary-btn {
+  .outlined-btn {
     @apply inline-flex rounded-full items-center uppercase justify-center border border-black px-4 py-3 font-semibold text-black transition-colors bg-white hover:bg-gray-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   /* Neutral close / cancel button */
-  .close-btn {
+  .closed-btn {
     @apply bg-transparent py-3.5 disabled:cursor-not-allowed disabled:opacity-50 inline-flex items-center justify-center rounded-full border border-white px-16 text-[14px] font-semibold uppercase tracking-[0.04em] text-white transition-all duration-200 hover:bg-white hover:text-black;
+  }
+
+  .paragraph-text{
+    @apply text-[18px] font-normal leading-[1.4] tracking-[-0.03em] text-black sm:text-[20px] md:text-[21px];
+  }
+
+  .quote-text {
+    @apply font-thin font-[Georgia] text-[#2f2f2f]/90 text-[20px] leading-[1.15] tracking-[-0.03em] sm:text-[22px] md:text-[24px] lg:text-[26px] lg:leading-[1.1]
   }
 
   .section-container {
@@ -104,7 +112,7 @@ body {
   }
 
   .section-description {
-    @apply mx-auto max-w-[760px] text-center text-[15px] leading-[1.7] text-gray-600 sm:text-[16px];
+    @apply mx-auto mt-3 max-w-400 text-[14px] font-normal leading-normal tracking-[-0.02em] text-white/90 sm:text-[18px] lg:mt-4 lg:text-[20px];
   }
 
   .section-card {
