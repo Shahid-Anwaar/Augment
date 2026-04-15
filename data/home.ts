@@ -79,6 +79,137 @@ export type HeroSlide = {
   video?: string;
 };
 
+export type HowItWorksCardItem = {
+  id: number;
+  step: string;
+  label: string;
+  title: string;
+  description: string;
+  image: string;
+  points: {
+    icon: string;
+    text: string;
+  }[];
+};
+
+export const HOW_IT_WORKS_CARDS: HowItWorksCardItem[] = [
+  {
+    id: 1,
+    step: "01",
+    label: "SET GOALS",
+    title: "We don't begin with a job ad, we begin with your business.",
+    description:
+      "We'll unpack your hiring challenges, skill gaps and goals, then build a bespoke recruitment marketing plan designed to reach the exact people you need.",
+    image: "/hiw-img2.webp",
+    points: [
+      {
+        icon: "lucide:search",
+        text: "Market mapping to understand the real talent pool",
+      },
+      {
+        icon: "lucide:target",
+        text: "Goal-oriented planning that works back from the outcome you want",
+      },
+      {
+        icon: "lucide:play",
+        text: "Clear timeline and metrics so you know what success will look like",
+      },
+    ],
+  },
+  {
+    id: 2,
+    step: "02",
+    label: "BUILD CAMPAIGNS",
+    title: "We don't just list jobs, we launch them.",
+    description:
+      "We design custom campaigns around your brand so your business is impossible to ignore. How this looks is unique for every business and their goals but includes:",
+    image: "/hiw-img1.webp",
+    points: [
+      {
+        icon: "lucide:image",
+        text: "Creative content: multimedia creative that bring your workplace & roles alive.",
+      },
+      {
+        icon: "lucide:radio-tower",
+        text: "Connect with top candidates via digital, social, OOH, and radio channels.",
+      },
+      {
+        icon: "lucide:users",
+        text: "Smart strategic placement that gets in front of candidates, wherever they are.",
+      },
+    ],
+  },
+  {
+    id: 3,
+    step: "03",
+    label: "FIND TALENT",
+    title: "We get the hard-to-getters.",
+    description:
+      "Using a mix of virtual shoulder tapping and personal outreach, we find and engage high-quality candidates, including those not actively job hunting.",
+    image: "/hiw-img3.webp",
+    points: [
+      {
+        icon: "lucide:hand",
+        text: "Digital shoulder tapping through clever advertising",
+      },
+      {
+        icon: "lucide:shield-check",
+        text: "Direct, personal outreach to high-value candidates",
+      },
+      {
+        icon: "lucide:brain",
+        text: "Smart targeting to avoid wasting time in the wrong talent pools",
+      },
+    ],
+  },
+  {
+    id: 4,
+    step: "04",
+    label: "HUMAN SCREENING",
+    title: "Your shortcut to the shortlist.",
+    description:
+      "Every candidate is personally vetted by experienced recruiters, ensuring shortlists are built for fit and readiness, not just keyword matches. The result: faster hires, fewer wasted interviews, and stronger long-term retention.",
+    image: "/hiw-img4.webp",
+    points: [
+      {
+        icon: "lucide:sparkles",
+        text: "Every candidate personally reviewed by experienced recruiters",
+      },
+      {
+        icon: "lucide:clipboard-check",
+        text: "Shortlists built for genuine fit and job readiness, not algorithms",
+      },
+      {
+        icon: "lucide:clock-3",
+        text: "Quicker hires, fewer time-wasters, and stronger long-term retention",
+      },
+    ],
+  },
+  {
+    id: 5,
+    step: "05",
+    label: "SUPPORT",
+    title: "With you from search to success.",
+    description:
+      "When your campaign goes live, we're hands-on until the right person signs.",
+    image: "/hiw-img5.webp",
+    points: [
+      {
+        icon: "lucide:hourglass",
+        text: "Real-time campaign optimisation",
+      },
+      {
+        icon: "lucide:clipboard-list",
+        text: "Transparent reporting on reach and candidate quality",
+      },
+      {
+        icon: "lucide:user-round-plus",
+        text: "Support closing the offer so you don't lose great talent late in the game",
+      },
+    ],
+  },
+];
+
 export const HERO_SLIDES: HeroSlide[] = [
   {
     id: 1,

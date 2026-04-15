@@ -14,7 +14,7 @@ export default function AugmentHeroSection() {
                         The MBA for Entrepreneurs
                     </h1>
 
-                    <p className="mx-auto mt-3 max-w-[36ch] text-[14px] font-normal leading-normal tracking-[-0.02em] text-white/90 sm:text-[18px] lg:mx-0 lg:mt-4 lg:max-w-112.5 lg:text-[20px]">
+                    <p className="section-description mx-auto lg:text-start lg:mx-0 lg:max-w-112.5">
                         Join the Business School for Entrepreneurs. Built by the founders
                         of YouTube, Waze, Siri and Wikipedia. For the founders of tomorrow.
                     </p>
@@ -52,7 +52,7 @@ export default function AugmentHeroSection() {
 
                         <Link
                             href="https://s13rwwhxhl9.typeform.com/to/lmPnaKUF?utm_source=website&"
-                            className="flex w-full items-center justify-center px-6 close-btn sm:w-auto sm:min-w-65"
+                            className="flex w-full items-center justify-center px-6 closed-btn sm:w-auto sm:min-w-65"
                         >
                             Watch Free Class
                         </Link>
@@ -68,12 +68,12 @@ export default function AugmentHeroSection() {
                             <div className="pointer-events-none absolute inset-y-0 right-4 z-10 w-10 bg-linear-to-l from-black/70 via-black/20 to-transparent sm:right-6" />
                             <CustomEmblaCarousel
                                 CustomCard={(item, index, firstItemIndex) => {
-                                    console.log("rendering card", index, item);
                                     return <HeroCard
                                         key={`${item.id}-${index}`}
                                         slide={item}
                                     />;
                                 }}
+                                isAutoplay={true}
                                 items={HERO_SLIDES}
                                 options={{ loop: true, align: "start", skipSnaps: false }}
                                 wrapperClassName="min-h-[420px] sm:min-h-[520px]"
@@ -83,16 +83,23 @@ export default function AugmentHeroSection() {
                         <div className="hidden w-full overflow-hidden lg:block relative">
                             <div className="absolute z-10 right-0 h-full w-full bg-linear-to-r pointer-events-none from-black/55 via-transparent to-transparent" />
                             <CustomEmblaCarousel
+                                isAutoplay={true}
                                 CustomCard={(item, index, firstItemIndex) => {
                                     console.log("rendering card", index, item);
-                                    return <HeroCard
-                                        key={`${item.id}-${index}`}
-                                        slide={item}
-                                    />;
+                                    return <div
+                                        key={index}
+                                        className={`min-h-105 sm:min-h-130 lg:min-h-170 min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-2 `}
+                                    >
+                                        <HeroCard
+                                            key={`${item.id}-${index}`}
+                                            slide={item}
+                                        />
+                                    </div>;
                                 }}
                                 items={HERO_SLIDES}
                                 options={{ loop: true, align: "start", skipSnaps: false }}
-                                wrapperClassName="min-h-180 mt-16"
+                                wrapperClassName="min-h-180 mt-16 lg:mr-14"
+
                             />
                         </div>
                     </div>

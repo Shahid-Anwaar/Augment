@@ -82,7 +82,7 @@ export default function HeroSection() {
 
             <Link
               href="https://s13rwwhxhl9.typeform.com/to/lmPnaKUF?utm_source=website&"
-              className="px-6 close-btn min-w-65"
+              className="px-6 closed-btn min-w-65"
             >
               Watch Free Class
             </Link>

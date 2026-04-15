@@ -160,7 +160,7 @@ export default function StudentTestimonialsSection() {
               onClick={() =>
                 setShowAll(true)
               }
-              className=" px-20 text-[15px] secondary-btn"
+              className=" px-20 text-[15px] outlined-btn"
             >
               Load More
             </button>

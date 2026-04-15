@@ -227,7 +227,7 @@ export default function FacultySection() {
         <div className="mt-14 flex justify-center">
           <Link
             href="/faculty"
-            className="close-btn px-20"
+            className="closed-btn px-20"
           >
             Learn More
           </Link>
