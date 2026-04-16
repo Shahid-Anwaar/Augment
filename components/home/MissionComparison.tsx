@@ -26,7 +26,7 @@ function ComparisonCard({
   return (
     <div
       className={[
-        "rounded-[20px] px-7 pb-8 pt-8 sm:px-9 sm:pb-9 sm:pt-9 md:px-10 md:pb-10 md:pt-10",
+        "min-w-0 rounded-[16px] px-4 pb-6 pt-6 sm:rounded-[20px] sm:px-6 sm:pb-8 sm:pt-8 md:px-8 md:pb-9 md:pt-9 lg:px-10 lg:pb-10 lg:pt-10",
         isDark
           ? "bg-[linear-gradient(90deg,#17181b_0%,#111214_55%,#17181b_100%)] text-white"
           : "bg-[#f3f4f6] text-black",
@@ -34,7 +34,7 @@ function ComparisonCard({
     >
       <h3
         className={[
-          "section-title text-[34px] sm:text-[38px] lg:text-[37px]",
+          "section-title break-words text-[26px] sm:text-[30px] md:text-[34px] lg:text-[37px]",
           isDark ? "text-white" : "text-black",
         ].join(" ")}
       >
@@ -43,17 +43,17 @@ function ComparisonCard({
 
       <div
         className={[
-          "mt-5 h-px w-full",
+          "mt-4 h-px w-full sm:mt-5",
           isDark ? "bg-white/70" : "bg-black/70",
         ].join(" ")}
       />
 
-      <ul className="mt-8">
+      <ul className="mt-5 sm:mt-6 md:mt-8">
         {items.map((item, index) => (
           <li
             key={item.text}
             className={[
-              "flex items-center gap-4 py-3.75",
+              "flex min-w-0 items-start gap-3 py-3 sm:gap-4 sm:py-3.5 md:items-center md:py-3.75",
               index !== items.length - 1
                 ? isDark
                   ? "border-b border-white/20"
@@ -61,27 +61,27 @@ function ComparisonCard({
                 : "",
             ].join(" ")}
           >
-            <span className="mt-px shrink-0">
+            <span className="mt-0.5 shrink-0 md:mt-px">
               {isDark ? (
                 <Icon
                   icon="lucide:x"
                   width="22"
                   height="22"
-                  className="text-white/80"
+                  className="h-[18px] w-[18px] text-white/80 sm:h-[20px] sm:w-[20px] md:h-[22px] md:w-[22px]"
                 />
               ) : (
                 <Icon
                   icon="mdi:check-circle"
                   width="19"
                   height="19"
-                  className="text-black/90"
+                  className="h-[16px] w-[16px] text-black/90 sm:h-[18px] sm:w-[18px] md:h-[19px] md:w-[19px]"
                 />
               )}
             </span>
 
             <span
               className={[
-                "text-[18px] font-normal leading-[1.35] tracking-[-0.03em] lg:text-[17px]",
+                "min-w-0 text-[15px] font-normal leading-[1.45] tracking-[-0.02em] sm:text-[16px] md:text-[17px] lg:text-[17px]",
                 isDark ? "text-white/95" : "text-black/95",
               ].join(" ")}
             >
@@ -92,10 +92,10 @@ function ComparisonCard({
       </ul>
 
       {!isDark && ctaHref && ctaLabel ? (
-        <div className="mt-10 flex justify-center">
+        <div className="mt-7 flex justify-center sm:mt-8 md:mt-10">
           <Link
             href={ctaHref}
-            className="contained-btn px-10 text-[15px]"
+            className="contained-btn inline-flex w-full justify-center px-8 text-[14px] sm:w-auto sm:px-10 sm:text-[15px]"
           >
             {ctaLabel}
           </Link>
@@ -107,19 +107,19 @@ function ComparisonCard({
 
 export default function MissionComparisonSection() {
   return (
-    <section className="bg-black">
-      <div className="mx-auto w-full max-w-282.5 px-6 pb-3 pt-16 sm:px-8 md:px-10 md:pb-4 md:pt-20 lg:px-12 lg:pb-16 lg:pt-28">
+    <section className="overflow-hidden bg-black">
+      <div className="mx-auto w-full max-w-282.5 px-4 pb-8 pt-12 sm:px-6 sm:pb-10 sm:pt-16 md:px-8 md:pb-12 md:pt-20 lg:px-12 lg:pb-16 lg:pt-28">
         <div className="mx-auto max-w-265 text-center">
           <p className="section-label">
             Our Mission
           </p>
 
-          <h2 className="mt-6 text-white section-title">
+          <h2 className="section-title mt-5 text-white sm:mt-6">
             We&apos;re Challenging the Traditional Education System
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 items-start gap-9 lg:mt-18 lg:grid-cols-2 lg:gap-9">
+        <div className="mt-10 grid grid-cols-1 items-start gap-5 sm:mt-12 sm:gap-6 md:gap-7 lg:mt-18 lg:grid-cols-2 lg:gap-9">
           <ComparisonCard
             title="Traditional MBAs"
             items={traditionalMbaItems}

@@ -35,12 +35,12 @@ export default function HeaderSection() {
 
   return (
     <>
-      <header className="fixed top-0 w-full z-40 bg-black text-white">
-        <div className="mx-auto max-w-[1560px] px-6 sm:px-8 md:px-10 xl:px-12 py-6 md:py-8">
-          <div className="relative flex items-center justify-between ">
+      <header className="fixed top-0 z-40 w-full bg-black text-white">
+        <div className="mx-auto max-w-[1560px] px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 xl:px-12 min-[1280px]:px-6 min-[1280px]:py-6">
+          <div className="relative flex items-center justify-between">
             <Link
               href="/"
-              className=" hidden min-[1280px]:inline-flex"
+              className="hidden min-[1280px]:inline-flex"
               aria-label="Augment Business School"
             >
               <Image
@@ -62,15 +62,12 @@ export default function HeaderSection() {
                 alt="Augment Business School"
                 width={80}
                 height={70}
-                className="h-auto w-[55px] sm:w-[60px] md:w-[65px]"
+                className="h-auto w-[48px] sm:w-[55px] md:w-[60px]"
               />
             </Link>
 
-            <div className="hidden min-[1280px]:flex items-center justify-end gap-x-8">
-              <nav
-                aria-label="Primary navigation"
-                className="mt-3"
-              >
+            <div className="hidden items-center justify-end gap-x-8 min-[1280px]:flex">
+              <nav aria-label="Primary navigation" className="mt-3">
                 <ul className="flex items-center gap-6 xl:gap-8">
                   {DESKTOP_NAV_ITEMS.map((item, index) => (
                     <li key={item.label}>
@@ -80,9 +77,7 @@ export default function HeaderSection() {
                       >
                         <span className="group-hover:text-primary">{item.label}</span>
                         <span
-                          className={`mt-1.5 h-px rounded-full bg-primary transition-all duration-300 ${index === 0
-                            ? "w-10.5 opacity-100"
-                            : "w-0 opacity-0"
+                          className={`mt-1.5 h-px rounded-full bg-primary transition-all duration-300 ${index === 0 ? "w-10.5 opacity-100" : "w-0 opacity-0"
                             }`}
                         />
                       </Link>
@@ -98,9 +93,9 @@ export default function HeaderSection() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((prev) => !prev)}
-              className="inline-flex h-11 w-11 items-center justify-center text-white transition-opacity duration-200 hover:opacity-80 min-[1280px]:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center text-white transition-opacity duration-200 hover:opacity-80 sm:h-11 sm:w-11 min-[1280px]:hidden"
             >
-              <Icon icon="mdi:menu" className="h-[30px] w-[30px]" />
+              <Icon icon="mdi:menu" className="h-7 w-7 sm:h-[30px] sm:w-[30px]" />
             </button>
           </div>
         </div>
@@ -108,30 +103,20 @@ export default function HeaderSection() {
 
       {menuOpen && (
         <div className="fixed inset-0 z-50 bg-black text-white min-[1280px]:hidden">
-          <div className="relative mx-auto flex min-h-screen max-w-[1560px] flex-col px-4 pb-7 pt-7 sm:px-6 sm:pb-8 md:px-8 md:pt-8">
-            <div className="flex items-start justify-between">
-              {/* <Link
-                href="#"
-                aria-label="Augment home"
-                onClick={() => setMenuOpen(false)}
-                className="inline-flex items-center"
-              >
-                <Icon
-                  icon="ph:caret-up-bold"
-                  className="h-[34px] w-[34px] rotate-180 text-[#D9F72B] sm:h-9.5 sm:w-9.5"
-                />
-              </Link> */}
+          <div className="relative mx-auto flex h-screen max-w-[1560px] flex-col px-4 pb-5 pt-4 sm:px-6 sm:pb-6 sm:pt-5 md:px-8 md:pt-6">
+            <div className="flex items-center justify-between">
               <Link
                 href="/"
                 className="inline-flex min-[1280px]:hidden"
                 aria-label="Augment Business School"
+                onClick={() => setMenuOpen(false)}
               >
                 <Image
                   src="/logo2.webp"
                   alt="Augment Business School"
                   width={80}
                   height={70}
-                  className="h-auto w-[55px] sm:w-[60px] md:w-[65px]"
+                  className="h-auto w-[48px] sm:w-[55px] md:w-[60px]"
                 />
               </Link>
 
@@ -139,23 +124,23 @@ export default function HeaderSection() {
                 type="button"
                 aria-label="Close menu"
                 onClick={() => setMenuOpen(false)}
-                className="inline-flex h-11 w-11 items-center justify-center text-white transition-opacity duration-200 hover:opacity-80"
+                className="inline-flex h-10 w-10 items-center justify-center text-white transition-opacity duration-200 hover:opacity-80 sm:h-11 sm:w-11"
               >
-                <Icon icon="ph:asterisk-bold" className="h-[30px] w-[30px]" />
+                <Icon icon="ph:asterisk-bold" className="h-7 w-7 sm:h-[30px] sm:w-[30px]" />
               </button>
             </div>
 
             <nav
               aria-label="Mobile navigation"
-              className="mt-8 overflow-y-auto mb-16 sm:mt-10 md:mt-12"
+              className="mt-8 overflow-y-auto pb-8 sm:mt-10 md:mt-12"
             >
-              <ul className="space-y-3 sm:space-y-4 md:space-y-5">
+              <ul className="space-y-3">
                 {DESKTOP_NAV_ITEMS.map((item) => (
                   <li key={item.label}>
                     <Link
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="inline-block text-[18px] font-medium tracking-[-0.03em] text-white transition-opacity duration-200 hover:opacity-80 sm:text-[20px] md:text-[21px]"
+                      className="inline-block text-[17px] font-medium tracking-[-0.03em] text-white transition-opacity duration-200 hover:opacity-80 sm:text-[19px] md:text-[20px]"
                     >
                       {item.label}
                     </Link>
@@ -164,11 +149,8 @@ export default function HeaderSection() {
               </ul>
             </nav>
 
-            <div className="pointer-events-none  inset-x-0 bottom-7 flex items-end justify-center px-7 sm:bottom-8 sm:px-10 md:px-14">
-              <div className="pointer-events-auto">
-                <PrimaryCta href="#" mobile />
-              </div>
-
+            <div className="border-t flex justify-center border-white/10 items-center pt-4 sm:pt-5">
+              <PrimaryCta href="#" mobile />
             </div>
           </div>
         </div>
@@ -187,9 +169,9 @@ function PrimaryCta({
   return (
     <Link
       href={href}
-      className={`group contained-btn ${mobile
-        ? " px-8 text-[14px] sm:px-10"
-        : " px-8 py-3 text-[13px] xl:px-10 xl:text-[14px]"
+      className={`group contained-btn mx-auto ${mobile
+          ? "inline-flex w-full px-6 py-3 text-[13px] sm:w-auto sm:mx-auto sm:px-8 sm:text-[14px]"
+          : "px-8 py-3 text-[13px] xl:px-10 xl:text-[14px]"
         }`}
     >
       <span className="text-[0.98em] font-semibold uppercase tracking-[0.12em]">

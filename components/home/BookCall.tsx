@@ -35,19 +35,21 @@ export default function BookCallSection({
             </div>
 
             <div className={`section-container relative z-1 ${cardClasses}`}>
-                <div className="rounded-[10px] bg-white px-6 pb-10 pt-10 sm:rounded-3xl sm:px-8 sm:pb-12 sm:pt-12 md:px-12 md:pb-14 md:pt-14 lg:px-24 lg:py-20">
+                <div className="rounded-[10px] bg-white px-4 pb-8 pt-8 sm:rounded-[20px] sm:px-6 sm:pb-10 sm:pt-10 md:rounded-3xl md:px-10 md:pb-12 md:pt-12 lg:px-24 lg:py-20">
                     {hasImage ? (
-                        <div className="grid grid-cols-1 items-center gap-y-5 md:grid-cols-[1.02fr_1fr] md:gap-x-6 lg:gap-x-8">
+                        <div className="grid grid-cols-1 items-center gap-y-8 md:grid-cols-[1.02fr_1fr] md:gap-x-6 lg:gap-x-8">
                             <div>
-                                <h2 className="max-w-155 section-title">{title}</h2>
+                                <h2 className="section-title max-w-full sm:max-w-155">
+                                    {title}
+                                </h2>
 
-                                <p className="mt-5 max-w-140 text-[20px] font-normal leading-[1.34] tracking-[-0.035em] text-black sm:text-[22px] md:text-[24px] lg:text-[21px]">
+                                <p className="mt-4 max-w-full text-[17px] font-normal leading-[1.4] tracking-[-0.03em] text-black sm:mt-5 sm:max-w-140 sm:text-[20px] md:text-[22px] lg:text-[21px]">
                                     {subTitle}
                                 </p>
 
                                 <Link
                                     href={btnLink}
-                                    className="mt-5 px-16 contained-btn"
+                                    className="contained-btn mt-6 inline-flex w-full justify-center px-8 sm:w-auto sm:px-12 md:px-14 lg:px-16"
                                 >
                                     <span>{btnText}</span>
                                     <Icon
@@ -60,7 +62,7 @@ export default function BookCallSection({
                             </div>
 
                             <div className="flex justify-center md:justify-end">
-                                <div className="relative w-full max-w-95">
+                                <div className="relative w-full max-w-[220px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-95">
                                     <Image
                                         src={imgSrc}
                                         alt={title}
@@ -72,21 +74,23 @@ export default function BookCallSection({
                             </div>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 gap-y-10 md:grid-cols-[1.02fr_1fr] md:gap-x-2 lg:gap-x-0">
+                        <div className="grid grid-cols-1 gap-y-8 md:grid-cols-[1.02fr_1fr] md:gap-x-6 lg:gap-x-0">
                             <div>
-                                <h2 className="max-w-100 section-title">{title}</h2>
+                                <h2 className="section-title max-w-full sm:max-w-100">
+                                    {title}
+                                </h2>
 
-                                <div className="mt-10 divider max-w-117.5 md:mt-10.5 lg:max-w-116.5" />
+                                <div className="divider mt-6 max-w-full sm:mt-8 md:mt-10 lg:max-w-116.5" />
                             </div>
 
                             <div className="flex flex-col md:pt-1 lg:pt-0.5">
-                                <p className="max-w-140 text-[20px] font-normal leading-[1.34] tracking-[-0.035em] text-black sm:text-[22px] md:text-[24px] lg:text-[21px]">
+                                <p className="max-w-full text-[17px] font-normal leading-[1.4] tracking-[-0.03em] text-black sm:max-w-140 sm:text-[20px] md:text-[22px] lg:text-[21px]">
                                     {subTitle}
                                 </p>
 
                                 <Link
                                     href={btnLink}
-                                    className="mt-8 max-w-65 px-8 text-[16px] font-bold md:mt-10.5 contained-btn"
+                                    className="contained-btn mt-6 inline-flex w-full justify-center px-8 text-[15px] font-bold sm:w-auto sm:max-w-65 sm:px-10 sm:text-[16px] md:mt-8 lg:mt-10.5"
                                 >
                                     <span>{btnText}</span>
                                     <Icon
