@@ -62,16 +62,21 @@ export default function AugmentHeroSection() {
                 <div
                     className="relative flex w-full justify-end"
                 >
-                    <div className="w-full max-w-265.5">
+                    <div className="w-full max-w-255">
                         <div className="relative mt-8 block w-full overflow-hidden px-4 sm:px-6 lg:hidden">
                             <div className="pointer-events-none absolute inset-y-0 left-4 z-10 w-10 bg-linear-to-r from-black/70 via-black/20 to-transparent sm:left-6" />
                             <div className="pointer-events-none absolute inset-y-0 right-4 z-10 w-10 bg-linear-to-l from-black/70 via-black/20 to-transparent sm:right-6" />
                             <CustomEmblaCarousel
                                 CustomCard={(item, index, firstItemIndex) => {
-                                    return <HeroCard
-                                        key={`${item.id}-${index}`}
-                                        slide={item}
-                                    />;
+                                    return <div
+                                        key={index}
+                                        className={`min-h-105 sm:min-h-130 lg:min-h-170 min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 p-2 `}
+                                    >
+                                        <HeroCard
+                                            key={`${item.id}-${index}`}
+                                            slide={item}
+                                        />
+                                    </div>;
                                 }}
                                 isAutoplay={true}
                                 items={HERO_SLIDES}
@@ -88,7 +93,7 @@ export default function AugmentHeroSection() {
                                     console.log("rendering card", index, item);
                                     return <div
                                         key={index}
-                                        className={`min-h-105 sm:min-h-130 lg:min-h-170 min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 xl:basis-1/4 p-2 `}
+                                        className={`min-h-105 sm:min-h-130 lg:min-h-170 min-w-0 shrink-0 grow-0 basis-full sm:basis-1/2 lg:basis-1/3 p-2 `}
                                     >
                                         <HeroCard
                                             key={`${item.id}-${index}`}
