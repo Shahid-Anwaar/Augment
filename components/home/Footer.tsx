@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import BookCallSection from "./BookCall";
+import Chats from "./Chats";
 
 type FooterLink = {
     label: string;
@@ -208,9 +209,10 @@ function FooterColumn({ links }: { links: FooterLink[] }) {
 export default function Footer() {
     return (
         <footer className="bg-black text-white overflow-hidden">
+
             <div className="section-container pb-8 pt-10 sm:pb-10 sm:pt-12 md:pb-12 md:pt-20 lg:pt-28">
-                <div className="grid grid-cols-1 gap-y-10 sm:gap-y-12 md:grid-cols-[1.08fr_0.95fr_0.95fr] md:gap-x-8 lg:grid-cols-[1.1fr_0.9fr_0.9fr_1fr] lg:gap-x-14">
-                    <div className="text-center md:text-left">
+                <div className="grid grid-cols-2 gap-y-10 sm:gap-y-12 md:grid-cols-[1.08fr_0.7fr_0.7fr_1.3fr] md:gap-x-8 lg:grid-cols-[1fr_0.9fr_0.9fr_1.1fr] xl:grid-cols-[1.1fr_0.9fr_0.9fr_1fr] lg:gap-x-14">
+                    <div className="text-center col-span-2 order-1 md:col-span-1 md:text-left">
                         <Link
                             href="/"
                             className="inline-flex"
@@ -226,15 +228,15 @@ export default function Footer() {
                         </Link>
                     </div>
 
-                    <div className="text-center md:text-left">
+                    <div className="text-center order-3 md:text-left  md:order-2">
                         <FooterColumn links={leftLinks} />
                     </div>
 
-                    <div className="text-center md:text-left">
+                    <div className="text-center order-4 md:text-left md:order-3">
                         <FooterColumn links={rightLinks} />
                     </div>
 
-                    <div className="mx-auto max-w-[290px] text-center md:col-span-3 md:mx-0 md:max-w-[360px] md:text-left lg:col-span-1 lg:ml-auto lg:text-end">
+                    <div className="mx-auto max-w-[290px] col-span-2 order-2 md:order-4 text-center md:col-span-1 md:mx-0 md:max-w-[360px] md:text-end lg:col-span-1 lg:ml-auto lg:text-end">
                         <h3 className="text-[20px] font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-[21px] md:text-[23px] lg:text-[24px]">
                             Still have questions?
                         </h3>
@@ -251,7 +253,7 @@ export default function Footer() {
                         </Link>
                     </div>
                 </div>
-
+                <Chats />
                 <div className="mt-12 flex flex-col items-center gap-4 text-center sm:mt-14 md:mt-16 md:flex-row md:items-center md:gap-7 md:text-left">
                     <span className="text-[18px] font-medium tracking-[-0.03em] text-white sm:text-[20px]">
                         Follow us

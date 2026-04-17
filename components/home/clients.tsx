@@ -232,8 +232,8 @@ export const TESTIMONIALS: TestimonialItem[] = [
 
 export function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <article className="min-w-0 h-full w-full overflow-hidden rounded-xl border lg:border-0 border-[#cfc8bf] bg-[#f5f3ef] p-3 sm:p-4 md:p-5 lg:px-0 lg:py-0">
-      <div className="grid h-full min-w-0 gap-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[360px_minmax(0,1fr)]">
+    <article className="min-w-0 w-full rounded-xl border lg:border-0 border-[#cfc8bf] bg-[#f5f3ef] p-3 sm:p-4 md:p-5 lg:px-0 lg:py-0">
+      <div className="grid h-full min-w-0 gap-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[370px_minmax(0,1fr)]">
         <div className="relative w-full overflow-hidden rounded-xl border border-[#cfc8bf] aspect-[4/4.2] lg:aspect-auto lg:min-h-[430px] xl:min-h-[460px]">
           <Image
             src={item.image}
@@ -244,8 +244,8 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
           />
         </div>
 
-        <div className="min-w-0 flex min-h-full flex-col rounded-xl border border-[#cfc8bf] bg-white p-4 sm:p-5 lg:p-5 xl:p-6">
-          <blockquote className="quote-text min-w-0 text-start text-black break-words">
+        <div className="min-w-0 flex min-h-137 sm:min-h-90 md:min-h-80 lg:min-h-120 flex-col rounded-xl border border-[#cfc8bf] bg-white p-4 sm:p-5 lg:p-5 xl:p-6">
+          <blockquote className="quote-text mb-auto min-w-0 text-start text-black break-words">
             “{item.quote}”
           </blockquote>
 
@@ -287,7 +287,7 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
 
 export default function ClientsSection() {
   return (
-    <section className="overflow-hidden bg-[#f1efeb] py-14 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+    <section className="overflow-hidden bg-[#f3f4f6] py-14 sm:py-16 md:py-20 lg:py-24 xl:py-32">
       <div className="mx-auto max-w-400 px-4 sm:px-6 lg:px-0">
         <div className="text-center">
           <span className="section-label text-black">Testimonials</span>
@@ -301,7 +301,7 @@ export default function ClientsSection() {
               return (
                 <div
                   key={index}
-                  className="box-border min-w-0 shrink-0 grow-0 basis-full px-0 lg:px-40"
+                  className="box-border min-w-0 shrink-0 grow-0 basis-full px-1 lg:px-24 xl:px-40"
                 >
                   <TestimonialCard item={item} />
                 </div>
