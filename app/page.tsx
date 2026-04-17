@@ -33,7 +33,7 @@ export default function Home() {
         title="15-Day Money-Back Guarantee"
         btnText="Enroll Now"
         subTitle="Try Augment for 15 days and if you are not completely satisfied, you can claim a full refund - no questions asked."
-        topClasses="bg-[#f1efeb]"
+        topClasses="bg-[#f3f4f6]"
         bottomClasses="bg-[#f3f4f6]"
       />
       <FAQSection />
@@ -83,7 +83,6 @@ export default function Home() {
         bottomClasses="bg-black"
       />
       <Footer />
-      <Chats />
     </main>
   );
 }
