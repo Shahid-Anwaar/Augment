@@ -18,17 +18,17 @@ type SocialLink = {
 };
 
 const leftLinks: FooterLink[] = [
-    { label: "Program", href: "/program" },
-    { label: "Faculty", href: "/faculty" },
-    { label: "About Us", href: "/about-us" },
-    { label: "Testimonials", href: "/testimonials" },
+    { label: "Products", href: "/program" },
+    { label: "Solutions", href: "/faculty" },
+    { label: "For Coach", href: "/about-us" },
+    { label: "For Teams", href: "/testimonials" },
 ];
 
 const rightLinks: FooterLink[] = [
-    { label: "Book a Call", href: "/book-a-call" },
-    { label: "Blog", href: "/blog" },
-    { label: "Free Class", href: "/free-class" },
-    { label: "Support", href: "/support" },
+    { label: "Community", href: "/free-class" },
+    { label: "About", href: "/support" },
+    { label: "Blogs", href: "/book-a-call" },
+    { label: "Free Resources", href: "/blog" },
 ];
 
 const socialLinks: SocialLink[] = [
@@ -72,9 +72,9 @@ const socialLinks: SocialLink[] = [
 ];
 
 const legalLinks: FooterLink[] = [
-    { label: "Terms of Service", href: "/terms-of-service" },
     { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Legal Notice", href: "/legal-notice" },
+    // { label: "Legal Notice", href: "/legal-notice" },
+    { label: "Terms and conditions", href: "/terms-of-service" },
 ];
 
 // function FooterColumn({ links }: { links: FooterLink[] }) {

@@ -12,13 +12,13 @@ type NavItem = {
 
 const DESKTOP_NAV_ITEMS: readonly NavItem[] = [
   { label: "Home", href: "#" },
-  { label: "Curriculum", href: "#" },
-  { label: "Faculty", href: "#" },
-  { label: "Community", href: "#" },
-  { label: "Free Classes", href: "#" },
+  { label: "Products", href: "#" },
+  { label: "Solutions", href: "#" },
+  { label: "For Coach", href: "#" },
   { label: "For Teams", href: "#" },
+  { label: "Community", href: "#" },
   { label: "About", href: "#" },
-  { label: "Log in", href: "#" },
+  // { label: "Log in", href: "#" },
 ] as const;
 
 export default function HeaderSection() {
@@ -175,7 +175,7 @@ function PrimaryCta({
         }`}
     >
       <span className="text-[0.98em] font-semibold uppercase tracking-[0.12em]">
-        Enroll Now
+      Book a call
       </span>
 
       <Icon
