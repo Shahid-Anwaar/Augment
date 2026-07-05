@@ -95,7 +95,7 @@ select {
 
   /* Primary rounded CTA button */
   .contained-btn {
-    @apply inline-flex items-center justify-center gap-1.5 rounded-full border border-black bg-primary px-5 py-2.5 text-[12px] font-bold uppercase text-black transition-opacity duration-200 hover:bg-primary-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:gap-2 sm:px-7 sm:py-3 sm:text-[14px] lg:px-[34px] lg:text-[15px];
+    @apply inline-flex items-center justify-center gap-1.5 rounded-full border border-black bg-primary px-5 py-2.5 text-[12px] font-semibold text-black transition-opacity duration-200 hover:bg-primary-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:gap-2 sm:px-7 sm:py-3 sm:text-[14px] lg:px-[34px] lg:text-[15px];
   }
 
   /* Danger / delete action button */
@@ -105,12 +105,12 @@ select {
 
   /* Secondary outlined action button */
   .outlined-btn {
-    @apply inline-flex items-center justify-center rounded-full border border-black bg-white px-4 py-2.5 text-[12px] font-semibold uppercase text-black transition-colors hover:bg-gray-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5 sm:py-3 sm:text-[14px] lg:text-[15px];
+    @apply inline-flex items-center justify-center rounded-full border border-black bg-white px-4 py-2.5 text-[12px] font-semibold text-black transition-colors hover:bg-gray-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5 sm:py-3 sm:text-[14px] lg:text-[15px];
   }
 
   /* Neutral close / cancel button */
   .closed-btn {
-    @apply inline-flex items-center justify-center rounded-full border border-white bg-transparent px-8 py-2.5 text-[12px] font-semibold uppercase tracking-[0.04em] text-white transition-all duration-200 hover:border-black hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:opacity-50 sm:px-12 sm:py-3 sm:text-[13px] lg:px-16 lg:text-[14px];
+    @apply inline-flex items-center justify-center rounded-full border border-white bg-transparent px-8 py-2.5 text-[12px] font-semibold tracking-[0.04em] text-white transition-all duration-200 hover:border-black hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:opacity-50 sm:px-12 sm:py-3 sm:text-[13px] lg:px-16 lg:text-[14px];
   }
 
   .paragraph-text {

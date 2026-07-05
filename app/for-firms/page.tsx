@@ -4,7 +4,7 @@ import HowItWorksCard from "@/components/home/HowItWorks";
 import IntegrationsSection from "@/components/home/Integrations";
 import ClientsSection from "@/components/home/clients";
 import ProductFeaturesSection from "@/components/products/ProductFeatures";
-import { Firms_FEATURES, Firms_FEATURES2, HowItWorksCardItem, teamFaqs } from "@/data/data";
+import { Firms_FEATURES, Firms_FEATURES2, HowItWorksCardItem, solutionItems, teamFaqs } from "@/data/data";
 import ProductSalesHubSection from "@/components/products/ProductSalesHub";
 import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
 import FAQSection from "@/components/home/FaqSection";
@@ -12,6 +12,7 @@ import FirmHeroSection from "@/components/for-firms/FirmHero";
 import FeaturesSection from "@/components/home/FacultySection";
 import { forFirmsMetadata } from "@/lib/seo";
 import BrainFeatureSection from "@/components/home/BrainFeature";
+import StickySolutionsSection from "@/components/home/StickyControl";
 
 const views = [
   {
@@ -264,15 +265,11 @@ export const metadata = forFirmsMetadata;
 export default function FirmsPage() {
   return (
     <main className="bg-white text-black relative">
-      {/* <FirmHeroSection />
+      <FirmHeroSection />
       <CompanyLogoCarousel companyLogos={[...companyLogos, ...companyLogos]} />;
-      <div className="py-7"></div> */}
+      <div className="py-7"></div>
       <BrainFeatureSection isDark={false} />
-      <ViewsSection
-        title="The future of your coaching firm happens here."
-        subtitle="Whatever your niche, your team size, or the clients you serve, Supreme Coach gives every person in your firm exactly what they need, in a portal built for their role. One platform. Four views. Complete control."
-        items={views}
-      />
+      <StickySolutionsSection items={solutionItems.slice(0, 3)} />
       <FeaturesSection />
       <ProductFeaturesSection
         title="Built for firms that deliver at scale and prove it with data."

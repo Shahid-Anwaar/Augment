@@ -96,6 +96,84 @@ export type Student = {
   classLabel: string;
 };
 
+export type SolutionItem = {
+    id: string;
+    label: string;
+    icon: string;
+    heroTitle: string;
+    cardTitle: string;
+    cardDescription: string;
+    points: string[];
+    image: string;
+};
+
+export const solutionItems: SolutionItem[] = [
+  {
+    id: "outbound",
+    label: "Outbound",
+    icon: "lucide:rss",
+    heroTitle: "Turn hours of prospecting into minutes",
+    cardTitle: "Outbound",
+    image: "/external-images/img-9c6d2fa4.webp",
+    cardDescription:
+      "Book more meetings faster with better data, smarter AI, and easier automation.",
+    points: [
+      "AI-powered, multichannel campaigns in a click",
+      "Built-in email deliverability guardrails",
+      "Prioritized task lists to maximize selling",
+      "Workflow automations to identify and scale what works",
+    ],
+  },
+  {
+    id: "inbound",
+    label: "Inbound",
+    icon: "lucide:triangle",
+    heroTitle: "Capture and qualify leads faster",
+    cardTitle: "Inbound",
+    image: "/external-images/img-cc03c5d9.webp",
+    cardDescription:
+      "Capture, qualify, and route every lead instantly so hot leads never go cold.",
+    points: [
+      "Capture leads from every channel",
+      "Qualify prospects automatically",
+      "Route hot leads to the right team",
+      "Follow up before opportunities go cold",
+    ],
+  },
+  {
+    id: "data-enrichment",
+    label: "Data Enrichment",
+    icon: "lucide:activity",
+    heroTitle: "Keep your lead data clean and complete",
+    cardTitle: "Data Enrichment",
+    image: "/external-images/img-3fd9a0fd.webp",
+    cardDescription:
+      "Cleanse and complete your records with always-fresh data that powers smarter targeting.",
+    points: [
+      "Enrich contacts with accurate business data",
+      "Complete missing company details",
+      "Refresh outdated records automatically",
+      "Improve targeting with better insights",
+    ],
+  },
+  {
+    id: "deal-execution",
+    label: "Deal Execution",
+    icon: "lucide:aperture",
+    heroTitle: "Move deals forward with less manual work",
+    cardTitle: "Deal Execution",
+    image: "/external-images/img-84d8d9dd.webp",
+    cardDescription:
+      "Keep deals moving with AI-powered prep, meeting insights, and follow-up.",
+    points: [
+      "Prepare for meetings with AI insights",
+      "Track important deal activities",
+      "Automate post-meeting follow-ups",
+      "Help teams focus more on closing",
+    ],
+  },
+];
+
 export const students: Student[] = [
   {
     id: 1,

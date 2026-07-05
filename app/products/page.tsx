@@ -6,13 +6,14 @@ import IntegrationsSection from "@/components/home/Integrations";
 import ClientsSection from "@/components/home/clients";
 import ProductsHeroSection from "@/components/products/ProductsHero";
 import ProductFeaturesSection from "@/components/products/ProductFeatures";
-import { companyLogos, Firms_FEATURES, Firms_FEATURES2, productFaqs } from "@/data/data";
+import { companyLogos, Firms_FEATURES, Firms_FEATURES2, productFaqs, solutionItems } from "@/data/data";
 import ProductSalesHubSection from "@/components/products/ProductSalesHub";
 import ProductTools from "@/components/products/ProductTools";
 import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
 import { productsMetadata } from "@/lib/seo";
 import WhatToInclude from "@/components/products/WhatInclude";
 import BrainFeatureSection from "@/components/home/BrainFeature";
+import StickySolutionsSection from "@/components/home/StickyControl";
 
 export const metadata = productsMetadata;
 
@@ -66,29 +67,11 @@ export default function ProductsPage() {
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
       <ClientsSection title="Supreme Coach success stories write themselves" />
+      <StickySolutionsSection items={solutionItems} />
       <ProductTools />
       <WhatToInclude />
       {/* <ProductSold /> */}
       <FAQSection faqs={productFaqs} />
-
-      {/* <FeaturedInSection />
-            <ViewsSection />
-            <FacultySection />
-            <EmblaCarousel /> */}
-
-
-      {/* <ClientsSection /> */}
-
-
-      {/* <BookCallSection
-                title="Stand out with the Supreme Coach LinkedIn Certificate"
-                btnText="Enroll Now"
-                subTitle="Earn a certificate upon completion and display your business credentials on your resume and LinkedIn."
-                topClasses="bg-[#f3f4f6]"
-                bottomClasses="bg-[#000000]"
-                imgSrc="/certificate.webp"
-            />
-            <MissionComparisonSection /> */}
       <BookCallSection
         title="Book a Demo with a Program Advisor"
         icon="solar:phone-linear"

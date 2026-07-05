@@ -108,7 +108,7 @@ function ComparisonCard({
 export default function MissionComparisonSection() {
   return (
     <section className="overflow-hidden bg-black">
-      <div className="mx-auto w-full max-w-340 px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-12 lg:py-16">
+      <div className="mx-auto section-container py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:px-12 lg:py-16">
         <div className=" text-center">
           <p className="section-label">
             Our Mission
@@ -116,7 +116,6 @@ export default function MissionComparisonSection() {
 
           <h2 className="section-title mx-auto mt-3 text-white">
            We're Challenging How Coaching Businesses Are Built
-
           </h2>
         </div>
 

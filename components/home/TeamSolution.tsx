@@ -327,13 +327,13 @@ export default function TeamSolutionsSection() {
 
     return (
         <section className="bg-white">
-            <div className="section-container max-w-[1400px]">
+            <div className="section-container">
                 <div className="text-center">
-                    <h2 className="section-title mx-auto max-w-88 text-black sm:max-w-xl">
+                    <h2 className="section-title mx-auto text-black">
                         AI solutions for every team
                     </h2>
-                    <p className="section-description mt-2 mx-auto max-w-152 mb-6 text-black">
-                        Your key workflows, powered by ClickUp Agents.
+                    <p className="section-description mx-auto mb-6 text-black">
+                        Your key workflows, powered by Supreme Coach Agents.
                     </p>
                 </div>
                 {/* Tabs */}

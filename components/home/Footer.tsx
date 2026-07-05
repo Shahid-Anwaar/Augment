@@ -120,7 +120,7 @@ export default function Footer() {
                 bottomClasses="bg-black"
             />
             <footer className="bg-black text-white overflow-hidden">
-                <div className="section-container mx-auto w-full px-4 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12 md:pb-12 md:pt-20 lg:px-8 lg:pt-28">
+                <div className="section-container mx-auto w-full pb-8 pt-10 sm:pb-10 sm:pt-12 md:pb-12 md:pt-20 lg:pt-28">
                     <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 xl:grid-cols-[1.5fr_2.8fr_1fr] xl:gap-x-14">
 
                         {/* Logo / About */}

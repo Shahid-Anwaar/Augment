@@ -127,8 +127,8 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
 
 export default function ClientsSection({ title, isShowCompanies = true }: { title: string, isShowCompanies?: boolean }) {
   return (
-    <section className="overflow-hidden bg-[#f3f4f6] py-8 sm:py-10 md:py-12 lg:py-16">
-      <div className="mx-auto max-w-400 px-4 sm:px-6 lg:px-0">
+    <section className="overflow-hidden bg-[#f3f4f6] py-5 sm:py-6 md:py-7 lg:py-8">
+      <div className="section-container">
         <div className="text-center">
           <span className="section-label text-black">Testimonials</span>
 
@@ -141,7 +141,7 @@ export default function ClientsSection({ title, isShowCompanies = true }: { titl
               return (
                 <div
                   key={index}
-                  className="box-border min-w-0 shrink-0 grow-0 basis-full px-1 lg:px-24 xl:px-40"
+                  className="box-border min-w-0 shrink-0 grow-0 basis-full px-1"
                 >
                   <TestimonialCard item={item} />
                 </div>
@@ -178,7 +178,7 @@ export default function ClientsSection({ title, isShowCompanies = true }: { titl
         </div>
 
         {isShowCompanies &&
-          <div className="mx-auto max-w-340 mt-6 px-4 sm:px-6 lg:px-0">
+          <div className="mx-auto max-w-full mt-6 px-4 sm:px-6 lg:px-0">
             <CompanyLogoCarousel companyLogos={[...companyLogos, ...companyLogos]} />
           </div>}
       </div>
