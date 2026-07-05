@@ -11,6 +11,7 @@ import FAQSection from "@/components/home/FaqSection";
 import { forCoachesMetadata } from "@/lib/seo";
 import CoachHeroSection from "@/components/for-coach/CoachHero";
 import FeaturesSection from "@/components/home/FacultySection";
+import BrainFeatureSection from "@/components/home/BrainFeature";
 
 const companyLogos = [
   {
@@ -191,8 +192,8 @@ export const metadata = forCoachesMetadata;
 export default function CoachesPage() {
   return (
     <main className="bg-white text-black relative">
-      <CoachHeroSection />
-      <div className="w-full bg-white pb-7">
+      {/* <CoachHeroSection /> */}
+      {/* <div className="w-full bg-white pb-7">
         <div className="max-w-full bg-white py-4 mx-auto">
           <div className="mx-auto bg-white px-0">
             <CompanyLogoCarousel
@@ -201,8 +202,9 @@ export default function CoachesPage() {
             />
           </div>
         </div>
-      </div>
-      <ViewsSection />
+      </div> */}
+      <BrainFeatureSection isDark={false} />
+       <ViewsSection />
       <ProductFeaturesSection
         title="Programme creation tools built for coaches who take their client results seriously."
         description="A client who gets real, measurable outcomes doesn't just complete your programme they renew, refer, and come back for everything you build next."
@@ -211,7 +213,7 @@ export default function CoachesPage() {
         imgAlt="Supreme Coach course onboarding and quiz preview"
         features={Coaches_FEATURES}
         btnText="Book a Discovery Call"
-
+        wrapperClassName="bg-white py-0! sm:py-0! md:py-0! lg:py-0!"
       />
       <ProductFeaturesSection
         title="A community that keeps clients engaged long after the session ends."
@@ -222,11 +224,22 @@ export default function CoachesPage() {
         wrapperClassName="bg-white"
         btnText="Book a Discovery Call"
       />
-      <ProductSalesHubSection
+      <ProductFeaturesSection
+        title="Programme creation tools built for coaches who take their client results seriously."
+        description="A client who gets real, measurable outcomes doesn't just complete your programme they renew, refer, and come back for everything you build next."
+        imgShown="left"
+        imgSrc="/external-images/img-15da9c81.webp"
+        imgAlt="Supreme Coach course onboarding and quiz preview"
+        features={Coaches_FEATURES}
+        btnText="Book a Discovery Call"
+        wrapperClassName="bg-white pt-0! sm:pt-0! md:pt-0! lg:pt-0!"
+      />
+      {/* <ProductSalesHubSection
         btnText="Book a Discovery Call"
         title="Your coaching business and your financial command centre."
         subtitle="Supreme Coach handles every payment, every invoice, and every financial metric your business generates so you always know what's coming in, what's outstanding, and what your business is worth right now."
       />
+      
       <FeaturesSection />
       <HowItWorksCard
         steps={steps}
@@ -236,16 +249,9 @@ export default function CoachesPage() {
         title="It's your business, your way"
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
-      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={true} />
-      <FAQSection faqs={coachesFaqs} />
-      <BookCallSection
-        title="Your Business. Your Licence. Your Infrastructure For Life."
-        btnText="Book a Discovery Call"
-        subTitle="Every Supreme Coach client receives a personal lifetime licence not a subscription, not a rental, not access that expires when you stop paying. "
-        topClasses="bg-[#f3f4f6]"
-        bottomClasses="bg-[#000000]"
-        imgSrc="/certificate.webp"
-      />
+      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
+      <FAQSection faqs={coachesFaqs} /> */}
+      
     </main>
   );
 }

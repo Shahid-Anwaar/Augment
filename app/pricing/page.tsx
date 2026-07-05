@@ -14,9 +14,9 @@ export default function PricingPage() {
     <main className="bg-white text-black relative">
       <PricingSection />
       <TrustAndSecuritySection />
-      <ProductTools />
       <WhatToInclude />
-      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={true} />
+      <ProductTools />
+      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
       <FAQSection faqs={pricingFaqs} />
     </main>
   );

@@ -11,6 +11,7 @@ import FAQSection from "@/components/home/FaqSection";
 import FirmHeroSection from "@/components/for-firms/FirmHero";
 import FeaturesSection from "@/components/home/FacultySection";
 import { forFirmsMetadata } from "@/lib/seo";
+import BrainFeatureSection from "@/components/home/BrainFeature";
 
 const views = [
   {
@@ -101,7 +102,7 @@ const SALES_HUB_FEATURES = [
     image:
       "/external-images/img-a96842b1.webp",
     imageAlt: "Modeller agents analytics dashboard preview",
-  objClass: "lg:-translate-y-28",
+    objClass: "lg:-translate-y-28",
   },
 ];
 
@@ -113,7 +114,7 @@ const steps = [
   "Scale Operations",
 ];
 
-const HOW_IT_WORKS_CARDS : HowItWorksCardItem[] = [
+const HOW_IT_WORKS_CARDS: HowItWorksCardItem[] = [
   {
     id: 1,
     step: "01",
@@ -263,16 +264,16 @@ export const metadata = forFirmsMetadata;
 export default function FirmsPage() {
   return (
     <main className="bg-white text-black relative">
-      <FirmHeroSection />
+      {/* <FirmHeroSection />
       <CompanyLogoCarousel companyLogos={[...companyLogos, ...companyLogos]} />;
-      <div className="py-7"></div>
+      <div className="py-7"></div> */}
+      <BrainFeatureSection isDark={false} />
       <ViewsSection
         title="The future of your coaching firm happens here."
         subtitle="Whatever your niche, your team size, or the clients you serve, Supreme Coach gives every person in your firm exactly what they need, in a portal built for their role. One platform. Four views. Complete control."
         items={views}
       />
       <FeaturesSection />
-      {/* <ProductsCompaniesSection /> */}
       <ProductFeaturesSection
         title="Built for firms that deliver at scale and prove it with data."
         description="Your firm needs more than a coaching platform; it needs an operating system that coordinates your team, manages corporate clients, and generates reports that renew contracts automatically."
@@ -280,6 +281,7 @@ export default function FirmsPage() {
         imgSrc="/external-images/img-15da9c81.webp"
         imgAlt="Supreme Coach course onboarding and quiz preview"
         features={Firms_FEATURES}
+        wrapperClassName="bg-white pb-0!"
       />
       <ProductFeaturesSection
         title="Powerful enough for enterprise. Clean enough for one person to run."
@@ -288,6 +290,15 @@ export default function FirmsPage() {
         imgSrc="/external-images/img-2aeeec10.webp"
         features={Firms_FEATURES2}
         wrapperClassName="bg-white"
+      />
+      <ProductFeaturesSection
+        title="Built for firms that deliver at scale and prove it with data."
+        description="Your firm needs more than a coaching platform; it needs an operating system that coordinates your team, manages corporate clients, and generates reports that renew contracts automatically."
+        imgShown="left"
+        imgSrc="/external-images/img-15da9c81.webp"
+        imgAlt="Supreme Coach course onboarding and quiz preview"
+        features={Firms_FEATURES}
+        wrapperClassName="bg-white pt-0!"
       />
       <ProductSalesHubSection
         title="Your firm's financial command centre built for scale."
@@ -300,50 +311,9 @@ export default function FirmsPage() {
         title="It's your business, your way"
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
-      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={true} />
-      {/* <ProductTools /> */}
-      {/* <ProductSold /> */}
-      {/* <FAQSection faqs={FAQS} /> */}
-
-
-
-      {/* <FeaturedInSection />
-            
-            <FacultySection />
-            <EmblaCarousel /> */}
-
-
-      {/* <ClientsSection /> */}
-
-
-      {/* <BookCallSection
-                title="Stand out with the Supreme Coach LinkedIn Certificate"
-                btnText="Enroll Now"
-                subTitle="Earn a certificate upon completion and display your business credentials on your resume and LinkedIn."
-                topClasses="bg-[#f3f4f6]"
-                bottomClasses="bg-[#000000]"
-                imgSrc="/certificate.webp"
-            />
-            <MissionComparisonSection /> */}
-
-
+      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
       <FAQSection faqs={teamFaqs} />
-      {/* <BookCallSection
-              title="Stand out with the Supreme Coach LinkedIn Certificate"
-              btnText="Enroll Now"
-              subTitle="Earn a certificate upon completion and display your business credentials on your resume and LinkedIn."
-              topClasses="bg-[#f3f4f6]"
-              bottomClasses="bg-[#000000]"
-              imgSrc="/certificate.webp"
-            /> */}
-      <BookCallSection
-              title="Your Business. Your Licence. Your Infrastructure For Life."
-              btnText="Book a Discovery Call"
-              subTitle="Every Supreme Coach client receives a personal lifetime licence not a subscription, not a rental, not access that expires when you stop paying."
-              topClasses="bg-[#f3f4f6]"
-              bottomClasses="bg-[#000000]"
-              imgSrc="/certificate.webp"
-            />
+
     </main>
   );
 }

@@ -347,10 +347,10 @@ export default function TeamSolutionsSection() {
                                 type="button"
                                 onClick={() => setActiveKey(team.key)}
                                 className={[
-                                    "rounded-full border px-4 py-1.5 text-[14px] font-bold leading-none transition-all duration-200",
+                                    "rounded-full border px-5 py-2.5 text-[14px] font-bold leading-none transition-all duration-200",
                                     isActive
                                         ? "border-black bg-black/90 text-white"
-                                        : "border cursor-pointer border-gray-200 bg-gray-100 text-black/80 hover:border-black/40 hover:bg-gray-300 hover:text-black",
+                                        : "border cursor-pointer border-gray-200 bg-primary-500 text-black/80 hover:border-black/40 hover:bg-primary-300 hover:text-black",
                                 ].join(" ")}
                             >
                                 {team.tab}

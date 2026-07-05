@@ -79,7 +79,7 @@ export default function TrustAndSecuritySection() {
   return (
     <section>
     <div className="section-container pt-0">
-        <div className="text-center">
+        {/* <div className="text-center">
             <p className="text-[14px] font-medium uppercase leading-tight tracking-[-0.03em] text-black sm:text-[16px] md:text-[18px] lg:text-[20px]">
                 Trusted by over 150,000 businesses
             </p>
@@ -100,9 +100,9 @@ export default function TrustAndSecuritySection() {
                     />
                 </div>
             ))}
-        </div>
+        </div> */}
 
-        <div className="mt-6 rounded-[18px] bg-gray-50 px-4 py-6 sm:rounded-[22px] sm:px-6 sm:py-8 md:px-8 lg:rounded-[24px] lg:px-10 lg:py-10">
+        <div className=" rounded-[18px] bg-gray-50 px-4 py-6 sm:rounded-[22px] sm:px-6 sm:py-8 md:px-8 lg:rounded-[24px] lg:px-10 lg:py-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10">
                 <div className="mx-auto max-w-[440px] text-center lg:mx-0 lg:text-left">
                     <h2 className="stylish-family text-[32px] leading-[1] tracking-[-0.04em] text-black sm:text-[40px] md:text-[48px] lg:text-[54px]">

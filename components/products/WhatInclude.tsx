@@ -143,10 +143,10 @@ const includedRows: IncludedRow[] = [
 
 export default function WhatToInclude() {
     return (
-        <section id="what-included" className="section-spacing pt-0 bg-white">
-            <div className="section-container pt-0">
+        <section id="what-included" className="section-spacing py-0 bg-[#03101d]">
+            <div className="section-container py-0">
                 <div className="overflow-hidden rounded-[18px] bg-[#03101d] px-3 py-7 sm:px-6 sm:py-8 lg:px-9 lg:py-10">
-                    <h2 className="section-title text-white text-center">
+                    <h2 className="section-title mx-auto text-white text-center">
                         What&apos;s included with Supreme Coach
                     </h2>
 
@@ -170,7 +170,7 @@ export default function WhatToInclude() {
                                 {includedRows.map((row) => (
                                     <tr
                                         key={row.feature}
-                                        className="overflow-hidden rounded-[9px] bg-white/[0.06] text-[12px] font-bold uppercase tracking-[0.03em] text-white shadow-sm sm:text-[13px]"
+                                        className="overflow-hidden rounded-[9px]  text-[12px] font-bold uppercase tracking-[0.03em] text-white shadow-sm sm:text-[13px]"
                                     >
                                         <td className="rounded-l-[9px] border-r border-white/8 px-3 py-3 sm:px-4 sm:py-3.5">
                                             {row.feature}
@@ -199,14 +199,14 @@ export default function WhatToInclude() {
                                         </td>
 
                                         <td className="rounded-r-[9px] px-3 py-3 text-center sm:px-4 sm:py-3.5">
-                                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary-500/15 text-primary-400 sm:h-8 sm:w-8">
-                                                <Icon icon="solar:check-circle-bold" className="h-5 w-5 sm:h-6 sm:w-6" />
+                                            <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-white/90">
+                                                <Icon icon="mdi:check" className="h-4 w-4 text-white" />
                                             </span>
                                         </td>
                                     </tr>
                                 ))}
 
-                                <tr className="bg-white/[0.08] text-[12px] font-bold uppercase tracking-[0.04em] text-white sm:text-[13px]">
+                                <tr className=" text-[12px] font-bold uppercase tracking-[0.04em] text-white sm:text-[13px]">
                                     <td className="rounded-l-[9px] px-3 py-3.5 sm:px-4" />
                                     <td className="px-3 py-3.5 sm:px-4" />
                                     <td className="px-3 py-3.5 text-primary sm:px-4">
@@ -227,7 +227,7 @@ export default function WhatToInclude() {
                         </table>
                     </div>
 
-                    <div className="mt-7 flex justify-center">
+                    <div className="my-7 flex justify-center">
                         <button className="closed-btn mx-auto px-4 py-2.5 text-[13px] xl:px-6 xl:text-[14px]">
                             Start With Supreme Coach
                         </button>

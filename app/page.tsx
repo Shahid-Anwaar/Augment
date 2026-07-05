@@ -19,8 +19,8 @@ export const metadata = homeMetadata;
 export default function Home() {
   return (
     <main className="bg-white text-black relative">
-      <AugmentHeroSection />
-      <div className="w-full bg-black">
+      {/* <AugmentHeroSection /> */}
+      {/* <div className="w-full bg-black">
         <div className="max-w-full bg-white py-4 mx-auto">
           <div className="mx-auto bg-white px-0">
             <CompanyLogoCarousel
@@ -29,11 +29,10 @@ export default function Home() {
             />
           </div>
         </div>
-      </div> 
-      <BrainFeatureSection />
+      </div>  */}
       <TeamSolutionsSection />
-      {/* <FeaturedInSection /> */}
-      <ViewsSection />
+      <BrainFeatureSection />
+      {/* <ViewsSection />
       <FeaturesSection />
       <EmblaCarousel />
       <HowItWorksCard classes="pt-0" />
@@ -41,7 +40,7 @@ export default function Home() {
         title="Your stack, connected. Configured on delivery not figured out later."
         description="Every integration Supreme Coach supports is set up, tested, and live before we hand over the keys. No documentation to follow. No API keys to paste. No hoping two platforms will finally sync. You open your business and everything already works."
       />
-      <ClientsSection title="Trusted by growing companies" isShowCompanies={true} />
+      <ClientsSection title="Trusted by growing companies" isShowCompanies={false} />
       <AiPoweredWorkSection />
       <BookCallSection
         title="Book a Discovery Call With Our Team"
@@ -59,30 +58,7 @@ export default function Home() {
         bottomClasses="bg-[#000000]"
         imgSrc="/certificate.webp"
       />
-      <MissionComparisonSection />
-      {/* <BookCallSection
-        title="15-Day Money-Back Guarantee"
-        btnText="Enroll Now"
-        subTitle="Try Supreme Coach for 15 days and if you are not completely satisfied, you can claim a full refund - no questions asked."
-        topClasses="bg-[#000000]"
-        bottomClasses="bg-[#000000]"
-      /> */}
-
-
-      {/* <TeaserVideoSection /> */}
-      {/* <WhyAugmentSection /> */}
-      {/* <StudentTestimonialsSection /> */}
-      {/* <BookCallSection
-        title="Stand out with the Supreme Coach LinkedIn Certificate"
-        btnText="Enroll Now"
-        subTitle="Earn a certificate upon completion and display your business credentials on your resume and LinkedIn."
-        topClasses="bg-[#f3f4f6]"
-        bottomClasses="bg-[#000000]"
-        imgSrc="/certificate.webp"
-      />
-      <MissionComparisonSection />
-      
-      <FAQSection /> */}
+      <MissionComparisonSection /> */}
     </main>
   );
 }

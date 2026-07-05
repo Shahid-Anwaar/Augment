@@ -12,6 +12,7 @@ import ProductTools from "@/components/products/ProductTools";
 import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
 import { productsMetadata } from "@/lib/seo";
 import WhatToInclude from "@/components/products/WhatInclude";
+import BrainFeatureSection from "@/components/home/BrainFeature";
 
 export const metadata = productsMetadata;
 
@@ -29,7 +30,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
-      {/* <ProductsCompaniesSection /> */}
+      <BrainFeatureSection isDark={false} />
       <ProductFeaturesSection
         title="Course creation tools for higher student engagement"
         description="So we give you the tools to give them the best learning experience possible. Keep them coming back—and referring their friends, too."
@@ -37,7 +38,7 @@ export default function ProductsPage() {
         imgSrc="/external-images/img-15da9c81.webp"
         imgAlt="Supreme Coach course onboarding and quiz preview"
         features={Firms_FEATURES}
-
+        wrapperClassName="bg-white pb-0!"
       />
       <ProductFeaturesSection
         title="Simple to build—and keep growing"
@@ -46,6 +47,16 @@ export default function ProductsPage() {
         imgSrc="/external-images/img-2aeeec10.webp"
         features={Firms_FEATURES2}
         wrapperClassName="bg-white"
+      />
+      <ProductFeaturesSection
+        title="Course creation tools for higher student engagement"
+        description="So we give you the tools to give them the best learning experience possible. Keep them coming back—and referring their friends, too."
+        imgShown="left"
+        imgSrc="/external-images/img-15da9c81.webp"
+        imgAlt="Supreme Coach course onboarding and quiz preview"
+        features={Firms_FEATURES}
+        wrapperClassName="bg-white pt-0!"
+
       />
       <FeaturesSection isShowBtn={false} />
       <ProductSalesHubSection />
@@ -67,7 +78,7 @@ export default function ProductsPage() {
 
 
       {/* <ClientsSection /> */}
-     
+
 
       {/* <BookCallSection
                 title="Stand out with the Supreme Coach LinkedIn Certificate"

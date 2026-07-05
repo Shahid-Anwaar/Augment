@@ -236,26 +236,23 @@ export default function PricingSection() {
 
                                 <button
                                     type="button"
-                                    className={`mt-5 w-full sm:mt-6 ${plan.custom
-                                        ? "closed-btn"
-                                        : plan.popular
-                                            ? "contained-btn"
-                                            : "outlined-btn hover:bg-primary"
+                                    className={`mt-5 w-full sm:mt-6 ${plan.popular
+                                        ? "contained-btn"
+                                        : "outlined-btn hover:bg-primary"
                                         }`}
                                 >
                                     {plan.buttonText}
                                 </button>
 
                                 <ul className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
-                                    {plan.features.map((feature) => (
+                                    {plan.features.map((feature, index) => (
                                         <li
                                             key={feature}
-                                            className="flex items-start gap-2 text-[13px] leading-[1.4] text-black sm:text-[14px]"
+                                            className={`flex items-center gap-2 text-[13px] leading-[1.4] text-black sm:text-[14px] ${index !== plan.features.length - 1 ? " border-b pb-3 border-black/70" : ""}`}
                                         >
-                                            <Icon
-                                                icon="mdi:check"
-                                                className="mt-[2px] h-3.5 w-3.5 shrink-0 text-black sm:h-4 sm:w-4"
-                                            />
+                                            <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-black/70">
+                                                <Icon icon="mdi:check" className="h-4 w-4 text-black" />
+                                            </div>
                                             <span>{feature}</span>
                                         </li>
                                     ))}

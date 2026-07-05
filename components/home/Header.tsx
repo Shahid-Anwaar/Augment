@@ -23,7 +23,7 @@ export default function HeaderSection() {
   return (
     <>
       <header className="fixed top-0 z-40 w-full bg-black text-white">
-        <div className="mx-auto max-w-[1560px] px-4 py-4 sm:px-6 sm:py-5 md:px-8 md:py-6 xl:px-12 min-[1280px]:px-6 min-[1280px]:py-6">
+        <div className="maximum-width">
           <div className="relative flex items-center justify-between">
             <Link
               href="/"

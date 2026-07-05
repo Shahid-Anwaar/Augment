@@ -5,10 +5,10 @@ import HeaderSection from "@/components/home/Header";
 import Footer from "@/components/home/Footer";
 import { defaultSEO } from "@/lib/seo";
 
-const augmentFont = Inter({
+const supremeFont = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-augment",
+  variable: "--font-supreme",
   display: "swap",
 });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={` ${geistMono.variable} ${augmentFont.variable} h-full antialiased`}
+      className={` ${geistMono.variable} ${supremeFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <HeaderSection />
