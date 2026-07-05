@@ -5,6 +5,7 @@ import BookCallSection from "./BookCall";
 import Chats from "./Chats";
 import CoursesCommunity from "./CoursesCommunity";
 import { securityItems } from "@/data/data";
+import { DESKTOP_NAV_ITEMS } from "@/data/home";
 
 type FooterLink = {
     label: string;
@@ -20,18 +21,25 @@ type SocialLink = {
 };
 
 const leftLinks: FooterLink[] = [
-    { label: "Pricing", href: "/pricing" },
-    // { label: "Products", href: "/products" },
-    // { label: "Solutions", href: "/solutions" },
-    { label: "For Coaches", href: "/for-coaches" },
-    { label: "For Firms", href: "/for-firms" },
+    { label: "Business Coaches", href: "/for-coaches" },
+    { label: "Executive Coaches", href: "/for-coaches" },
+];
+
+const mainItems: FooterLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Products", href: "/products" },
+  // { label: "Solutions", href: "/solutions" },
+  { label: "For Coaches", href: "/for-coaches" },
+  { label: "For Firms", href: "/for-firms" },
+  // { label: "Community", href: "/community" },
+  // { label: "About", href: "/about" },
+  { label: "Pricing", href: "/pricing" },
+  // { label: "Log in", href: "#" },
 ];
 
 const rightLinks: FooterLink[] = [
-    { label: "Community", href: "/community" },
-    { label: "About Us", href: "/about" },
-    // { label: "Blogs", href: "/book-a-call" },
-    // { label: "Free Resources", href: "/blog" },
+     { label: "Coaches", href: "/for-coaches" },
+  { label: "Firms", href: "/for-firms" },
 ];
 
 const socialLinks: SocialLink[] = [
@@ -83,9 +91,8 @@ const legalLinks: FooterLink[] = [
 function FooterColumn({ links, title }: { links: FooterLink[], title: string }) {
     return (
         <>
-            <p className="mb-7 text-[16px] font-semibold leading-none tracking-[-0.03em] text-white sm:text-[17px] md:text-[18px] lg:text-[22px]">{title}</p>
-            <ul className="space-y-2 sm:space-y-3 md:space-y-3">
-
+            <p className="mb-5 text-[16px] font-semibold leading-none tracking-[-0.03em] text-white sm:text-[17px] md:text-[18px] lg:text-[22px]">{title}</p>
+            <ul className="space-y-1.5 sm:space-y-1.5 xl:space-y-2">
                 {links.map((item) => (
                     <li key={item.label}>
                         <Link
@@ -113,9 +120,11 @@ export default function Footer() {
                 bottomClasses="bg-black"
             />
             <footer className="bg-black text-white overflow-hidden">
-                <div className="section-container pb-8 pt-10 sm:pb-10 sm:pt-12 md:pb-12 md:pt-20 lg:pt-28">
-                    <div className="grid grid-cols-2 gap-y-10 sm:gap-y-12 md:grid-cols-[1.08fr_0.7fr_0.7fr_1.3fr] md:gap-x-8 lg:grid-cols-[1fr_0.9fr_0.9fr_1.1fr] xl:grid-cols-[1.1fr_0.9fr_0.9fr_1fr] lg:gap-x-14">
-                        <div className="text-center col-span-2 order-1 md:col-span-1 md:text-left">
+                <div className="section-container mx-auto w-full pb-8 pt-10 sm:pb-10 sm:pt-12 md:pb-12 md:pt-20 lg:pt-28">
+                    <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-12 xl:grid-cols-[1.5fr_2.8fr_1fr] xl:gap-x-14">
+
+                        {/* Logo / About */}
+                        <div className="order-1 text-center sm:text-left">
                             <Link
                                 href="/"
                                 className="inline-flex"
@@ -126,48 +135,57 @@ export default function Footer() {
                                     alt="Supreme Coach Business School"
                                     width={240}
                                     height={72}
-                                    className="h-auto w-[150px] sm:w-[175px] md:w-[228px]"
+                                    className="h-auto w-[150px] sm:w-[175px] md:w-[210px] lg:w-[228px]"
                                 />
                             </Link>
-                            <p className="mt-2 text-[14px] font-medium leading-[1.35] tracking-[-0.025em] text-white/90 sm:text-[15px] md:text-[16px]">
+
+                            <p className="mx-auto mt-3 max-w-[420px] text-[14px] font-medium leading-[1.45] tracking-[-0.025em] text-white/90 sm:mx-0 sm:text-[15px] md:text-[16px]">
                                 Supreme Coach helps coaches and firms launch courses, build communities, and sell from one simple platform.
                             </p>
                         </div>
 
-                        <div className="text-center order-3 md:text-left  md:order-2">
-                            <FooterColumn title="Explore" links={leftLinks} />
+                        {/* Footer Links */}
+                        <div className="order-3 grid w-full grid-cols-1 gap-8 sm:col-span-2 sm:grid-cols-3 sm:gap-6 xl:order-2 xl:col-span-1">
+                            <div className="text-center xl:text-left">
+                                <FooterColumn title="Explore More" links={mainItems} />
+                            </div>
+
+                            <div className="text-center xl:text-left">
+                                <FooterColumn title="Solutions For" links={leftLinks} />
+                            </div>
+
+                            <div className="text-center xl:text-left">
+                                <FooterColumn title="Software For" links={rightLinks} />
+                            </div>
                         </div>
 
-                        <div className="text-center order-4 md:text-left md:order-3">
-                            <FooterColumn title="Company" links={rightLinks} />
-                        </div>
-
-                        <div className="mx-auto max-w-[290px] col-span-2 order-2 md:order-4 text-center md:col-span-1 md:mx-0 md:max-w-[360px] md:text-end lg:col-span-1 lg:ml-auto lg:text-end">
-                            <h3 className="text-[20px] font-medium leading-[1.08] tracking-[-0.04em] text-white sm:text-[21px] md:text-[23px] lg:text-[24px]">
+                        {/* Contact CTA */}
+                        <div className="order-2 text-center sm:ml-auto sm:max-w-[360px] sm:text-right xl:order-3">
+                            <h3 className="text-[20px] font-medium leading-[1.12] tracking-[-0.04em] text-white sm:text-[21px] md:text-[23px] lg:text-[24px]">
                                 Still have questions?
                             </h3>
 
-                            <p className="mt-2 text-[15px] font-medium leading-[1.35] tracking-[-0.025em] text-white sm:text-[16px] md:text-[17px]">
+                            <p className="mt-2 text-[15px] font-medium leading-[1.4] tracking-[-0.025em] text-white sm:text-[16px] md:text-[17px]">
                                 Use the contact form below.
                             </p>
 
                             <Link
                                 href="/contact-sales"
-                                className="contained-btn mt-6 w-full max-w-[220px] px-4 sm:mt-7 sm:w-auto sm:px-8"
+                                className="contained-btn mx-auto mt-6 inline-flex w-full max-w-[220px] justify-center px-4 sm:ml-auto sm:mr-0 sm:mt-7 sm:w-auto sm:px-8"
                             >
                                 Contact Sales
                             </Link>
                         </div>
                     </div>
-                    {/* <Chats /> */}
 
-                    <div className="mt-7 flex flex-col items-center justify-center gap-7 sm:mt-8 md:mt-10 lg:flex-row lg:items-end lg:justify-between">
+                    {/* Social + Security */}
+                    <div className="mt-8 flex flex-col items-center justify-center gap-7 sm:mt-10 lg:flex-row lg:items-end lg:justify-between">
                         <div className="flex flex-col items-center gap-3 text-center sm:gap-4 md:flex-row md:gap-6 md:text-left">
                             <span className="text-[15px] font-medium tracking-[-0.03em] text-white sm:text-[17px] md:text-[18px] lg:text-[20px]">
                                 Follow us
                             </span>
 
-                            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+                            <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5 lg:gap-6">
                                 {socialLinks.map((item) => (
                                     <Link
                                         key={item.label}
@@ -186,7 +204,7 @@ export default function Footer() {
                             </div>
                         </div>
 
-                        <div className="flex gap-x-4 gap-y-4 sm:gap-x-5 md:gap-x-6 lg:gap-x-5">
+                        <div className="flex max-w-full flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:gap-x-5 md:gap-x-6 lg:justify-end lg:gap-x-5">
                             {securityItems.map((item, i) => (
                                 <div
                                     key={item.name}
@@ -204,14 +222,16 @@ export default function Footer() {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-7 sm:mt-8 h-px w-full bg-white/40" />
 
+                    <div className="mt-7 h-px w-full bg-white/40 sm:mt-8" />
+
+                    {/* Copyright + Legal */}
                     <div className="mt-6 flex flex-col items-center gap-4 text-center md:mt-7 md:flex-row md:items-center md:justify-between md:text-left">
                         <p className="text-[11px] font-normal tracking-[-0.015em] text-white/75 sm:text-[12px] md:text-[14px]">
                             Copyright 2026 © Supreme Coach, Inc. All rights reserved.
                         </p>
 
-                        <div className="flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-8 md:justify-end md:gap-14">
+                        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:gap-x-8 md:justify-end md:gap-x-10 lg:gap-x-14">
                             {legalLinks.map((item) => (
                                 <Link
                                     key={item.label}

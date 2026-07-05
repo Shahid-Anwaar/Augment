@@ -31,8 +31,8 @@ export default function ProductFeaturesSection({
     const contentOrderClass = imgShown === "left" ? "order-1 lg:order-2" : "order-1";
 
     return (
-        <section className={`bg-[#efefef] ${wrapperClassName}`}>
-            <div className="section-container py-10 sm:py-12 md:py-18 lg:py-24">
+        <section className={`section-container py-10 sm:py-12 md:py-18 lg:py-24 bg-[#efefef] ${wrapperClassName}`}>
+            <div className="">
                 <div className="text-center">
                     <h2 className="section-title mx-auto text-black">
                         {title}

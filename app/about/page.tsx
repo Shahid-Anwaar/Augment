@@ -14,9 +14,10 @@ import PressMediaSection from "@/components/about/PressMediaSection";
 import StorySection from "@/components/about/StorySection";
 import ManifestoSection from "@/components/about/ManifestoSection";
 import AboutHeroSection from "@/components/about/AboutHeroSection";
+import { aboutMetadata } from "@/lib/seo";
 
-
-export default function CommunityPage() {
+export const metadata = aboutMetadata;
+export default function AboutPage() {
   return (
     <main className="bg-white text-black relative">
       <AboutHeroSection />

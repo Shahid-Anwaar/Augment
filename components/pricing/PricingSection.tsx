@@ -5,6 +5,11 @@ import { Icon } from "@iconify/react";
 
 type PricingTab = "coaches" | "forms";
 
+type featureObj = {
+    feature: string;
+    available: boolean;
+}
+
 type PricingPlan = {
     name: string;
     description: string;
@@ -14,42 +19,112 @@ type PricingPlan = {
     buttonText: string;
     popular?: boolean;
     custom?: boolean;
-    features: string[];
+    features: featureObj[];
 };
 
 const pricingData: Record<PricingTab, PricingPlan[]> = {
     coaches: [
         {
             name: "Builder",
-            description: "Essential features for building your multi-product offering.",
+            description:
+                "Essential features for building and selling your coaching products.",
             price: "69,000",
             oldPrice: "89,000",
             badge: "SAVE 20,000",
             buttonText: "Start now",
             features: [
-                "Everything in Starter",
-                "10 products",
-                "Create with AI",
-                "Email integration",
-                "Upsells & cart recovery",
-                "Real-time support",
+                {
+                    feature: "10 products",
+                    available: true,
+                },
+                {
+                    feature: "Create products with AI",
+                    available: true,
+                },
+                {
+                    feature: "Email integration",
+                    available: true,
+                },
+                {
+                    feature: "Basic sales dashboard",
+                    available: true,
+                },
+                {
+                    feature: "Upsells & cart recovery",
+                    available: true,
+                },
+                {
+                    feature: "Coupon codes",
+                    available: true,
+                },
+                {
+                    feature: "Real-time support",
+                    available: true,
+                },
+                {
+                    feature: "Affiliate program",
+                    available: false,
+                },
+                {
+                    feature: "Custom admin permissions",
+                    available: false,
+                },
+                {
+                    feature: "Dedicated success manager",
+                    available: false,
+                },
             ],
         },
         {
             name: "Growth",
-            description: "Powerful tools for growing your revenue and audience.",
+            description:
+                "Powerful tools for growing your revenue, audience, and coaching team.",
             price: "139,000",
             oldPrice: "189,000",
             badge: "POPULAR",
             buttonText: "Start now",
             popular: true,
             features: [
-                "Everything in Builder",
-                "50 products",
-                "Advanced dashboard",
-                "Affiliate program",
-                "Custom admin permissions",
-                "Priority support",
+                {
+                    feature: "Everything in Builder",
+                    available: true,
+                },
+                {
+                    feature: "50 products",
+                    available: true,
+                },
+                {
+                    feature: "Advanced revenue dashboard",
+                    available: true,
+                },
+                {
+                    feature: "Affiliate program",
+                    available: true,
+                },
+                {
+                    feature: "Custom admin permissions",
+                    available: true,
+                },
+                {
+                    feature: "Priority support",
+                    available: true,
+                },
+                {
+                    feature: "Advanced email automation",
+                    available: true,
+                },
+                {
+                    feature: "Lead capture forms",
+                    available: true,
+                },
+                {
+                    feature: "Sandbox setup for testing",
+                    available: false,
+                },
+                {
+                    feature: "Dedicated success manager",
+                    available: false,
+                },
             ],
         },
         {
@@ -60,12 +135,46 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
             buttonText: "Contact sales",
             custom: true,
             features: [
-                "Dedicated success manager",
-                "Bulk sales features",
-                "Flexible admin seats",
-                "Sandbox setup for testing",
-                "Priority SLA-based support",
-                "Migration assistance",
+                {
+                    feature: "Everything in Growth",
+                    available: true,
+                },
+                {
+                    feature: "Unlimited products",
+                    available: true,
+                },
+                {
+                    feature: "Dedicated success manager",
+                    available: true,
+                },
+                {
+                    feature: "Bulk sales features",
+                    available: true,
+                },
+                {
+                    feature: "Flexible admin seats",
+                    available: true,
+                },
+                {
+                    feature: "Sandbox setup for testing",
+                    available: true,
+                },
+                {
+                    feature: "Priority SLA-based support",
+                    available: true,
+                },
+                {
+                    feature: "Migration assistance",
+                    available: true,
+                },
+                {
+                    feature: "Custom integrations",
+                    available: true,
+                },
+                {
+                    feature: "Custom contract & billing terms",
+                    available: true,
+                },
             ],
         },
     ],
@@ -73,31 +182,101 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
     forms: [
         {
             name: "Core",
-            description: "Centralize and launch your business forms and workflows.",
+            description:
+                "Centralize and launch your business forms with essential workflow tools.",
             price: "600,000",
             buttonText: "Start now",
             features: [
-                "Form management",
-                "5 admin seats",
-                "250 users",
-                "25 forms",
-                "2 TB storage",
-                "Email support",
+                {
+                    feature: "Form management",
+                    available: true,
+                },
+                {
+                    feature: "5 admin seats",
+                    available: true,
+                },
+                {
+                    feature: "250 users",
+                    available: true,
+                },
+                {
+                    feature: "25 forms",
+                    available: true,
+                },
+                {
+                    feature: "2 TB storage",
+                    available: true,
+                },
+                {
+                    feature: "Email support",
+                    available: true,
+                },
+                {
+                    feature: "Basic reporting",
+                    available: true,
+                },
+                {
+                    feature: "Single Sign-On",
+                    available: false,
+                },
+                {
+                    feature: "Remove branding",
+                    available: false,
+                },
+                {
+                    feature: "Advanced analytics",
+                    available: false,
+                },
             ],
         },
         {
             name: "Pro",
-            description: "Expand your forms system with advanced management and SSO.",
+            description:
+                "Expand your forms system with advanced management, branding, and SSO.",
             price: "1,200,000",
             buttonText: "Start now",
             popular: true,
             features: [
-                "Everything in Core",
-                "Single Sign-On",
-                "Remove branding",
-                "15 admin seats",
-                "1,000 users",
-                "Standard support",
+                {
+                    feature: "Everything in Core",
+                    available: true,
+                },
+                {
+                    feature: "Single Sign-On",
+                    available: true,
+                },
+                {
+                    feature: "Remove branding",
+                    available: true,
+                },
+                {
+                    feature: "15 admin seats",
+                    available: true,
+                },
+                {
+                    feature: "1,000 users",
+                    available: true,
+                },
+                {
+                    feature: "Advanced workflow approvals",
+                    available: true,
+                },
+                {
+                    feature: "Standard support",
+                    available: true,
+                },
+                {
+                    feature: "Advanced analytics",
+                    available: true,
+                },
+                {
+                    feature: "Custom form limits",
+                    available: false,
+                },
+                {
+                    feature: "Priority SLA-based support",
+                    available: false,
+                },
             ],
         },
         {
@@ -108,12 +287,46 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
             buttonText: "Contact sales",
             custom: true,
             features: [
-                "Customizable admin seats",
-                "Customizable user seats",
-                "Custom form limits",
-                "Secure Single Sign-On",
-                "Advanced analytics",
-                "Priority support",
+                {
+                    feature: "Everything in Pro",
+                    available: true,
+                },
+                {
+                    feature: "Customizable admin seats",
+                    available: true,
+                },
+                {
+                    feature: "Customizable user seats",
+                    available: true,
+                },
+                {
+                    feature: "Custom form limits",
+                    available: true,
+                },
+                {
+                    feature: "Secure Single Sign-On",
+                    available: true,
+                },
+                {
+                    feature: "Advanced analytics",
+                    available: true,
+                },
+                {
+                    feature: "Dedicated onboarding",
+                    available: true,
+                },
+                {
+                    feature: "Priority support",
+                    available: true,
+                },
+                {
+                    feature: "Custom integrations",
+                    available: true,
+                },
+                {
+                    feature: "Custom security review",
+                    available: true,
+                },
             ],
         },
     ],
@@ -236,27 +449,24 @@ export default function PricingSection() {
 
                                 <button
                                     type="button"
-                                    className={`mt-5 w-full sm:mt-6 ${plan.custom
-                                        ? "closed-btn"
-                                        : plan.popular
-                                            ? "contained-btn"
-                                            : "outlined-btn hover:bg-primary"
+                                    className={`mt-5 w-full sm:mt-6 ${plan.popular
+                                        ? "contained-btn"
+                                        : "outlined-btn hover:bg-primary"
                                         }`}
                                 >
                                     {plan.buttonText}
                                 </button>
 
                                 <ul className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
-                                    {plan.features.map((feature) => (
+                                    {plan.features.map((feature, index) => (
                                         <li
-                                            key={feature}
-                                            className="flex items-start gap-2 text-[13px] leading-[1.4] text-black sm:text-[14px]"
+                                            key={feature.feature}
+                                            className={`flex items-center gap-2 text-[13px] leading-[1.4] text-black sm:text-[14px] ${index !== plan.features.length - 1 ? " border-b pb-3 border-black/70" : ""}`}
                                         >
-                                            <Icon
-                                                icon="mdi:check"
-                                                className="mt-[2px] h-3.5 w-3.5 shrink-0 text-black sm:h-4 sm:w-4"
-                                            />
-                                            <span>{feature}</span>
+                                            <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${feature.available ? "border-primary-500" : "border-red-500"}`}>
+                                                <Icon icon={feature.available ? "mdi:check" : "mdi:close"} className={`h-4 w-4 ${feature.available ? "text-primary-500" : "text-red-500"}`} />
+                                            </div>
+                                            <span>{feature.feature}</span>
                                         </li>
                                     ))}
                                 </ul>

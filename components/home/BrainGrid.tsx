@@ -38,20 +38,22 @@ const BRAIN_CARDS: BrainCard[] = [
     },
 ];
 
-export default function BrainGrid({cards = BRAIN_CARDS, classes = "rounded-lg"}: {cards?: BrainCard[], classes?: string}) {
-    return <div className={`grid overflow-hidden border border-white/10 bg-black md:grid-cols-3 ${classes}`}>
+export default function BrainGrid({cards = BRAIN_CARDS, classes = "rounded-lg", isDark}: {cards?: BrainCard[], classes?: string, isDark?: boolean}) {
+    console.log(isDark, "isDark");
+    
+    return <div className={`grid overflow-hidden border border-white/10 md:grid-cols-3 ${isDark ? " bg-black" : " bg-white"} ${classes} `}>
         {cards.map((card) => (
             <article
                 key={card.id}
-                className="relative min-h-[430px] overflow-hidden border-b border-white/10 bg-black last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0"
+                className={`relative min-h-[430px] overflow-hidden border-b last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 ${isDark ? " bg-black border-white/10" : " bg-gray-50/80 border-black/10"}`}
             >
                 {/* Text */}
                 <div className="relative z-20 px-6 py-7 sm:px-8 sm:py-8 lg:px-10">
-                    <p className="mb-4 text-[12px] font-bold uppercase tracking-[0.22em] text-white/90">
+                    <p className={`mb-4 text-[12px] font-bold uppercase tracking-[0.22em]  ${isDark ? " text-white/90" : " text-black/90"}`}>
                         {card.title}
                     </p>
 
-                    <p className="max-w-full text-[16px] font-normal leading-[1.45] tracking-[-0.03em] text-white/80 sm:text-[17px]">
+                    <p className={`max-w-full text-[16px] font-normal leading-[1.45] tracking-[-0.03em]  sm:text-[17px] ${isDark ? " text-white/80" : " text-black/80"}`}>
                         {card.description}
                     </p>
                 </div>

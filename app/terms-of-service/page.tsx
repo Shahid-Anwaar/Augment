@@ -1,4 +1,5 @@
 import PrivacySectionsList from "@/components/privacy/PrivacySectionList";
+import { termsOfServiceMetadata } from "@/lib/seo";
 
 
 const termsSections = [
@@ -119,6 +120,7 @@ const termsSections = [
   },
 ];
 
+export const metadata = termsOfServiceMetadata;
 export default function TermsOfServiceSection() {
   return (
     <section className="bg-white text-black">

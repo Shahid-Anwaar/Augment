@@ -91,7 +91,7 @@ export default function CoachHeroSection({
                             {description}
                         </p>
 
-                        <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2.5 sm:gap-x-5 lg:mt-5 lg:justify-start">
+                        <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2.5 sm:gap-x-5 lg:mt-5 lg:gap-x-8 xl:gap-x-10 lg:justify-start">
                             {features.map((item) => (
                                 <li
                                     key={item.label}
@@ -130,7 +130,7 @@ export default function CoachHeroSection({
                             </Link>
                         </div>
 
-                        <div className="mt-5 flex justify-center gap-x-5 md:gap-x-7 lg:justify-start">
+                        <div className="mt-5 flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-start">
                             {securityItems.map((item) => (
                                 <div
                                     key={item.name}
@@ -141,10 +141,10 @@ export default function CoachHeroSection({
                                         alt={item.name}
                                         width={item.width}
                                         height={item.height}
-                                        className="h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10"
+                                        className="h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12"
                                     />
 
-                                    <p className="mt-1 text-[13px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[15px] lg:text-[16px]">
+                                    <p className="mt-1 text-[13px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[15px] lg:text-[16px] xl:text-[17px]">
                                         {item.name}
                                     </p>
                                 </div>

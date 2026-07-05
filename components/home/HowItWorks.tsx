@@ -62,7 +62,7 @@ export default function HowItWorksCard({ classes, steps= tempSteps, cards = HOW_
 
   return (
     <section className={`w-full bg-[#f3f4f6] px-4 pb-10 sm:px-6 sm:pb-12 md:px-8 md:pb-16 lg:px-10 lg:pb-20 ${classes ? classes : "  pt-8 sm:pt-10 md:pt-12 lg:pt-14"}`}>
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
+      <div className="mx-auto flex section-container flex-col gap-10 lg:flex-row lg:items-start lg:gap-10">
         <div className="w-full lg:sticky lg:top-16 lg:max-w-[430px] lg:self-start xl:max-w-[470px] pt-10">
           <div className="mb-4 sm:mb-5">
             <span className="section-label text-black">Everything inside Supreme</span>

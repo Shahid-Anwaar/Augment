@@ -1,6 +1,7 @@
+import { siteConfig } from "@/lib/site";
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://supreme-coach.netlify.app";
+const SITE_URL = siteConfig.url;
 
 const routes = [
   {
@@ -10,6 +11,11 @@ const routes = [
   },
   {
     path: "/about",
+    priority: 0.8,
+    changeFrequency: "monthly",
+  },
+  {
+    path: "/contact-sales",
     priority: 0.8,
     changeFrequency: "monthly",
   },

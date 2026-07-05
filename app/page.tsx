@@ -4,16 +4,17 @@ import FAQSection from "@/components/home/FaqSection";
 import MissionComparisonSection from "@/components/home/MissionComparison";
 import EmblaCarousel from "@/components/home/EmblaCarosal";
 import AugmentHeroSection from "@/components/home/HeroSection";
-import ViewsSection from "@/components/home/ViewsSection";
 import HowItWorksCard from "@/components/home/HowItWorks";
 import IntegrationsSection from "@/components/home/Integrations";
 import ClientsSection from "@/components/home/clients";
-import { companyLogos, homeFaqs } from "@/data/data";
+import { companyLogos, homeFaqs, solutionItems } from "@/data/data";
 import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
 import BrainFeatureSection from "@/components/home/BrainFeature";
 import TeamSolutionsSection from "@/components/home/TeamSolution";
-import AiPoweredWorkSection from "@/components/home/AIWorkedSection";
+import { homeMetadata } from "@/lib/seo";
+import StickySolutionsSection from "@/components/home/StickyControl";
 
+export const metadata = homeMetadata;
 export default function Home() {
   return (
     <main className="bg-white text-black relative">
@@ -28,10 +29,8 @@ export default function Home() {
           </div>
         </div>
       </div> 
-      <BrainFeatureSection />
       <TeamSolutionsSection />
-      {/* <FeaturedInSection /> */}
-      <ViewsSection />
+      <BrainFeatureSection isDark={false} />
       <FeaturesSection />
       <EmblaCarousel />
       <HowItWorksCard classes="pt-0" />
@@ -39,8 +38,9 @@ export default function Home() {
         title="Your stack, connected. Configured on delivery not figured out later."
         description="Every integration Supreme Coach supports is set up, tested, and live before we hand over the keys. No documentation to follow. No API keys to paste. No hoping two platforms will finally sync. You open your business and everything already works."
       />
-      <ClientsSection title="Trusted by growing companies" isShowCompanies={true} />
-      <AiPoweredWorkSection />
+      <ClientsSection title="Trusted by growing companies" isShowCompanies={false} />
+      <StickySolutionsSection items={solutionItems} />
+      {/* <AiPoweredWorkSection /> */}
       <BookCallSection
         title="Book a Discovery Call With Our Team"
         icon="solar:phone-linear"
@@ -58,29 +58,6 @@ export default function Home() {
         imgSrc="/certificate.webp"
       />
       <MissionComparisonSection />
-      {/* <BookCallSection
-        title="15-Day Money-Back Guarantee"
-        btnText="Enroll Now"
-        subTitle="Try Supreme Coach for 15 days and if you are not completely satisfied, you can claim a full refund - no questions asked."
-        topClasses="bg-[#000000]"
-        bottomClasses="bg-[#000000]"
-      /> */}
-
-
-      {/* <TeaserVideoSection /> */}
-      {/* <WhyAugmentSection /> */}
-      {/* <StudentTestimonialsSection /> */}
-      {/* <BookCallSection
-        title="Stand out with the Supreme Coach LinkedIn Certificate"
-        btnText="Enroll Now"
-        subTitle="Earn a certificate upon completion and display your business credentials on your resume and LinkedIn."
-        topClasses="bg-[#f3f4f6]"
-        bottomClasses="bg-[#000000]"
-        imgSrc="/certificate.webp"
-      />
-      <MissionComparisonSection />
-      
-      <FAQSection /> */}
     </main>
   );
 }

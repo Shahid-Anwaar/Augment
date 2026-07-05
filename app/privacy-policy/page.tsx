@@ -1,4 +1,5 @@
 import PrivacySectionsList from "@/components/privacy/PrivacySectionList";
+import { pricingMetadata } from "@/lib/seo";
 
 const privacySections = [
   {
@@ -137,6 +138,7 @@ const privacySections = [
   },
 ];
 
+export const metadata = pricingMetadata;
 export default function PrivacyPolicySection() {
   return (
     <section className="bg-white text-black">

@@ -6,26 +6,16 @@ import IntegrationsSection from "@/components/home/Integrations";
 import ClientsSection from "@/components/home/clients";
 import ProductsHeroSection from "@/components/products/ProductsHero";
 import ProductFeaturesSection from "@/components/products/ProductFeatures";
-import { companyLogos, Firms_FEATURES, Firms_FEATURES2, productFaqs } from "@/data/data";
+import { companyLogos, Firms_FEATURES, Firms_FEATURES2, productFaqs, solutionItems } from "@/data/data";
 import ProductSalesHubSection from "@/components/products/ProductSalesHub";
 import ProductTools from "@/components/products/ProductTools";
 import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
-import { createMetadata } from "@/lib/seo";
+import { productsMetadata } from "@/lib/seo";
 import WhatToInclude from "@/components/products/WhatInclude";
+import BrainFeatureSection from "@/components/home/BrainFeature";
+import StickySolutionsSection from "@/components/home/StickyControl";
 
-export const metadata = createMetadata({
-  title: "What We Build | Supreme Coach — Custom Coaching Business Infrastructure",
-  description: "Supreme Coach builds 8 custom coaching infrastructure components — website, CRM, client portal, programme delivery, funnels, AI, community, and payments — deployed on your own servers, owned by you.",
-  keywords: [
-    "done-for-you coaching business infrastructure", 
-    "coaching website design service UK", 
-    "custom coaching platform build", 
-    "coaching CRM setup service", 
-    "coaching business setup", 
-    "coaching programme delivery system"
-  ],
-  path: "/products",
-});
+export const metadata = productsMetadata;
 
 export default function ProductsPage() {
   return (
@@ -41,7 +31,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
-      {/* <ProductsCompaniesSection /> */}
+      <BrainFeatureSection isDark={false} />
       <ProductFeaturesSection
         title="Course creation tools for higher student engagement"
         description="So we give you the tools to give them the best learning experience possible. Keep them coming back—and referring their friends, too."
@@ -49,7 +39,7 @@ export default function ProductsPage() {
         imgSrc="/external-images/img-15da9c81.webp"
         imgAlt="Supreme Coach course onboarding and quiz preview"
         features={Firms_FEATURES}
-
+        wrapperClassName="bg-white pb-0!"
       />
       <ProductFeaturesSection
         title="Simple to build—and keep growing"
@@ -59,6 +49,16 @@ export default function ProductsPage() {
         features={Firms_FEATURES2}
         wrapperClassName="bg-white"
       />
+      <ProductFeaturesSection
+        title="Course creation tools for higher student engagement"
+        description="So we give you the tools to give them the best learning experience possible. Keep them coming back—and referring their friends, too."
+        imgShown="left"
+        imgSrc="/external-images/img-15da9c81.webp"
+        imgAlt="Supreme Coach course onboarding and quiz preview"
+        features={Firms_FEATURES}
+        wrapperClassName="bg-white pt-0!"
+
+      />
       <FeaturesSection isShowBtn={false} />
       <ProductSalesHubSection />
       <HowItWorksCard />
@@ -67,28 +67,11 @@ export default function ProductsPage() {
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
       <ClientsSection title="Supreme Coach success stories write themselves" />
+      <StickySolutionsSection items={solutionItems} />
       <ProductTools />
       <WhatToInclude />
       {/* <ProductSold /> */}
       <FAQSection faqs={productFaqs} />
-
-      {/* <FeaturedInSection />
-            <FacultySection />
-            <EmblaCarousel /> */}
-
-
-      {/* <ClientsSection /> */}
-     
-
-      {/* <BookCallSection
-                title="Stand out with the Supreme Coach LinkedIn Certificate"
-                btnText="Enroll Now"
-                subTitle="Earn a certificate upon completion and display your business credentials on your resume and LinkedIn."
-                topClasses="bg-[#f3f4f6]"
-                bottomClasses="bg-[#000000]"
-                imgSrc="/certificate.webp"
-            />
-            <MissionComparisonSection /> */}
       <BookCallSection
         title="Book a Demo with a Program Advisor"
         icon="solar:phone-linear"

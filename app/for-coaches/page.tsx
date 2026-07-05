@@ -4,13 +4,15 @@ import HowItWorksCard from "@/components/home/HowItWorks";
 import IntegrationsSection from "@/components/home/Integrations";
 import ClientsSection from "@/components/home/clients";
 import ProductFeaturesSection from "@/components/products/ProductFeatures";
-import { Coaches_FEATURES, Coaches_FEATURES2, coachesFaqs, Firms_FEATURES, Firms_FEATURES2, HowItWorksCardItem } from "@/data/data";
+import { Coaches_FEATURES, Coaches_FEATURES2, coachesFaqs, Firms_FEATURES, Firms_FEATURES2, HowItWorksCardItem, solutionItems } from "@/data/data";
 import ProductSalesHubSection from "@/components/products/ProductSalesHub";
 import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
 import FAQSection from "@/components/home/FaqSection";
-import { createMetadata } from "@/lib/seo";
+import { forCoachesMetadata } from "@/lib/seo";
 import CoachHeroSection from "@/components/for-coach/CoachHero";
 import FeaturesSection from "@/components/home/FacultySection";
+import BrainFeatureSection from "@/components/home/BrainFeature";
+import StickySolutionsSection from "@/components/home/StickyControl";
 
 const companyLogos = [
   {
@@ -186,22 +188,7 @@ const HOW_IT_WORKS_CARDS: HowItWorksCardItem[] = [
   },
 ];
 
-export const metadata = createMetadata({
-  title:
-    "Custom Coaching Business Infrastructure for Professional Coaches | Supreme Coach",
-  description:
-    "Supreme Coach builds custom coaching websites, client portals, CRM systems, and programme delivery — deployed on your own servers. For ACC, PCC, and MCC coaches. One-time investment, lifetime ownership.",
-  keywords: [
-    "done-for-you coaching business setup",
-    "coaching website design for coaches",
-    "ICF coach website",
-    "coaching CRM setup",
-    "coaching client portal",
-    "professional coach infrastructure",
-    "coaching business build",
-  ],
-  path: "/for-coaches",
-});
+export const metadata = forCoachesMetadata;
 
 export default function CoachesPage() {
   return (
@@ -217,7 +204,8 @@ export default function CoachesPage() {
           </div>
         </div>
       </div>
-      <ViewsSection />
+      <BrainFeatureSection isDark={false} />
+      <StickySolutionsSection items={solutionItems.slice(0, 3)} />
       <ProductFeaturesSection
         title="Programme creation tools built for coaches who take their client results seriously."
         description="A client who gets real, measurable outcomes doesn't just complete your programme they renew, refer, and come back for everything you build next."
@@ -226,7 +214,7 @@ export default function CoachesPage() {
         imgAlt="Supreme Coach course onboarding and quiz preview"
         features={Coaches_FEATURES}
         btnText="Book a Discovery Call"
-
+        wrapperClassName="bg-white py-0! sm:py-0! md:py-0! lg:py-0!"
       />
       <ProductFeaturesSection
         title="A community that keeps clients engaged long after the session ends."
@@ -237,11 +225,22 @@ export default function CoachesPage() {
         wrapperClassName="bg-white"
         btnText="Book a Discovery Call"
       />
+      <ProductFeaturesSection
+        title="Programme creation tools built for coaches who take their client results seriously."
+        description="A client who gets real, measurable outcomes doesn't just complete your programme they renew, refer, and come back for everything you build next."
+        imgShown="left"
+        imgSrc="/external-images/img-15da9c81.webp"
+        imgAlt="Supreme Coach course onboarding and quiz preview"
+        features={Coaches_FEATURES}
+        btnText="Book a Discovery Call"
+        wrapperClassName="bg-white pt-0! sm:pt-0! md:pt-0! lg:pt-0!"
+      />
       <ProductSalesHubSection
         btnText="Book a Discovery Call"
         title="Your coaching business and your financial command centre."
         subtitle="Supreme Coach handles every payment, every invoice, and every financial metric your business generates so you always know what's coming in, what's outstanding, and what your business is worth right now."
       />
+      
       <FeaturesSection />
       <HowItWorksCard
         steps={steps}
@@ -251,16 +250,9 @@ export default function CoachesPage() {
         title="It's your business, your way"
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
-      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={true} />
+      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
       <FAQSection faqs={coachesFaqs} />
-      <BookCallSection
-        title="Your Business. Your Licence. Your Infrastructure For Life."
-        btnText="Book a Discovery Call"
-        subTitle="Every Supreme Coach client receives a personal lifetime licence not a subscription, not a rental, not access that expires when you stop paying. "
-        topClasses="bg-[#f3f4f6]"
-        bottomClasses="bg-[#000000]"
-        imgSrc="/certificate.webp"
-      />
+      
     </main>
   );
 }

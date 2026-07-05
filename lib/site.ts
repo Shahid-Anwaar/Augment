@@ -1,6 +1,6 @@
 export const siteConfig = {
     name: "Supreme Coach ",
-    url: "https://supreme-coach.netlify.app/",
+    url: "https://supreme-coach.netlify.app",
     title: "Supreme Coach — Custom Coaching Business Infrastructure. Built For You. Owned By You.",
     description:
         "Supreme Coach builds custom coaching business infrastructure — website, CRM, client portal, programme delivery, AI tools — deployed on your own servers. One-time investment. You own everything.",

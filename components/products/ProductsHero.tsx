@@ -5,18 +5,18 @@ import { Icon } from "@iconify/react";
 export default function ProductsHeroSection() {
     return (
         <section className="bg-white">
-            <div className="section-container max-w-390 relative pb-3 sm:pb-5 md:pb-6 lg:pb-7 xl:pb-8 pt-32">
+            <div className="section-container relative pb-3 sm:pb-5 md:pb-6 lg:pb-7 xl:pb-8 pt-32 ">
                 <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(520px,1fr)] lg:gap-10 xl:gap-14">
-                    <div className="max-w-150 mx-auto text-center lg:text-left">
-                        <p className="section-label text-black">
-                            — Supreme Coach
+                    <div className=" text-center lg:text-left">
+                        <p className="section-label section-label-border text-black">
+                            Supreme Coach
                         </p>
 
-                        <h1 className="section-title hero-title mt-5 text-black lg:mt-6 lg:max-w-130">
-                         Deployed on Your Servers. Owned by You.
+                        <h1 className="section-title hero-title  text-black lg:max-w-180">
+                            Deployed on Your Servers. Owned by You.
                         </h1>
 
-                        <p className="section-description mx-auto mt-5 max-w-2xl text-black lg:mx-0 lg:mt-6 lg:max-w-130">
+                        <p className="section-description mx-auto mt-5 max-w-2xl text-black lg:mx-0 lg:mt-6 lg:max-w-170">
                             Supreme Coach is not software you subscribe to. We are a specialist build-and-deploy service for coaching businesses. We take our proven coaching infrastructure frameworks — refined across years of working inside coaching businesses — customise every component for your brand, audience, and methodology, and deploy everything on your own servers. You get battle-tested foundations with full custom precision. And you own all of it permanently.
                         </p>
 
@@ -25,7 +25,7 @@ export default function ProductsHeroSection() {
                                 href="/"
                                 className="contained-btn px-6 py-3 capitalize!"
                             >
-                                Book A Strategy Call  
+                                Book A Strategy Call
                                 <Icon
                                     icon="solar:phone-linear"
                                     width="19"
@@ -38,13 +38,13 @@ export default function ProductsHeroSection() {
                                 href="/pricing"
                                 className="outlined-btn px-6 py-3 capitalize!"
                             >
-                                See Our Project Investment Levels  
+                                See Our Project Investment Levels
                             </Link>
                         </div>
                     </div>
 
                     <div className="flex justify-center lg:justify-end">
-                        <div className="relative w-full max-w-190 overflow-hidden rounded-[14px] bg-[#f3f3f3] sm:rounded-[18px] lg:rounded-[20px]">
+                        <div className="relative w-full max-w-150 overflow-hidden rounded-[14px] bg-[#f3f3f3] sm:rounded-[18px] lg:rounded-[20px]">
                             <Image
                                 src="/external-images/img-36f1a8bd.webp"
                                 alt="Supreme Coach online courses dashboard on laptop"
@@ -58,7 +58,7 @@ export default function ProductsHeroSection() {
                     </div>
                 </div>
             </div>
-           
+
         </section>
     );
 }

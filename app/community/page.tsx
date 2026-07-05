@@ -1,15 +1,15 @@
 import BookCallSection from "@/components/home/BookCall";
-import Footer from "@/components/home/Footer";
 import FAQSection from "@/components/home/FaqSection";
-import { coachesFaqs, communityFaqs } from "@/data/data";
+import { communityFaqs } from "@/data/data";
 import CommunityHero from "@/components/community/CommunityHero";
 import StudentsTestmonials from "@/components/community/StudentsTestmonials";
 import StudentDirectory from "@/components/community/StudentDirectory";
 import StudentsCompaniesBuilt from "@/components/community/StudentCompanies";
 import InPersonEventsSection from "@/components/community/InPersonEvents";
 import EmblaCarousel from "@/components/home/EmblaCarosal";
+import { communityMetadata } from "@/lib/seo";
 
-
+export const metadata = communityMetadata;
 export default function CommunityPage() {
     return (
         <main className="bg-white text-black relative">
