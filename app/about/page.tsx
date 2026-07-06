@@ -1,25 +1,70 @@
-import BookCallSection from "@/components/home/BookCall";
-import Footer from "@/components/home/Footer";
-import FAQSection from "@/components/home/FaqSection";
-import { aboutFaqs, coachesFaqs } from "@/data/data";
-import CommunityHero from "@/components/community/CommunityHero";
-import StudentsTestmonials from "@/components/community/StudentsTestmonials";
-import StudentDirectory from "@/components/community/StudentDirectory";
-import StudentsCompaniesBuilt from "@/components/community/StudentCompanies";
-import InPersonEventsSection from "@/components/community/InPersonEvents";
-import EmblaCarousel from "@/components/home/EmblaCarosal";
-import ProductStories from "@/components/products/ProductStories";
-import AlumniStatsSection from "@/components/about/AluminyStatSection";
-import PressMediaSection from "@/components/about/PressMediaSection";
-import StorySection from "@/components/about/StorySection";
-import ManifestoSection from "@/components/about/ManifestoSection";
+import dynamic from "next/dynamic";
 import AboutHeroSection from "@/components/about/AboutHeroSection";
+import CustomLoader from "@/components/custom/CustomLoader";
+import { aboutFaqs } from "@/data/data";
 import { aboutMetadata } from "@/lib/seo";
 
+const ManifestoSection = dynamic(
+  () => import("@/components/about/ManifestoSection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const StorySection = dynamic(
+  () => import("@/components/about/StorySection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const PressMediaSection = dynamic(
+  () => import("@/components/about/PressMediaSection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const AlumniStatsSection = dynamic(
+  () => import("@/components/about/AluminyStatSection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const ProductStories = dynamic(
+  () => import("@/components/products/ProductStories"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const InPersonEventsSection = dynamic(
+  () => import("@/components/community/InPersonEvents"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const BookCallSection = dynamic(
+  () => import("@/components/home/BookCall"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const FAQSection = dynamic(
+  () => import("@/components/home/FaqSection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
 export const metadata = aboutMetadata;
+
 export default function AboutPage() {
   return (
-    <main className="bg-white text-black relative">
+    <main className="relative bg-white text-black">
       <AboutHeroSection />
       <ManifestoSection />
       <StorySection />

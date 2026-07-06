@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { HERO_SLIDES, HeroSlide } from "@/data/data";
 import CustomEmblaCarousel from "./CustomCarosal";
 import { FEATURES, heroSecurityItems } from "@/data/home";
+import Image from "next/image";
 
 type HeroFeature = {
   label: string;
@@ -55,7 +56,7 @@ export default function AugmentHeroSection({
     <section
       className={`hero-carousel relative z-1 overflow-hidden bg-black ${sectionClassName}`}
     >
-      <div className="relative mx-auto flex flex-col bg-black sm:pt-16 pt-14 lg:flex-row lg:items-center pb-2 maximum-width">
+      <div className="relative mx-auto flex flex-col bg-black pt-24 sm:pt-16 lg:flex-row lg:items-center pb-2 maximum-width">
         <div className="relative z-30 text-center text-white lg:col-span-5 lg:text-left xl:col-span-5">
           <p className="section-label section-label-border">
             For Coaches & Firms
@@ -113,12 +114,13 @@ export default function AugmentHeroSection({
                 key={item.name}
                 className="flex flex-col items-center justify-center text-center"
               >
-                <img
+                <Image
                   src={item.src}
                   alt={item.name}
                   width={item.width}
                   height={item.height}
-                  className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? " opacity-[0.7]" : " "}`}
+                  className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? "opacity-[0.7]" : ""
+                    }`}
                 />
 
                 <p className="mt-1 text-[13px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[15px] lg:text-[16px] xl:text-[17px]">
@@ -190,11 +192,13 @@ function HeroCard({ slide }: { slide: HeroSlide }) {
       ].join(" ")}
     >
       <div className="absolute inset-0 bg-black">
-        <img
+        <Image
           src={slide.image}
           alt={slide.name}
+          fill
+          sizes="100vw"
           className={[
-            "h-full w-full object-cover transition-all duration-700 ease-out",
+            "object-cover transition-all duration-700 ease-out",
             "scale-100 group-hover:opacity-0",
           ].join(" ")}
         />
@@ -230,11 +234,12 @@ function HeroCard({ slide }: { slide: HeroSlide }) {
                 "h-5 w-19.5 sm:h-6 sm:w-23 lg:h-6 lg:w-24 xl:h-7 xl:w-27",
               ].join(" ")}
             >
-              <img
+              <Image
                 src={slide.company}
                 alt={`${slide.name} company logo`}
-                className="h-full w-full object-contain object-left"
-                loading="lazy"
+                fill
+                sizes="108px"
+                className="object-contain object-left"
               />
             </figure>
           ) : (

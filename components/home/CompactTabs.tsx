@@ -1,4 +1,5 @@
 "use client";
+
 import { SolutionItem } from "@/data/data";
 
 type CompactSolutionTabsProps = {
@@ -19,7 +20,7 @@ export default function CompactSolutionTabs({
   return (
     <div
       className={[
-        "fixed left-0 right-0 z-30 bg-white transition-all duration-300",
+        "fixed left-0 right-0 hidden lg:block z-30 bg-white transition-all duration-300",
         show
           ? "pointer-events-auto translate-y-0 opacity-100"
           : "pointer-events-none -translate-y-5 opacity-0",
@@ -28,24 +29,31 @@ export default function CompactSolutionTabs({
         top: `${stickyTop}px`,
       }}
     >
-      <div className="mx-auto w-full max-w-[1560px] px-6 sm:px-8 md:px-10 lg:px-12">
-        <div className={`grid gap-4 sm:grid-cols-2  ${items.length !== 4 ? " lg:grid-cols-3" : " lg:grid-cols-4"}`}>
+      <div className="mx-auto w-full max-w-[1560px] px-4 sm:px-6 md:px-10 lg:px-12">
+        <div
+          className={`flex gap-2 overflow-x-auto py-2 pr-2 lg:grid lg:overflow-visible lg:py-0 lg:pr-0 lg:gap-4 ${
+            items.length !== 4 ? "lg:grid-cols-3" : "lg:grid-cols-4"
+          }`}
+        >
           {items.map((item, index) => {
             const isActive = index === activeIndex;
 
             return (
-              <div
+              <button
                 key={item.id}
+                type="button"
                 className={[
-                  "flex cursor-pointer items-center justify-center rounded-full px-3 py-2 text-center font-mono text-[13px] font-medium uppercase tracking-[0.08em] transition-all duration-300",
+                  "shrink-0 cursor-pointer whitespace-nowrap rounded-full px-3 py-1.5 text-center font-mono text-[10px] font-medium uppercase tracking-[0.06em] transition-all duration-300",
+                  "sm:px-4 sm:py-2 sm:text-[12px]",
+                  "lg:flex lg:items-center lg:justify-center lg:px-3 lg:py-2 lg:text-[13px] lg:tracking-[0.08em]",
                   isActive
                     ? "bg-primary text-black"
                     : "bg-[#f4f1ee] text-black",
                 ].join(" ")}
-                onClick={() => handleIndexChange && handleIndexChange(index)}
+                onClick={() => handleIndexChange?.(index)}
               >
                 {item.label}
-              </div>
+              </button>
             );
           })}
         </div>

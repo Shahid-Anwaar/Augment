@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import { HERO_SLIDES, HeroSlide } from "@/data/data";
 import CustomEmblaCarousel from "../home/CustomCarosal";
 import { FEATURES, heroSecurityItems } from "@/data/home";
+import Image from "next/image";
 
 type HeroFeature = {
     label: string;
@@ -129,19 +130,19 @@ export default function CoachHeroSection({
                                 {secondaryButtonText}
                             </Link>
                         </div>
-
-                        <div className="mt-5 lg:w-full flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between max-w-[33rem] ">
+                        <div className="mt-5 lg:w-full flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between max-w-[33rem]">
                             {securityItems.map((item, index) => (
                                 <div
                                     key={item.name}
                                     className="flex flex-col items-center justify-center text-center"
                                 >
-                                    <img
+                                    <Image
                                         src={item.src}
                                         alt={item.name}
                                         width={item.width}
                                         height={item.height}
-                                        className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? " opacity-[0.7]" : " "}`}
+                                        className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? "opacity-[0.7]" : ""
+                                            }`}
                                     />
 
                                     <p className="mt-1 text-[13px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[15px] lg:text-[16px] xl:text-[17px]">
@@ -266,13 +267,16 @@ function HeroCard({ slide }: { slide: HeroSlide }) {
             ].join(" ")}
         >
             <div className="absolute inset-0 bg-black">
-                <img
+                <Image
                     src={slide.image}
                     alt={slide.name}
+                    fill
+                    sizes="100vw"
                     className={[
-                        "h-full w-full object-cover transition-all duration-700 ease-out",
+                        "object-cover transition-all duration-700 ease-out",
                         "scale-100 group-hover:opacity-0",
                     ].join(" ")}
+                    priority={false}
                 />
 
                 <video
@@ -307,11 +311,12 @@ function HeroCard({ slide }: { slide: HeroSlide }) {
                                 "h-4.5 w-17 sm:h-5 sm:w-20 lg:h-5 lg:w-21 xl:h-6 xl:w-24",
                             ].join(" ")}
                         >
-                            <img
+                            <Image
                                 src={slide.company}
                                 alt={`${slide.name} company logo`}
-                                className="h-full w-full object-contain object-left"
-                                loading="lazy"
+                                fill
+                                sizes="96px"
+                                className="object-contain object-left"
                             />
                         </figure>
                     ) : (

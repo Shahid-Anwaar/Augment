@@ -306,7 +306,7 @@ export default function PricingSection() {
         <section className="section-spacing pb-5">
             <div className="section-container">
                 <div className="">
-                    <h2 className="section-title max-w-5xl hero-title mx-auto text-center">
+                    <h2 className="section-title pt-2 max-w-5xl hero-title mx-auto text-center">
                         Project Investment Levels. One-Time. You Own Everything. Forever.
                     </h2>
                     <p className="section-description text-black text-center mx-auto mt-4">

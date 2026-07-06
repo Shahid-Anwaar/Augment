@@ -13,56 +13,45 @@ export default function CoursesCommunity() {
     ]
     return (
         <div className="overflow-hidden bg-black text-white">
-            <div className="section-container section-spacing pb-0 text-center">
+            <div className="section-container section-spacing pb-0 pt-8 text-center sm:pt-16 lg:pt-20">
                 <h2 className="section-title mx-auto text-white">
                     Better Client Relationships. Data Backed Results. Predictable Business Growth.
                 </h2>
-                <p className="section-description mx-auto text-white/90">
-                   Supreme Coach designs and builds the complete infrastructure behind your coaching practice  so you attract the right clients, deliver an exceptional experience, and grow a business that runs without you holding it together.
+
+                <p className="section-description mx-auto mt-3 max-w-[900px] text-white/90 sm:mt-4">
+                    Supreme Coach designs and builds the complete infrastructure behind your
+                    coaching practice so you attract the right clients, deliver an exceptional
+                    experience, and grow a business that runs without you holding it together.
                 </p>
-                <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+
+                <div className="mt-4 flex flex-col items-center justify-center gap-2.5 sm:mt-5 sm:flex-row sm:flex-wrap sm:gap-3">
                     <Link
                         href="/"
-                        className="group contained-btn inline-flex w-full max-w-[260px] justify-center px-8 text-[14px] sm:w-auto sm:max-w-none sm:px-10"
+                        className="group contained-btn inline-flex w-full max-w-[240px] justify-center px-5 py-2.5 text-[12px] sm:w-auto sm:max-w-none sm:px-10 sm:text-[14px]"
                     >
-                        <span className="text-[0.98em] font-semibold uppercase tracking-[0.12em]">
+                        <span className="text-[0.9em] font-semibold uppercase tracking-[0.08em] sm:text-[0.98em] sm:tracking-[0.12em]">
                             Book a Discovery Call
                         </span>
 
                         <Icon
-                            icon={"solar:phone-linear"}
-                            width="19"
-                            height="19"
-                            className="shrink-0"
+                            icon="solar:phone-linear"
+                            width="18"
+                            height="18"
+                            className="shrink-0 sm:h-[19px] sm:w-[19px]"
                         />
                     </Link>
 
                     <Link
                         href="/contact-sales"
-                        className="closed-btn inline-flex w-full max-w-[260px] justify-center px-7 py-3 sm:w-auto sm:max-w-none"
+                        className="closed-btn inline-flex w-full max-w-[240px] justify-center px-5 py-2.5 text-[12px] sm:w-auto sm:max-w-none sm:px-12 sm:py-3 sm:text-[13px] lg:px-16 lg:text-[14px]"
                     >
                         Talk to Our Team
                     </Link>
                 </div>
-                <TrustBadgesSection />
 
-                {/* <div className="mt-6 grid grid-cols-5 gap-1 sm:mt-7 sm:gap-1.5 lg:mt-8 lg:flex lg:max-w-2xl lg:justify-center lg:gap-3 lg:mx-auto">
-                    {tempArray.map((item, index) => (
-                        <div
-                            key={index}
-                            className="relative mx-auto h-14 w-11 shrink-0 sm:h-16 sm:w-13 lg:h-28 lg:w-24"
-                        >
-                            <Image
-                                src={item}
-                                alt={`badge-${index}`}
-                                fill
-                                sizes="(max-width: 640px) 44px, (max-width: 1024px) 52px, 96px"
-                                className="object-cover"
-                                unoptimized
-                            />
-                        </div>
-                    ))}
-                </div> */}
+                <div className="mt-6 sm:mt-8">
+                    <TrustBadgesSection />
+                </div>
             </div>
         </div>
     )
