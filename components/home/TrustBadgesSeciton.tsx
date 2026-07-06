@@ -35,17 +35,17 @@ const topBadges = [
 
 const securityBadges = [
   {
-    src: "/external-images/img-8921ea20.webp",
+    src: "/external-images/img-8921ea20.png",
     alt: "AICPA SOC",
     className: "w-[78px] sm:w-[90px] md:w-[98px]",
   },
   {
-    src: "/external-images/img-9708ab6d.webp",
+    src: "/external-images/img-9708ab6d.png",
     alt: "GDPR",
     className: "w-[78px] sm:w-[90px] md:w-[98px]",
   },
   {
-    src: "/external-images/img-c16d13a5.webp",
+    src: "/external-images/img-c16d13a5.png",
     alt: "HIPAA",
     className: "w-[95px] sm:w-[110px] md:w-[125px]",
   },
@@ -67,7 +67,7 @@ const reviewBadges = [
 export default function TrustBadgesSection() {
   return (
     <section className="w-full px-4 py-12 sm:px-6 md:px-8 lg:px-10">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+      <div className="mx-auto flex max-w-[1100px] flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
         {/* Left Side */}
         <div className="flex flex-col items-center gap-7 lg:items-start">
           <div className="flex flex-wrap items-end justify-center gap-x-3 gap-y-4 lg:justify-start">
@@ -100,7 +100,7 @@ export default function TrustBadgesSection() {
         </div>
 
         {/* Right Side */}
-        <div className="flex shrink-0 flex-wrap items-center justify-center gap-6 sm:gap-8 lg:justify-end">
+        <div className="flex shrink-0 flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-end">
           {securityBadges.map((badge) => (
             <Image
               key={badge.alt}

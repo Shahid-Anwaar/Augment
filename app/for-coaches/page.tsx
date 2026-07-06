@@ -240,7 +240,6 @@ export default function CoachesPage() {
         title="Your coaching business and your financial command centre."
         subtitle="Supreme Coach handles every payment, every invoice, and every financial metric your business generates so you always know what's coming in, what's outstanding, and what your business is worth right now."
       />
-      
       <FeaturesSection />
       <HowItWorksCard
         steps={steps}
@@ -252,7 +251,6 @@ export default function CoachesPage() {
       />
       <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
       <FAQSection faqs={coachesFaqs} />
-      
     </main>
   );
 }

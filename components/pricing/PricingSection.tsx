@@ -46,18 +46,6 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
                     available: true,
                 },
                 {
-                    feature: "Basic sales dashboard",
-                    available: true,
-                },
-                {
-                    feature: "Upsells & cart recovery",
-                    available: true,
-                },
-                {
-                    feature: "Coupon codes",
-                    available: true,
-                },
-                {
                     feature: "Real-time support",
                     available: true,
                 },
@@ -87,18 +75,6 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
             features: [
                 {
                     feature: "Everything in Builder",
-                    available: true,
-                },
-                {
-                    feature: "50 products",
-                    available: true,
-                },
-                {
-                    feature: "Advanced revenue dashboard",
-                    available: true,
-                },
-                {
-                    feature: "Affiliate program",
                     available: true,
                 },
                 {
@@ -192,14 +168,6 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
                     available: true,
                 },
                 {
-                    feature: "5 admin seats",
-                    available: true,
-                },
-                {
-                    feature: "250 users",
-                    available: true,
-                },
-                {
                     feature: "25 forms",
                     available: true,
                 },
@@ -242,18 +210,6 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
                     available: true,
                 },
                 {
-                    feature: "Single Sign-On",
-                    available: true,
-                },
-                {
-                    feature: "Remove branding",
-                    available: true,
-                },
-                {
-                    feature: "15 admin seats",
-                    available: true,
-                },
-                {
                     feature: "1,000 users",
                     available: true,
                 },
@@ -293,14 +249,6 @@ const pricingData: Record<PricingTab, PricingPlan[]> = {
                 },
                 {
                     feature: "Customizable admin seats",
-                    available: true,
-                },
-                {
-                    feature: "Customizable user seats",
-                    available: true,
-                },
-                {
-                    feature: "Custom form limits",
                     available: true,
                 },
                 {
@@ -423,7 +371,7 @@ export default function PricingSection() {
                                     {plan.description}
                                 </p>
 
-                                <div className="mt-5 sm:mt-6">
+                                <div className="mt-2 sm:mt-3">
                                     {plan.oldPrice && (
                                         <p className="text-[18px] text-black/40 line-through sm:text-[20px] lg:text-[22px]">
                                             £{plan.oldPrice}
@@ -457,14 +405,14 @@ export default function PricingSection() {
                                     {plan.buttonText}
                                 </button>
 
-                                <ul className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
+                                <ul className="mt-6 space-y-2 sm:mt-8 sm:space-y-3">
                                     {plan.features.map((feature, index) => (
                                         <li
                                             key={feature.feature}
                                             className={`flex items-center gap-2 text-[13px] leading-[1.4] text-black sm:text-[14px] ${index !== plan.features.length - 1 ? " border-b pb-3 border-black/70" : ""}`}
                                         >
-                                            <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border ${feature.available ? "border-primary-500" : "border-red-500"}`}>
-                                                <Icon icon={feature.available ? "mdi:check" : "mdi:close"} className={`h-4 w-4 ${feature.available ? "text-primary-500" : "text-red-500"}`} />
+                                            <div className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border ${feature.available ? "border-primary-700" : "border-red-500"}`}>
+                                                <Icon icon={feature.available ? "mdi:check" : "mdi:close"} className={`h-3.5 w-3.5 ${feature.available ? "text-primary-700" : "text-red-500"}`} />
                                             </div>
                                             <span>{feature.feature}</span>
                                         </li>

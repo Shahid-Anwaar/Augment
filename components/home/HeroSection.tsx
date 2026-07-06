@@ -107,8 +107,8 @@ export default function AugmentHeroSection({
             </Link>
           </div>
 
-          <div className="mt-5 flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-start">
-            {securityItems.map((item) => (
+          <div className="mt-5 lg:w-full flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between lg:pr-3">
+            {securityItems.map((item, index) => (
               <div
                 key={item.name}
                 className="flex flex-col items-center justify-center text-center"
@@ -118,7 +118,7 @@ export default function AugmentHeroSection({
                   alt={item.name}
                   width={item.width}
                   height={item.height}
-                  className="h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12"
+                  className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? " opacity-[0.7]" : " "}`}
                 />
 
                 <p className="mt-1 text-[13px] font-normal leading-tight tracking-[-0.03em] text-white sm:text-[15px] lg:text-[16px] xl:text-[17px]">
@@ -163,7 +163,7 @@ export default function AugmentHeroSection({
                   return (
                     <div
                       key={index}
-                      className="min-h-105 min-w-0 shrink-0 grow-0 basis-full p-2 sm:min-h-130 sm:basis-1/2 lg:min-h-160 lg:basis-1/2 xl:basis-1/3"
+                      className="min-h-105 min-w-0 shrink-0 grow-0 basis-full p-2 sm:min-h-130 sm:basis-1/2 lg:min-h-151 lg:basis-1/2 xl:basis-1/3"
                     >
                       <HeroCard key={`${item.id}-${index}`} slide={item} />
                     </div>

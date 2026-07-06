@@ -25,41 +25,72 @@ export default function StickySolutionsSection({
   const [activeIndex, setActiveIndex] = useState(0);
   const [showCompactTabs, setShowCompactTabs] = useState(false);
 
+  const handleIndexChange = (index: number) => {
+    const wrapper = wrapperRef.current;
+
+    if (!wrapper || !items.length) return;
+
+    const safeIndex = clamp(index, 0, items.length - 1);
+
+    const viewportHeight = window.innerHeight - stickyTop;
+    const maxScroll = Math.max(wrapper.offsetHeight - viewportHeight, 1);
+
+    const stepHeight = maxScroll / items.length;
+
+    const targetScrolled =
+      safeIndex === items.length - 1
+        ? maxScroll
+        : stepHeight * safeIndex + 1;
+
+    const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
+
+    const targetY = wrapperTop - stickyTop + targetScrolled;
+
+    setActiveIndex(safeIndex);
+
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth",
+    });
+  };
+
+  const handleScroll = () => {
+    const wrapper = wrapperRef.current;
+    const leadCards = leadCardsRef.current;
+
+    if (!wrapper || !items.length) return;
+
+    const wrapperRect = wrapper.getBoundingClientRect();
+
+    if (leadCards) {
+      const cardsRect = leadCards.getBoundingClientRect();
+
+      // This waits until big cards are fully gone above navbar/header
+      const largeCardsGone = cardsRect.bottom <= stickyTop + 0;
+
+      // This keeps compact tabs visible during sticky section only
+      const stickyAreaNotFinished = wrapperRect.bottom > stickyTop + 600;
+
+      setShowCompactTabs(largeCardsGone && stickyAreaNotFinished);
+    }
+
+    const viewportHeight = window.innerHeight - stickyTop;
+    const maxScroll = Math.max(wrapper.offsetHeight - viewportHeight, 1);
+
+    const scrolled = clamp(stickyTop - wrapperRect.top, 0, maxScroll);
+
+    const stepHeight = maxScroll / items.length;
+
+    const nextIndex = Math.min(
+      items.length - 1,
+      Math.floor(scrolled / stepHeight),
+    );
+
+    setActiveIndex(nextIndex);
+  };
+
   useEffect(() => {
-   const handleScroll = () => {
-  const wrapper = wrapperRef.current;
-  const leadCards = leadCardsRef.current;
 
-  if (!wrapper || !items.length) return;
-
-  const wrapperRect = wrapper.getBoundingClientRect();
-
-  if (leadCards) {
-    const cardsRect = leadCards.getBoundingClientRect();
-
-    // This waits until big cards are fully gone above navbar/header
-    const largeCardsGone = cardsRect.bottom <= stickyTop + 0;
-
-    // This keeps compact tabs visible during sticky section only
-    const stickyAreaNotFinished = wrapperRect.bottom > stickyTop + 600;
-
-    setShowCompactTabs(largeCardsGone && stickyAreaNotFinished);
-  }
-
-  const viewportHeight = window.innerHeight - stickyTop;
-  const maxScroll = Math.max(wrapper.offsetHeight - viewportHeight, 1);
-
-  const scrolled = clamp(stickyTop - wrapperRect.top, 0, maxScroll);
-
-  const stepHeight = maxScroll / items.length;
-
-  const nextIndex = Math.min(
-    items.length - 1,
-    Math.floor(scrolled / stepHeight),
-  );
-
-  setActiveIndex(nextIndex);
-};
 
     handleScroll();
 
@@ -76,11 +107,12 @@ export default function StickySolutionsSection({
 
   return (
     <div className=" bg-white">
-      <LeadToDealsSection items={items} cardsRef={leadCardsRef} />
+      <LeadToDealsSection items={items} handleIndexChange={handleIndexChange} cardsRef={leadCardsRef} />
 
       <CompactSolutionTabs
         items={items}
         activeIndex={activeIndex}
+        handleIndexChange={handleIndexChange}
         show={showCompactTabs}
         stickyTop={stickyTop}
       />

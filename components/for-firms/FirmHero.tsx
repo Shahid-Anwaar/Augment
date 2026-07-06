@@ -62,7 +62,7 @@ export default function FirmHeroSection() {
                     </div>
 
                     <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-5 sm:gap-x-10">
-                        {heroSecurityItems.map((item) => (
+                        {heroSecurityItems.map((item, index) => (
                             <div
                                 key={item.name}
                                 className="flex flex-col items-center justify-center text-center"
@@ -72,8 +72,8 @@ export default function FirmHeroSection() {
                                     alt={item.name}
                                     width={item.width}
                                     height={item.height}
-                                    className="h-12 w-12"
-                                />
+                                    className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? " opacity-[0.7]" : " "}`}
+                                    />
                                 <p className="mt-1 text-[16px] font-normal tracking-[-0.03em] text-white sm:text-[18px]">
                                     {item.name}
                                 </p>

@@ -49,7 +49,7 @@ export default function Home() {
                 bottomClasses="bg-[#f3f4f6]"
       />
       <FAQSection faqs={homeFaqs} />
-      <BookCallSection
+      {/* <BookCallSection
         title="Your Business. Your Licence. Your Infrastructure For Life."
         btnText="Book a Discovery Call"
         subTitle="Every Supreme Coach client receives a personal lifetime licence not a subscription, not a rental, not access that expires when you stop paying."
@@ -57,7 +57,7 @@ export default function Home() {
         bottomClasses="bg-[#000000]"
         imgSrc="/certificate.webp"
       />
-      <MissionComparisonSection />
+      <MissionComparisonSection /> */}
     </main>
   );
 }

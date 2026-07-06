@@ -128,7 +128,7 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
 export default function ClientsSection({ title, isShowCompanies = true }: { title: string, isShowCompanies?: boolean }) {
   return (
     <section className="overflow-hidden bg-[#f3f4f6] py-5 sm:py-6 md:py-7 lg:py-8">
-      <div className="section-container">
+      <div className="section-container max-w-[1360px]">
         <div className="text-center">
           <span className="section-label text-black">Testimonials</span>
 

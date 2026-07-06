@@ -75,7 +75,7 @@ export default function ProductSalesHubSection(
         : { btnText?: string; title?: string; subtitle?: string; classes?: string; features?: SalesHubFeatureItem[] }) {
     return (
         <section className="bg-primary-300">
-            <div className="section-container py-10 sm:py-12 md:py-14 lg:py-18">
+            <div className="section-container max-w-[1360px] py-10 sm:py-12 md:py-14 lg:py-18">
                 <div className="grid grid-cols-1 gap-y-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-start lg:gap-x-12 xl:gap-x-16">
                     <div>
                         <h2 className="section-title max-w-lg text-black">

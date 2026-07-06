@@ -34,7 +34,7 @@ export default function BookCallSection({
                 <div className={bottomClasses} />
             </div>
 
-            <div className={`section-container relative z-1 ${cardClasses}`}>
+            <div className={`section-container max-w-[1360px] relative z-1 ${cardClasses}`}>
                 <div className="rounded-[10px] bg-white px-4 pb-8 pt-8 sm:rounded-[20px] sm:px-6 sm:pb-10 sm:pt-10 md:rounded-3xl md:px-10 md:pb-12 md:pt-12 lg:px-24 lg:py-20">
                     {hasImage ? (
                         <div className="grid grid-cols-1 items-center gap-y-8 md:grid-cols-[1.02fr_1fr] md:gap-x-6 lg:gap-x-8">

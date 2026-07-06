@@ -219,7 +219,7 @@ export default function EmblaCarousel({
             onMouseLeave={startAutoplay}
         >
             <div
-                className="overflow-hidden bg-[#f3f4f6] py-12 sm:py-16 md:py-18 lg:py-20"
+                className="overflow-hidden bg-[#f3f4f6] py-7 sm:py-8 md:py-10 lg:pt-12 lg:pb-4"
                 ref={emblaRef}
             >
                 <div className="-ml-3 flex touch-pan-y sm:-ml-4">
