@@ -1,26 +1,95 @@
-import BookCallSection from "@/components/home/BookCall";
-import FeaturesSection from "@/components/home/FacultySection";
-import FAQSection from "@/components/home/FaqSection";
-import MissionComparisonSection from "@/components/home/MissionComparison";
-import EmblaCarousel from "@/components/home/EmblaCarosal";
+import dynamic from "next/dynamic";
+
 import AugmentHeroSection from "@/components/home/HeroSection";
-import HowItWorksCard from "@/components/home/HowItWorks";
-import IntegrationsSection from "@/components/home/Integrations";
-import ClientsSection from "@/components/home/clients";
+import CustomLoader from "@/components/custom/CustomLoader";
 import { companyLogos, homeFaqs, solutionItems } from "@/data/data";
-import CompanyLogoCarousel from "@/components/home/CompaniesSlider";
-import BrainFeatureSection from "@/components/home/BrainFeature";
-import TeamSolutionsSection from "@/components/home/TeamSolution";
 import { homeMetadata } from "@/lib/seo";
-import StickySolutionsSection from "@/components/home/StickyControl";
+
+const CompanyLogoCarousel = dynamic(
+  () => import("@/components/home/CompaniesSlider"),
+  {
+    loading: () => <CustomLoader minHeightClass="min-h-[80px]" />,
+  }
+);
+
+const TeamSolutionsSection = dynamic(
+  () => import("@/components/home/TeamSolution"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const BrainFeatureSection = dynamic(
+  () => import("@/components/home/BrainFeature"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const FeaturesSection = dynamic(
+  () => import("@/components/home/FacultySection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const EmblaCarousel = dynamic(
+  () => import("@/components/home/EmblaCarosal"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const HowItWorksCard = dynamic(
+  () => import("@/components/home/HowItWorks"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const IntegrationsSection = dynamic(
+  () => import("@/components/home/Integrations"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const ClientsSection = dynamic(
+  () => import("@/components/home/clients"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const StickySolutionsSection = dynamic(
+  () => import("@/components/home/StickyControl"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const BookCallSection = dynamic(
+  () => import("@/components/home/BookCall"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
+
+const FAQSection = dynamic(
+  () => import("@/components/home/FaqSection"),
+  {
+    loading: () => <CustomLoader />,
+  }
+);
 
 export const metadata = homeMetadata;
+
 export default function Home() {
   return (
-    <main className="bg-white text-black relative">
+    <main className="relative bg-white text-black">
       <AugmentHeroSection />
       <div className="w-full bg-black">
-        <div className="max-w-full bg-white py-4 mx-auto">
+        <div className="mx-auto max-w-full bg-white py-4">
           <div className="mx-auto bg-white px-0">
             <CompanyLogoCarousel
               companyLogos={[...companyLogos, ...companyLogos]}
@@ -28,7 +97,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </div> 
+      </div>
       <TeamSolutionsSection />
       <BrainFeatureSection isDark={false} />
       <FeaturesSection />
@@ -38,26 +107,19 @@ export default function Home() {
         title="Your stack, connected. Configured on delivery not figured out later."
         description="Every integration Supreme Coach supports is set up, tested, and live before we hand over the keys. No documentation to follow. No API keys to paste. No hoping two platforms will finally sync. You open your business and everything already works."
       />
-      <ClientsSection title="Trusted by growing companies" isShowCompanies={false} />
+      <ClientsSection
+        title="Trusted by growing companies"
+        isShowCompanies={false}
+      />
       <StickySolutionsSection items={solutionItems} />
-      {/* <AiPoweredWorkSection /> */}
       <BookCallSection
         title="Book a Discovery Call With Our Team"
         icon="solar:phone-linear"
         subTitle="Tell us where your business is right now and where you're trying to take it. We'll show you exactly what Supreme Coach looks like in practice and give you an honest answer on whether it's the right fit."
-                topClasses="bg-[#f3f4f6]"
-                bottomClasses="bg-[#f3f4f6]"
+        topClasses="bg-[#f3f4f6]"
+        bottomClasses="bg-[#f3f4f6]"
       />
       <FAQSection faqs={homeFaqs} />
-      {/* <BookCallSection
-        title="Your Business. Your Licence. Your Infrastructure For Life."
-        btnText="Book a Discovery Call"
-        subTitle="Every Supreme Coach client receives a personal lifetime licence not a subscription, not a rental, not access that expires when you stop paying."
-        topClasses="bg-[#f3f4f6]"
-        bottomClasses="bg-[#000000]"
-        imgSrc="/certificate.webp"
-      />
-      <MissionComparisonSection /> */}
     </main>
   );
 }

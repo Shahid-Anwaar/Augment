@@ -24,8 +24,11 @@ export default function StickySolutionsSection({
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [showCompactTabs, setShowCompactTabs] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleIndexChange = (index: number) => {
+  const handleIndexChange = (index: number, isScrollImediately = false) => {
+    setIsLoading(true);
+
     const wrapper = wrapperRef.current;
 
     if (!wrapper || !items.length) return;
@@ -46,12 +49,22 @@ export default function StickySolutionsSection({
 
     const targetY = wrapperTop - stickyTop + targetScrolled;
 
-    setActiveIndex(safeIndex);
-
-    window.scrollTo({
-      top: targetY,
-      behavior: "smooth",
-    });
+    if (isScrollImediately) {
+      window.scrollTo({
+        top: targetY,
+        behavior: "smooth",
+      });
+    }
+    setTimeout(() => {
+      if (!isScrollImediately) {
+        window.scrollTo({
+          top: targetY,
+          behavior: "smooth",
+        });
+      }
+      setActiveIndex(safeIndex);
+      setIsLoading(false);
+    }, 1000);
   };
 
   const handleScroll = () => {
@@ -127,11 +140,11 @@ export default function StickySolutionsSection({
         <div
           className="sticky bg-white"
           style={{
-            top: `${stickyTop}px`,
+            top: `${stickyTop-70}px`,
             minHeight: ` 570px`,
           }}
         >
-          <ProspectingSection items={items} activeIndex={activeIndex} />
+          <ProspectingSection isLoading={isLoading} items={items} activeIndex={activeIndex} />
         </div>
       </section>
     </div>

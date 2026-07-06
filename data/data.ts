@@ -1876,6 +1876,630 @@ export const securityItems: SecurityItem[] = [
   },
 ];
 
+export const termsSections = [
+  {
+    title: "READ THE TERMS",
+    content: [
+      `Please read these Terms of Service carefully before using Simply.Coach. By accessing or using our website, platform, or services, you agree to follow these terms and all related policies.`,
+      `If you do not agree with these terms, you should not use the service.`,
+    ],
+  },
+  {
+    title: "1. RESPONSIBILITIES OF CUSTOMER",
+    content: [
+      `The customer is responsible for maintaining accurate account information, protecting login credentials, and ensuring that all users follow these terms while using the service.`,
+      `The customer must not use the service for unlawful, harmful, abusive, or unauthorized purposes.`,
+    ],
+  },
+  {
+    title: "2. TAXES",
+    content: [
+      `All fees are exclusive of applicable taxes unless clearly stated otherwise. The customer is responsible for paying any taxes, duties, or government charges related to the use of the service.`,
+    ],
+  },
+  {
+    title: "3. ACCESS",
+    content: [
+      `Simply.Coach grants the customer limited, non-exclusive, non-transferable access to use the service according to the selected plan and these terms.`,
+      `Access may be restricted, suspended, or terminated if the customer violates these terms or fails to meet payment obligations.`,
+    ],
+  },
+  {
+    title: "4. CHANGES TO THE SERVICE",
+    content: [
+      `Simply.Coach may update, improve, modify, or discontinue parts of the service from time to time to improve performance, security, or user experience.`,
+    ],
+  },
+  {
+    title: "5. OWNERSHIP OF IPR",
+    content: [
+      `All intellectual property rights related to Simply.Coach, including software, design, features, branding, content, and technology, remain the property of Simply.Coach or its licensors.`,
+      `Customers retain ownership of their own data and content uploaded to the platform.`,
+    ],
+  },
+  {
+    title: "6. OTHER SERVICES",
+    content: [
+      `The service may include integrations or links to third-party tools and services. Simply.Coach is not responsible for the availability, performance, or policies of third-party services.`,
+    ],
+  },
+  {
+    title: "7. BILLING, PLAN MODIFICATION AND PAYMENT",
+    content: [
+      `Customers agree to pay all fees according to the selected subscription plan, billing cycle, and payment terms.`,
+      `Plan changes, upgrades, downgrades, renewals, and cancellations will be handled according to the billing terms shown at the time of purchase or subscription.`,
+    ],
+  },
+  {
+    title: "8. TERM, TERMINATION AND SUSPENSION",
+    content: [
+      `These terms remain effective while the customer uses the service. Simply.Coach may suspend or terminate access if the customer violates these terms, fails to pay fees, or misuses the platform.`,
+      `Customers may stop using the service or cancel their subscription according to the cancellation process provided by Simply.Coach.`,
+    ],
+  },
+  {
+    title: "9. CONFIDENTIALITY",
+    content: [
+      `Both parties agree to protect confidential information shared during the use of the service and not disclose it to unauthorized parties, except where required by law.`,
+    ],
+  },
+  {
+    title: "10. DATA EXPORT",
+    content: [
+      `Customers may request or export their data where supported by the service. Simply.Coach may provide data export options according to the plan, technical limitations, and applicable policies.`,
+    ],
+  },
+  {
+    title: "11. DISCLAIMER OF WARRANTIES",
+    content: [
+      `The service is provided on an “as is” and “as available” basis. Simply.Coach does not guarantee that the service will always be error-free, uninterrupted, or suitable for every specific business need.`,
+    ],
+  },
+  {
+    title: "12. LIMITATION OF LIABILITY",
+    content: [
+      `To the maximum extent permitted by law, Simply.Coach shall not be liable for indirect, incidental, special, consequential, or loss-of-profit damages arising from the use of the service.`,
+    ],
+  },
+  {
+    title: "13. INDEMNIFICATION",
+    content: [
+      `The customer agrees to defend and indemnify Simply.Coach against claims, losses, damages, liabilities, and expenses arising from misuse of the service, violation of these terms, or infringement of third-party rights.`,
+    ],
+  },
+  {
+    title: "14. MISCELLANEOUS",
+    content: [
+      `These terms represent the complete agreement between the customer and Simply.Coach regarding the use of the service.`,
+      `If any part of these terms is found unenforceable, the remaining terms will continue to remain valid and enforceable.`,
+    ],
+  },
+  {
+    title: "15. DEFINITIONS",
+    content: [
+      `Certain words used in these Terms of Service may have specific meanings. These definitions apply throughout the terms unless the context clearly requires otherwise.`,
+    ],
+  },
+  {
+    title: "16. SUPPORT",
+    content: [
+      `Simply.Coach may provide customer support through available support channels. Support availability, response time, and scope may depend on the customer’s selected plan.`,
+    ],
+  },
+  {
+    title: "17. CONTACT",
+    content: [
+      `For questions about these Terms of Service, customers may contact Simply.Coach through the contact details available on the website.`,
+    ],
+  },
+];
+
+export const privacySections = [
+  {
+    title: "WHO WE ARE",
+    content: [
+      `Simply.Coach is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.`,
+      `By using our service, you agree to the collection and use of information in accordance with this Privacy Policy.`,
+    ],
+  },
+  {
+    title: "DEFINITIONS",
+    content: [
+      `For the purpose of this Privacy Policy, the terms used in this document shall have the meanings defined under the Terms of Service.`,
+    ],
+  },
+  {
+    title: "1. WHOM DOES THIS NOTICE APPLY TO?",
+    content: [
+      `This notice applies to individuals who interact with Simply.Coach, including website visitors, users, coaches, clients, customers, partners, and people who contact us for support or information.`,
+    ],
+    bullets: [
+      "Visit our website",
+      "Use our services",
+      "Register for an account",
+      "Contact us or interact with our platform",
+    ],
+  },
+  {
+    title: "2. WHAT PERSONAL DATA DOES SIMPLY.COACH COLLECT?",
+    content: [
+      `We may collect personal data such as your name, email address, contact details, company information, login details, usage data, device information, billing information, and communication preferences.`,
+      `We may also collect information through cookies, analytics tools, forms, support requests, and interactions with our website or services.`,
+    ],
+  },
+  {
+    title: "3. WHY DO WE PROCESS PERSONAL DATA AND WHAT ARE THE LEGAL BASES WE RELY ON?",
+    content: [
+      `We process personal data to provide our services, manage accounts, improve platform performance, communicate with users, ensure security, comply with legal obligations, and support business operations.`,
+    ],
+  },
+  {
+    title: "4. WITH WHOM DO WE SHARE PERSONAL DATA?",
+    content: [
+      `We may share personal data with trusted service providers, payment processors, hosting partners, analytics providers, legal authorities, or business partners where required to deliver our services or comply with legal obligations.`,
+    ],
+  },
+  {
+    title: "5. HOW DOES SIMPLY.COACH KEEP PERSONAL DATA SECURE?",
+    content: [
+      `We use reasonable technical and organizational measures to protect personal data from unauthorized access, loss, misuse, alteration, or disclosure.`,
+    ],
+  },
+  {
+    title: "6. YOUR RIGHTS",
+    content: [
+      `Depending on your location, you may have rights to access, correct, delete, restrict, object to processing, or request a copy of your personal data.`,
+    ],
+  },
+  {
+    title: "7. RIGHTS UNDER HEALTH INSURANCE PORTABILITY AND ACCOUNTABILITY ACT",
+    content: [
+      `Where applicable, Simply.Coach may process certain information in accordance with relevant health information privacy and data protection obligations.`,
+    ],
+  },
+  {
+    title: "8. OPTING OUT PROCEDURE",
+    content: [
+      `You may opt out of certain marketing communications by following the unsubscribe instructions included in our emails or by contacting us directly.`,
+    ],
+  },
+  {
+    title: "9. OTHER COMMUNICATIONS",
+    content: [
+      `We may send important service-related communications such as account notices, security alerts, billing updates, or changes to our terms and policies.`,
+    ],
+  },
+  {
+    title: "10. RETENTION OF PERSONAL DATA",
+    content: [
+      `We retain personal data only for as long as necessary to provide our services, meet legal obligations, resolve disputes, and enforce agreements.`,
+    ],
+  },
+  {
+    title: "11. LINKS TO THIRD PARTY SITES",
+    content: [
+      `Our website may contain links to third-party websites. We are not responsible for the privacy practices, content, or security of those external websites.`,
+    ],
+  },
+  {
+    title: "12. GOOGLE API DISCLOSURE",
+    content: [
+      `Simply.Coach may use Google API services where required. Any use of Google user data will comply with applicable Google API Services User Data Policy requirements.`,
+    ],
+  },
+  {
+    title: "13. MICROSOFT API DISCLOSURE",
+    content: [
+      `Simply.Coach may use Microsoft API services where required. Any access to Microsoft user data is handled only for the intended service purpose.`,
+    ],
+  },
+  {
+    title: "14. ZOOM API DISCLOSURE",
+    content: [
+      `Simply.Coach may connect with Zoom services where required for scheduling, meetings, or coaching sessions. Zoom-related information is handled only for service-related purposes.`,
+    ],
+  },
+  {
+    title: "15. NOTICE TO END-USER AND OTHER EXCLUSIONS",
+    content: [
+      `Where Simply.Coach is used by an organization, that organization may control certain data and account settings. End users should contact their organization for privacy requests related to such data.`,
+    ],
+  },
+  {
+    title: "16. CHILDREN’S PERSONAL DATA",
+    content: [
+      `Our services are not intended for children under the applicable legal age. We do not knowingly collect personal data from children without proper consent.`,
+    ],
+  },
+  {
+    title: "17. AMENDMENTS",
+    content: [
+      `We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date.`,
+    ],
+  },
+  {
+    title: "18. EFFECT OF MERGER OR ACQUISITION",
+    content: [
+      `If Simply.Coach is involved in a merger, acquisition, restructuring, or sale of assets, personal data may be transferred as part of that transaction.`,
+    ],
+  },
+  {
+    title: "19. CONTACTING SIMPLY.COACH",
+    content: [
+      `For questions about this Privacy Policy or your personal data, you may contact Simply.Coach through the contact details provided on our website.`,
+    ],
+  },
+];
+
+export const coach_steps = [
+  "Be Found",
+  "Build Trust",
+  "Sign Clients",
+  "Deliver Results",
+  "Grow Quietly",
+];
+
+export const Coach_HOW_IT_WORKS_CARDS: HowItWorksCardItem[] = [
+  {
+    id: 1,
+    step: "01",
+    label: "BE FOUND",
+    title: "The right clients are searching for you. Make sure they find you.",
+    description:
+      "Most coaching websites are invisible to search engines and forgettable to visitors. Supreme Coach builds a digital presence that works 24/7 so you're discoverable, credible, and compelling before a single conversation takes place.",
+    image: "/hiw-img2.webp",
+    cta: "Book a Discovery Call",
+    points: [
+      {
+        icon: "lucide:layout-template",
+        text: "7-page website funnel built around your niche, your methodology, and your ideal client",
+      },
+      {
+        icon: "lucide:search-check",
+        text: "Complete SEO setup local and national so you appear when clients are searching",
+      },
+      {
+        icon: "lucide:magnet",
+        text: "Lead magnet designed and positioned to attract qualified prospects automatically",
+      },
+      {
+        icon: "lucide:badge-check",
+        text: "Your brand, your domain, your identity fully white-label from day one",
+      },
+    ],
+  },
+  {
+    id: 2,
+    step: "02",
+    label: "BUILD TRUST",
+    title: "Clients don't buy coaching. They buy the person they trust most.",
+    description:
+      "Trust isn't built in a single visit. Supreme Coach builds the nurture infrastructure that keeps you present and credible in a prospect's mind from first contact until they're ready to commit.",
+    image: "/hiw-img1.webp",
+    cta: "Book a Discovery Call",
+    points: [
+      {
+        icon: "lucide:mail-check",
+        text: "Automated email sequences that nurture leads while you sleep",
+      },
+      {
+        icon: "lucide:circle-play",
+        text: "Free community or free lesson preview that lets prospects experience your work before buying",
+      },
+      {
+        icon: "lucide:bell-ring",
+        text: "Notification journeys triggered by behaviour, sending the right message at exactly the right moment",
+      },
+      {
+        icon: "lucide:clipboard-check",
+        text: "Client assessments that show prospects you understand their situation before they've paid a penny",
+      },
+    ],
+  },
+  {
+    id: 3,
+    step: "03",
+    label: "SIGN CLIENTS",
+    title: "Stop losing clients between the first conversation and the signed contract.",
+    description:
+      "The gap between interest and enrolment is where most coaches lose revenue. Supreme Coach closes that gap with booking, pipeline tracking, payment, and onboarding all connected and running automatically.",
+    image: "/hiw-img3.webp",
+    cta: "Book a Discovery Call",
+    points: [
+      {
+        icon: "lucide:calendar-check",
+        text: "Book-a-call page integrated with Calendly, Cal.com, and Zoom with no back-and-forth scheduling",
+      },
+      {
+        icon: "lucide:kanban",
+        text: "Sales pipeline tracking every prospect from first message to signed client",
+      },
+      {
+        icon: "lucide:credit-card",
+        text: "Stripe, PayPal, Google Pay, and Apple Pay so clients pay the moment they're ready",
+      },
+      {
+        icon: "lucide:user-check",
+        text: "Automated onboarding triggered on payment so first impressions are handled before you've lifted a finger",
+      },
+    ],
+  },
+  {
+    id: 4,
+    step: "04",
+    label: "DELIVER RESULTS",
+    title:
+      "Clients who get visible results stay longer, refer more, and buy everything you build next.",
+    description:
+      "Supreme Coach builds a client experience that makes your coaching feel as premium as it actually is: structured delivery, clear progress, and the engagement tools that keep clients active between every session.",
+    image: "/hiw-img4.webp",
+    cta: "Book a Discovery Call",
+    points: [
+      {
+        icon: "lucide:monitor-smartphone",
+        text: "Branded client portal with unlimited programmes, modules, and lesson formats",
+      },
+      {
+        icon: "lucide:target",
+        text: "Goal tracking and milestone management so progress is visible to both you and the client at every stage",
+      },
+      {
+        icon: "lucide:activity",
+        text: "Habit trackers, journals, quizzes, and 30-day challenges built directly into your programmes",
+      },
+      {
+        icon: "lucide:timeline",
+        text: "Client timeline with every session, milestone, and interaction logged automatically so you always know the full story",
+      },
+    ],
+  },
+  {
+    id: 5,
+    step: "05",
+    label: "GROW QUIETLY",
+    title: "The business that grows while you coach, not instead of it.",
+    description:
+      "Every referral, renewal, and new client should come from the system working, not from you posting every day and hoping someone enquires. Supreme Coach builds the infrastructure that compounds in the background so your business grows without you adding more hours to your week.",
+    image: "/hiw-img5.webp",
+    cta: "Book a Discovery Call",
+    points: [
+      {
+        icon: "lucide:repeat",
+        text: "Automated renewal flows triggered before a programme ends so retention happens without the awkward ask",
+      },
+      {
+        icon: "lucide:users-round",
+        text: "Community spaces that keep clients engaged, connected, and associated with the results you delivered",
+      },
+      {
+        icon: "lucide:workflow",
+        text: "Automation workflows that remove every recurring manual task permanently",
+      },
+      {
+        icon: "lucide:gauge",
+        text: "BFM Dashboard showing revenue, lifetime client value, and pipeline in real time so you always know where your business stands",
+      },
+    ],
+  },
+];
+
+
+export const firmCompanyLogos = [
+  {
+    title: "AA",
+    image: "/external-images/img-cdcf3d31.webp",
+  },
+  {
+    title: "AK",
+    image: "/external-images/img-e982166d.webp",
+  },
+  {
+    title: "CIET",
+    image: "/external-images/img-129b3243.webp",
+  },
+  {
+    title: "Visy",
+    image: "/external-images/img-c6334e3e.webp",
+  },
+  {
+    title: "GFS",
+    image: "/external-images/img-696b08de.webp",
+  },
+];
+
+export const Firm_SALES_HUB_FEATURES = [
+  {
+    title: "Corporate payments",
+    description:
+      "One invoice per company regardless of how many employees are enrolled. Every corporate client billed professionally and automatically with no manual step, no chasing.",
+    image:
+      "/external-images/img-f04c8b1e.webp",
+    imageAlt: "Corporate payments preview",
+    objClass: "",
+  },
+  {
+    title: "Tax-compliant invoicing",
+    description:
+      "Every invoice generated, formatted, and sent without your team touching it. Individual receipts, company invoices, and VAT applied correctly per client location all handled automatically.",
+    image:
+      "/external-images/img-a96842b1.webp",
+    imageAlt: "Tax-compliant invoicing preview",
+    objClass: "lg:-translate-y-28",
+  },
+  {
+    title: "BFM Dashboard",
+    description:
+      "Revenue per coach, pipeline forecasting, corporate contract values, and lifetime client value across the entire operation in one real-time view, no spreadsheet required.",
+    image:
+      "/external-images/img-ae29ee70.webp",
+    imageAlt: "BFM dashboard preview",
+    // objClass: "lg:-translate-y-14",
+  },
+  {
+    title: "Modeller Agents",
+    description:
+      "The Modeller simulates revenue scenarios in seconds. The Analyst flags anomalies before they become problems. The Planner tells you exactly what to do next based on live data, not gut feeling.",
+    image:
+      "/external-images/img-a96842b1.webp",
+    imageAlt: "Modeller agents analytics dashboard preview",
+    objClass: "lg:-translate-y-28",
+  },
+];
+
+export const firm_steps = [
+  "Win Clients",
+  "Coordinate Teams",
+  "Deliver at Scale",
+  "Prove ROI",
+  "Scale Operations",
+];
+
+export const Firm_HOW_IT_WORKS_CARDS: HowItWorksCardItem[] = [
+  {
+    id: 1,
+    step: "01",
+    label: "WIN CLIENTS",
+    title: "Corporate clients don't buy on instinct. They buy on evidence.",
+    description:
+      "Winning a firm-level contract requires more than a great conversation; it requires a professional pipeline, a credible digital presence, and a sales process that moves corporate buyers from interest to signed agreement without losing momentum.",
+    image: "/hiw-img2.webp",
+    cta: "Talk to Our Team",
+    points: [
+      {
+        icon: "lucide:chart-no-axes-combined",
+        text: "Sales pipeline tracking every corporate prospect from first enquiry to signed contract with estimated value at every stage",
+      },
+      {
+        icon: "lucide:target",
+        text: "ICP profiler to identify, target, and prioritise the organisations most likely to buy",
+      },
+      {
+        icon: "lucide:layout-template",
+        text: "Standalone funnels and landing pages for each service line built and live without a separate tool",
+      },
+      {
+        icon: "lucide:file-signature",
+        text: "Proposals triggered automatically after a discovery call so nothing falls through the gaps between conversations",
+      },
+    ],
+  },
+  {
+    id: 2,
+    step: "02",
+    label: "COORDINATE TEAMS",
+    title:
+      "When the team grows, the coordination problem grows with it unless the infrastructure is built for it.",
+    description:
+      "Every new coach on your team is a new variable. Supreme Coach removes the coordination overhead. Role-based access, shared programme delivery, and activity tracking across the whole operation mean your team stays aligned without status meetings or shared inboxes.",
+    image: "/hiw-img1.webp",
+    cta: "Talk to Our Team",
+    points: [
+      {
+        icon: "lucide:users-round",
+        text: "Team portal with role-based permissions coach, admin, account manager, analyst each seeing exactly what they need",
+      },
+      {
+        icon: "lucide:clipboard-list",
+        text: "Shared programme templates so every coach delivers to the same standard regardless of experience level",
+      },
+      {
+        icon: "lucide:activity",
+        text: "Activity tracking across the full team so you can see what's happening without chasing anyone for updates",
+      },
+      {
+        icon: "lucide:messages-square",
+        text: "Internal messaging separate from client-facing communications so there are no crossed wires, ever",
+      },
+    ],
+  },
+  {
+    id: 3,
+    step: "03",
+    label: "DELIVER AT SCALE",
+    title:
+      "Consistent delivery across multiple coaches, multiple clients, and multiple programmes without the founder holding it all together.",
+    description:
+      "The risk in a growing coaching firm isn't capacity, it's consistency. Supreme Coach builds the delivery infrastructure that makes every client experience the same, regardless of which coach is delivering it or how many clients are being served simultaneously.",
+    image: "/hiw-img3.webp",
+    cta: "Talk to Our Team",
+    points: [
+      {
+        icon: "lucide:monitor-smartphone",
+        text: "Branded client portal fully white-label, with your firm's identity on every touchpoint",
+      },
+      {
+        icon: "lucide:user-plus",
+        text: "Bulk enrolment for corporate cohorts so you can register an entire company team in seconds",
+      },
+      {
+        icon: "lucide:video",
+        text: "Live event studio for masterclasses, cohort kickoffs, and group sessions with broadcast and moderation built in",
+      },
+      {
+        icon: "lucide:users",
+        text: "Community spaces for cohort engagement that are private, branded, and attached to your programmes",
+      },
+    ],
+  },
+  {
+    id: 4,
+    step: "04",
+    label: "PROVE ROI",
+    title: "The report that renews the contract before you've asked for it.",
+    description:
+      "Corporate clients need evidence. L&D buyers and HR directors sign renewals based on data: utilisation rates, engagement scores, goal completion, and measurable outcomes across their team. Supreme Coach generates that evidence automatically.",
+    image: "/hiw-img4.webp",
+    cta: "Talk to Our Team",
+    points: [
+      {
+        icon: "lucide:building-2",
+        text: "Corporate hierarchy to manage organisations, budget holders, and individual employees under one clean account",
+      },
+      {
+        icon: "lucide:bar-chart-3",
+        text: "Company-level reporting for utilisation, programme completion, and engagement across the entire team in one dashboard",
+      },
+      {
+        icon: "lucide:timeline",
+        text: "Individual client timelines nested under the company account with every session, milestone, and outcome recorded automatically",
+      },
+      {
+        icon: "lucide:receipt-text",
+        text: "Automated invoicing per company with one professional, tax-compliant invoice sent without manual input",
+      },
+    ],
+  },
+  {
+    id: 5,
+    step: "05",
+    label: "SCALE OPERATIONS",
+    title:
+      "The operational layer that lets a coaching firm grow without the founder doing everything manually.",
+    description:
+      "Most coaching firms hit a ceiling because their operations can't hold more complexity without breaking. Supreme Coach builds the automation, financial visibility, and AI-powered intelligence that removes that ceiling permanently.",
+    image: "/hiw-img5.webp",
+    cta: "Talk to Our Team",
+    points: [
+      {
+        icon: "lucide:workflow",
+        text: "Automation workflows that connect enrolment, payment, onboarding, delivery, and renewal so the business runs automatically once built",
+      },
+      {
+        icon: "lucide:gauge",
+        text: "BFM Dashboard showing MRR, lifetime client value, pipeline revenue, and outstanding invoices in one real-time view",
+      },
+      {
+        icon: "lucide:bot",
+        text: "Three AI Agents working in the background: the Modeller, the Analyst, and the Planner",
+      },
+      {
+        icon: "lucide:badge-check",
+        text: "Full white-label platform with client portal, team portal, and custom domain so every touchpoint carries your firm's brand, not ours",
+      },
+    ],
+  },
+];
+
 export type FAQItem = {
   question: string;
   answer: string;

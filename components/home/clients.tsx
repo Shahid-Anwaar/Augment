@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Icon } from "@iconify/react";
-import { useState } from "react";
 import CustomEmblaCarousel from "./CustomCarosal";
 import CompanyLogoCarousel from "./CompaniesSlider";
 import { companyLogos } from "@/data/data";
@@ -72,9 +71,9 @@ const TESTIMONIALS: TestimonialItem[] = [
 
 export function TestimonialCard({ item }: { item: TestimonialItem }) {
   return (
-    <article className="min-w-0 w-full rounded-xl border lg:border-0 border-[#cfc8bf] bg-[#f5f3ef] p-3 sm:p-4 md:p-5 lg:px-0 lg:py-0">
-      <div className="grid h-full min-w-0 gap-1 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[370px_minmax(0,1fr)]">
-        <div className="relative w-full overflow-hidden rounded-xl border border-[#cfc8bf] aspect-[4/4.2] lg:aspect-auto lg:min-h-[430px] xl:min-h-[460px]">
+    <article className="min-w-0 w-full rounded-xl border border-[#cfc8bf] bg-[#f5f3ef] p-2.5 sm:p-4 md:p-5 lg:border-0 lg:px-0 lg:py-0">
+      <div className="grid h-full min-w-0 gap-2.5 sm:gap-3 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-0 xl:grid-cols-[370px_minmax(0,1fr)]">
+        <div className="relative w-full overflow-hidden rounded-xl border border-[#cfc8bf] aspect-[4/3.25] sm:aspect-[4/3.8] md:aspect-[4/4] lg:aspect-auto lg:min-h-70 xl:min-h-80">
           <Image
             src={item.image}
             alt={item.name}
@@ -84,35 +83,35 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
           />
         </div>
 
-        <div className="min-w-0 flex min-h-137 sm:min-h-90 md:min-h-80 lg:min-h-120 flex-col rounded-xl border border-[#cfc8bf] bg-white p-4 sm:p-5 lg:p-5 xl:p-6">
-          <blockquote className="quote-text mb-auto min-w-0 text-start text-black break-words">
+        <div className="min-w-0 flex min-h-[220px] flex-col rounded-xl border border-[#cfc8bf] bg-white p-3.5 sm:min-h-[300px] sm:p-5 md:min-h-[320px] lg:min-h-85 lg:p-5 xl:p-6">
+          <blockquote className="quote-text mb-auto min-w-0 break-words text-start text-black">
             “{item.quote}”
           </blockquote>
 
-          <div className="mt-6 border-t border-[#cec8c0] pt-3 sm:pt-4 lg:mt-auto">
-            <div className="flex items-end justify-between gap-4 sm:gap-5">
+          <div className="mt-5 border-t border-[#cec8c0] pt-3 sm:mt-6 sm:pt-4 lg:mt-auto">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-5">
               <div className="min-w-0 text-start">
                 <h3 className="truncate text-[12px] font-semibold text-black/70 sm:text-[13px]">
                   {item.name}
                 </h3>
 
-                <p className="mt-1 text-[11px] leading-[1.45] text-black/70 sm:text-[13px]">
+                <p className="mt-1 break-words text-[11px] leading-[1.45] text-black/70 sm:text-[13px]">
                   {item.role ? `${item.role} | ${item.company}` : item.company}
                 </p>
               </div>
 
-              <div className="relative h-8 w-18 shrink-0 sm:h-10 sm:w-24 md:w-28">
+              <div className="relative h-7 w-18 shrink-0 self-start sm:h-10 sm:w-24 sm:self-auto md:w-28">
                 {item.logo ? (
                   <Image
                     src={item.logo}
                     alt={item.company}
                     fill
-                    className="object-contain object-right-bottom"
+                    className="object-contain object-left-bottom sm:object-right-bottom"
                     sizes="116px"
                     unoptimized
                   />
                 ) : (
-                  <span className="text-sm font-semibold text-black/60">
+                  <span className="break-words text-xs font-semibold text-black/60 sm:text-sm">
                     {item.company}
                   </span>
                 )}
@@ -127,7 +126,7 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
 
 export default function ClientsSection({ title, isShowCompanies = true }: { title: string, isShowCompanies?: boolean }) {
   return (
-    <section className="overflow-hidden bg-[#f3f4f6] py-5 sm:py-6 md:py-7 lg:py-8">
+    <section className="overflow-hidden bg-[#f3f4f6]">
       <div className="section-container max-w-[1360px]">
         <div className="text-center">
           <span className="section-label text-black">Testimonials</span>

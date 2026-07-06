@@ -66,54 +66,54 @@ const reviewBadges = [
 
 export default function TrustBadgesSection() {
   return (
-    <section className="w-full px-4 py-12 sm:px-6 md:px-8 lg:px-10">
-      <div className="mx-auto flex max-w-[1100px] flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-        {/* Left Side */}
-        <div className="flex flex-col items-center gap-7 lg:items-start">
-          <div className="flex flex-wrap items-end justify-center gap-x-3 gap-y-4 lg:justify-start">
-            {topBadges.map((badge) => (
-              <Image
-                key={badge.alt}
-                src={badge.src}
-                alt={badge.alt}
-                width={80}
-                height={100}
-                unoptimized
-                className="h-auto w-[58px] sm:w-[66px] md:w-[72px] lg:w-[76px]"
-              />
-            ))}
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5 lg:justify-start lg:pl-[70px]">
-            {reviewBadges.map((badge) => (
-              <Image
-                key={badge.alt}
-                src={badge.src}
-                alt={badge.alt}
-                width={170}
-                height={55}
-                unoptimized
-                className={`h-auto object-contain ${badge.className}`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Right Side */}
-        <div className="flex shrink-0 flex-wrap items-center justify-center gap-3 sm:gap-4 lg:justify-end">
-          {securityBadges.map((badge) => (
-            <Image
-              key={badge.alt}
-              src={badge.src}
-              alt={badge.alt}
-              width={130}
-              height={130}
-              unoptimized
-              className={`h-auto object-contain ${badge.className}`}
-            />
-          ))}
-        </div>
+    <section className="w-full overflow-hidden px-4 py-8 sm:px-6 sm:py-12 md:px-8 lg:px-10">
+  <div className="mx-auto flex max-w-[1100px] flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:justify-between">
+    {/* Left Side */}
+    <div className="flex min-w-0 flex-col items-center gap-5 sm:gap-7 lg:items-start">
+      <div className="flex flex-wrap items-end justify-center gap-x-2.5 gap-y-3 sm:gap-x-3 sm:gap-y-4 lg:justify-start">
+        {topBadges.map((badge) => (
+          <Image
+            key={badge.alt}
+            src={badge.src}
+            alt={badge.alt}
+            width={80}
+            height={100}
+            unoptimized
+            className="h-auto w-[46px] sm:w-[66px] md:w-[72px] lg:w-[76px]"
+          />
+        ))}
       </div>
-    </section>
+
+      <div className="flex items-center justify-center gap-3 sm:gap-5 lg:justify-start lg:pl-[70px]">
+        {reviewBadges.map((badge) => (
+          <Image
+            key={badge.alt}
+            src={badge.src}
+            alt={badge.alt}
+            width={170}
+            height={55}
+            unoptimized
+            className={`h-auto max-w-[130px] object-contain sm:max-w-none ${badge.className}`}
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* Right Side */}
+    <div className="flex min-w-0 shrink-0 items-center justify-center gap-2.5 sm:gap-4 lg:justify-end">
+      {securityBadges.map((badge) => (
+        <Image
+          key={badge.alt}
+          src={badge.src}
+          alt={badge.alt}
+          width={130}
+          height={130}
+          unoptimized
+          className={`h-auto max-w-[82px] object-contain sm:max-w-none ${badge.className}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
   );
 }

@@ -41,41 +41,49 @@ const BRAIN_CARDS: BrainCard[] = [
 export default function BrainGrid({cards = BRAIN_CARDS, classes = "rounded-lg", isDark}: {cards?: BrainCard[], classes?: string, isDark?: boolean}) {
     console.log(isDark, "isDark");
     
-    return <div className={`grid overflow-hidden border border-white/10 md:grid-cols-3 ${isDark ? " bg-black" : " bg-white"} ${classes} `}>
-        {cards.map((card) => (
-            <article
-                key={card.id}
-                className={`relative min-h-[430px] overflow-hidden border-b last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 ${isDark ? " bg-black border-white/10" : " bg-gray-50/80 border-black/10"}`}
-            >
-                {/* Text */}
-                <div className="relative z-20 px-6 py-7 sm:px-8 sm:py-8 lg:px-10">
-                    <p className={`mb-4 text-[12px] font-bold uppercase tracking-[0.22em]  ${isDark ? " text-white/90" : " text-black/90"}`}>
-                        {card.title}
-                    </p>
+    return <div
+  className={`grid overflow-hidden border border-white/10 md:grid-cols-3 ${
+    isDark ? "bg-black" : "bg-white"
+  } ${classes}`}
+>
+  {cards.map((card) => (
+    <article
+      key={card.id}
+      className={`relative min-h-[360px] overflow-hidden border-b last:border-b-0 sm:min-h-[390px] md:min-h-[430px] md:border-b-0 md:border-r md:last:border-r-0 ${
+        isDark ? "bg-black border-white/10" : "bg-gray-50/80 border-black/10"
+      }`}
+    >
+      {/* Text */}
+      <div className="relative z-20 px-4 py-5 sm:px-6 sm:py-7 md:px-6 lg:px-10 lg:py-8">
+        <p
+          className={`mb-3 text-[10px] font-bold uppercase tracking-[0.16em] sm:mb-4 sm:text-[11px] sm:tracking-[0.2em] md:text-[12px] md:tracking-[0.22em] ${
+            isDark ? "text-white/90" : "text-black/90"
+          }`}
+        >
+          {card.title}
+        </p>
 
-                    <p className={`max-w-full text-[16px] font-normal leading-[1.45] tracking-[-0.03em]  sm:text-[17px] ${isDark ? " text-white/80" : " text-black/80"}`}>
-                        {card.description}
-                    </p>
-                </div>
+        <p
+          className={`max-w-full text-[14px] font-normal leading-[1.45] tracking-[-0.02em] sm:text-[16px] sm:tracking-[-0.03em] md:text-[15px] lg:text-[17px] ${
+            isDark ? "text-white/80" : "text-black/80"
+          }`}
+        >
+          {card.description}
+        </p>
+      </div>
 
-                {/* Image */}
-                <div className="absolute bottom-0 left-0 h-[255px] w-full overflow-hidden">
-                    <Image
-                        src={card.image}
-                        alt={card.alt}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover"
-                    />
-
-                    {/* Dark overlay like screenshot */}
-                    {/* <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#000_0%,rgba(0,0,0,0.35)_35%,rgba(0,0,0,0.95)_100%)]" /> */}
-
-                    {/* Soft color tint */}
-                    {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(214,253,58,0.12),rgba(15,136,255,0.12))]" /> */}
-                </div>
-            </article>
-        ))}
-    </div>
+      {/* Image */}
+      <div className="absolute bottom-0 left-0 h-[210px] w-full overflow-hidden sm:h-[235px] md:h-[255px]">
+        <Image
+          src={card.image}
+          alt={card.alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover"
+        />
+      </div>
+    </article>
+  ))}
+</div>
 
 }

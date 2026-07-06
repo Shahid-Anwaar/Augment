@@ -5,11 +5,12 @@ import { Icon } from "@iconify/react";
 import { HERO_SLIDES, HeroSlide, securityItems } from "@/data/data";
 import CustomEmblaCarousel from "../home/CustomCarosal";
 import { FEATURES, heroSecurityItems } from "@/data/home";
+import Image from "next/image";
 
 export default function FirmHeroSection() {
     return (
         <section className="hero-carousel relative z-1 overflow-hidden bg-black">
-            <div className="relative mx-auto flex max-w-full flex-col bg-black px-4 pb-10 pt-14 sm:px-6 sm:pt-28 lg:px-8 2xl:max-w-400">
+            <div className="relative mx-auto flex max-w-full flex-col bg-black px-4 pb-10 pt-22 sm:px-6 sm:pt-28 lg:px-8 2xl:max-w-400">
 
                 {/* Top Center Content */}
                 <div className="relative z-30 mx-auto flex w-full max-w-5xl flex-col items-center text-center text-white">
@@ -61,19 +62,21 @@ export default function FirmHeroSection() {
                         </Link>
                     </div>
 
-                    <div className="mt-8 flex flex-wrap justify-center gap-x-8 gap-y-5 sm:gap-x-10">
+                    <div className="mt-8 flex justify-center gap-x-3 lg:gap-x-5 gap-y-5 sm:gap-x-10">
                         {heroSecurityItems.map((item, index) => (
                             <div
                                 key={item.name}
                                 className="flex flex-col items-center justify-center text-center"
                             >
-                                <img
+                                <Image
                                     src={item.src}
                                     alt={item.name}
                                     width={item.width}
                                     height={item.height}
-                                    className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? " opacity-[0.7]" : " "}`}
-                                    />
+                                    className={`h-8 w-8 object-contain sm:h-9 sm:w-9 lg:h-10 lg:w-10 xl:h-12 xl:w-12 ${index !== 4 ? "opacity-[0.7]" : ""
+                                        }`}
+                                />
+
                                 <p className="mt-1 text-[16px] font-normal tracking-[-0.03em] text-white sm:text-[18px]">
                                     {item.name}
                                 </p>
@@ -123,11 +126,12 @@ function HeroCard({ slide }: { slide: HeroSlide }) {
                     <div className="mb-5">
                         {slide.company ? (
                             <figure className="relative h-7 w-28 overflow-hidden sm:h-8 sm:w-32">
-                                <img
+                                <Image
                                     src={slide.company}
                                     alt={`${slide.name} company logo`}
-                                    className="h-full w-full object-contain object-left"
-                                    loading="lazy"
+                                    fill
+                                    sizes="128px"
+                                    className="object-contain object-left"
                                 />
                             </figure>
                         ) : (
@@ -154,10 +158,12 @@ function HeroCard({ slide }: { slide: HeroSlide }) {
 
                 {/* Card Image / Video Right */}
                 <div className="relative min-h-[210px] overflow-hidden md:min-h-full">
-                    <img
+                    <Image
                         src={slide.image}
                         alt={slide.name}
-                        className="h-full w-full object-cover transition-all duration-700 ease-out group-hover:opacity-0"
+                        fill
+                        sizes="100vw"
+                        className="object-cover transition-all duration-700 ease-out group-hover:opacity-0"
                     />
 
                     <video

@@ -326,18 +326,20 @@ export default function TeamSolutionsSection() {
         TEAM_SOLUTIONS.find((item) => item.key === activeKey) || TEAM_SOLUTIONS[0];
 
     return (
-        <section className="bg-white">
+        <section className="bg-white overflow-hidden">
             <div className="section-container max-w-[1360px]">
                 <div className="text-center">
                     <h2 className="section-title mx-auto text-black">
                         AI solutions for every team
                     </h2>
-                    <p className="section-description mx-auto mb-6 text-black">
+
+                    <p className="section-description mx-auto mb-5 sm:mb-6 text-black">
                         Your key workflows, powered by Supreme Coach Agents.
                     </p>
                 </div>
+
                 {/* Tabs */}
-                <div className="mb-7 flex flex-wrap items-center justify-center gap-2.5">
+                <div className="mb-5 sm:mb-7 flex w-full flex-wrap items-center justify-center gap-1.5 sm:gap-2.5">
                     {TEAM_SOLUTIONS.map((team) => {
                         const isActive = team.key === activeKey;
 
@@ -347,10 +349,12 @@ export default function TeamSolutionsSection() {
                                 type="button"
                                 onClick={() => setActiveKey(team.key)}
                                 className={[
-                                    "rounded-full border px-5 py-2.5 text-[14px] font-bold leading-none transition-all duration-200",
+                                    "rounded-full border px-2.5 py-1.5 text-[10px] font-bold leading-none transition-all duration-200",
+                                    "sm:px-5 sm:py-2.5 sm:text-[14px]",
+                                    "max-w-full whitespace-nowrap",
                                     isActive
-                                        ? "border border-black/30 bg-primary-500 text-black/80"
-                                        : "border cursor-pointer border-black/30 bg-primary-300 hover:bg-primary-400 text-black",
+                                        ? "border-black/30 bg-primary-500 text-black/80"
+                                        : "cursor-pointer border-black/30 bg-primary-300 text-black hover:bg-primary-400",
                                 ].join(" ")}
                             >
                                 {team.tab}
@@ -360,11 +364,11 @@ export default function TeamSolutionsSection() {
                 </div>
 
                 {/* Main card */}
-                <div className="rounded-[32px] bg-[#f6f7f8] px-4 py-5 sm:px-6 md:px-7 lg:px-10 lg:py-8">
-                    <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="rounded-[20px] bg-[#f6f7f8] px-4 py-5 sm:rounded-[24px] sm:px-6 md:px-7 lg:rounded-[32px] lg:px-10 lg:py-8">
+                    <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr]">
                         {/* Left content */}
-                        <div>
-                            <h2 className="max-w-[1700px] section-title font-[600] text-[#202124] ">
+                        <div className="min-w-0">
+                            <h2 className="section-title max-w-full font-[600] text-[#202124]">
                                 {activeTeam.titleBlack.map((line) => (
                                     <span key={line} className="block">
                                         {line}
@@ -376,22 +380,22 @@ export default function TeamSolutionsSection() {
                                 </span>
                             </h2>
 
-                            <p className="mt-4 max-w-[500px] text-[18px] leading-[1.28] tracking-[-0.03em] text-[#2d2d2d] sm:text-[20px]">
+                            <p className="mt-3 max-w-[500px] text-[15px] leading-[1.35] tracking-[-0.02em] text-[#2d2d2d] sm:mt-4 sm:text-[18px] sm:leading-[1.3] md:text-[20px]">
                                 {activeTeam.description}
                             </p>
 
-                            <div className="mt-16 sm:mt-20">
+                            <div className="mt-8 sm:mt-12 lg:mt-16">
                                 <div className="mb-4 flex flex-wrap items-center gap-2">
-                                    <span className="text-[14px] font-bold uppercase tracking-[0.04em] text-black/55">
+                                    <span className="text-[12px] font-bold uppercase tracking-[0.04em] text-black/55 sm:text-[14px]">
                                         Replaces
                                     </span>
 
-                                    <div className="flex items-center gap-2">
+                                    <div className="flex flex-wrap items-center gap-2">
                                         {activeTeam.replaces.map((icon, index) => (
                                             <Icon
                                                 key={`${icon}-${index}`}
                                                 icon={icon}
-                                                className="text-[17px] text-black/55"
+                                                className="text-[16px] text-black/55 sm:text-[17px]"
                                             />
                                         ))}
                                     </div>
@@ -401,13 +405,13 @@ export default function TeamSolutionsSection() {
                                     {activeTeam.bullets.map((bullet) => (
                                         <li
                                             key={bullet}
-                                            className="flex items-start gap-3 text-[16px] leading-[1.25] tracking-[-0.02em] text-black/55 sm:text-[17px]"
+                                            className="flex items-start gap-2.5 text-[14px] leading-[1.35] tracking-[-0.01em] text-black/55 sm:gap-3 sm:text-[16px] sm:leading-[1.3] md:text-[17px]"
                                         >
                                             <Icon
                                                 icon="lucide:check"
-                                                className="mt-0.5 shrink-0 text-[19px] text-black/45"
+                                                className="mt-0.5 shrink-0 text-[17px] text-black/45 sm:text-[19px]"
                                             />
-                                            <span>{bullet}</span>
+                                            <span className="min-w-0">{bullet}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -415,40 +419,37 @@ export default function TeamSolutionsSection() {
                         </div>
 
                         {/* Right cards */}
-                        <div className="mx-auto w-full max-w-[510px]">
-                            <div className="space-y-3">
+                        <div className="mx-auto w-full max-w-[510px] min-w-0">
+                            <div className="space-y-2.5 sm:space-y-3">
                                 {activeTeam.agents.map((agent) => (
                                     <div
                                         key={agent.text}
-                                        className="flex min-h-[68px] items-center gap-4 rounded-[14px] border border-black/5 bg-white px-4 py-3 shadow-[0_1px_4px_rgba(0,0,0,0.12)]"
+                                        className="flex min-h-[60px] items-center gap-3 rounded-[12px] border border-black/5 bg-white px-3 py-3 shadow-[0_1px_4px_rgba(0,0,0,0.12)] sm:min-h-[68px] sm:gap-4 sm:rounded-[14px] sm:px-4"
                                     >
                                         <div
                                             className={[
-                                                "relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full",
+                                                "relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-9 sm:w-9",
                                                 agent.iconBg,
                                             ].join(" ")}
                                         >
-                                            <Icon icon={agent.icon} className="text-[26px]" />
+                                            <Icon icon={agent.icon} className="text-[22px] sm:text-[26px]" />
 
-                                            <span className="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-white">
+                                            <span className="absolute -bottom-1 -right-1 flex h-3.5 w-3.5 items-center justify-center rounded-full bg-white sm:h-4 sm:w-4">
                                                 <Icon
                                                     icon="fluent:star-four-points-16-filled"
-                                                    className="text-[14px] text-secondary"
+                                                    className="text-[12px] text-secondary sm:text-[14px]"
                                                 />
                                             </span>
                                         </div>
 
-                                        <p className="text-[16px] font-medium leading-[1.25] tracking-[-0.035em] text-[#202124] sm:text-[17px]">
+                                        <p className="min-w-0 text-[14px] font-medium leading-[1.35] tracking-[-0.02em] text-[#202124] sm:text-[16px] sm:leading-[1.3] md:text-[17px]">
                                             {agent.text}
                                         </p>
                                     </div>
                                 ))}
                             </div>
 
-                            <button
-                                type="button"
-                                className="outlined-btn mt-4 "
-                            >
+                            <button type="button" className="outlined-btn mt-4 w-full justify-center sm:w-auto">
                                 Explore solution
                                 <Icon icon="lucide:arrow-right" className="text-[16px]" />
                             </button>
@@ -457,5 +458,6 @@ export default function TeamSolutionsSection() {
                 </div>
             </div>
         </section>
+
     );
 }
