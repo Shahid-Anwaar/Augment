@@ -4,6 +4,7 @@ import { SolutionItem } from "@/data/data";
 type CompactSolutionTabsProps = {
   items: SolutionItem[];
   activeIndex: number;
+  handleIndexChange?: (index: number) => void;
   show: boolean;
   stickyTop?: number;
 };
@@ -11,6 +12,7 @@ type CompactSolutionTabsProps = {
 export default function CompactSolutionTabs({
   items,
   activeIndex,
+  handleIndexChange,
   show,
   stickyTop = 72,
 }: CompactSolutionTabsProps) {
@@ -35,11 +37,12 @@ export default function CompactSolutionTabs({
               <div
                 key={item.id}
                 className={[
-                  "flex items-center justify-center rounded-[4px] px-3 py-2 text-center font-mono text-[13px] font-medium uppercase tracking-[0.08em] transition-all duration-300",
+                  "flex cursor-pointer items-center justify-center rounded-full px-3 py-2 text-center font-mono text-[13px] font-medium uppercase tracking-[0.08em] transition-all duration-300",
                   isActive
                     ? "bg-primary text-black"
                     : "bg-[#f4f1ee] text-black",
                 ].join(" ")}
+                onClick={() => handleIndexChange && handleIndexChange(index)}
               >
                 {item.label}
               </div>

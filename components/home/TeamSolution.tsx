@@ -327,7 +327,7 @@ export default function TeamSolutionsSection() {
 
     return (
         <section className="bg-white">
-            <div className="section-container">
+            <div className="section-container max-w-[1360px]">
                 <div className="text-center">
                     <h2 className="section-title mx-auto text-black">
                         AI solutions for every team
@@ -349,8 +349,8 @@ export default function TeamSolutionsSection() {
                                 className={[
                                     "rounded-full border px-5 py-2.5 text-[14px] font-bold leading-none transition-all duration-200",
                                     isActive
-                                        ? "border-black bg-black/90 text-white"
-                                        : "border cursor-pointer border-gray-200 bg-primary-500 text-black/80 hover:border-black/40 hover:bg-primary-300 hover:text-black",
+                                        ? "border border-black/30 bg-primary-500 text-black/80"
+                                        : "border cursor-pointer border-black/30 bg-primary-300 hover:bg-primary-400 text-black",
                                 ].join(" ")}
                             >
                                 {team.tab}

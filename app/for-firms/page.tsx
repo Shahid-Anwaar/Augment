@@ -309,8 +309,7 @@ export default function FirmsPage() {
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
       <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
-      <FAQSection faqs={teamFaqs} />
-
+      <FAQSection faqs={teamFaqs} /> 
     </main>
   );
 }

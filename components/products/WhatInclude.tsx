@@ -170,13 +170,13 @@ export default function WhatToInclude() {
                                 {includedRows.map((row) => (
                                     <tr
                                         key={row.feature}
-                                        className="overflow-hidden rounded-[9px]  text-[12px] font-bold uppercase tracking-[0.03em] text-white shadow-sm sm:text-[13px]"
+                                        className="overflow-hidden rounded-[9px] text-[12px] font-bold uppercase tracking-[0.03em] text-white sm:text-[13px]"
                                     >
-                                        <td className="rounded-l-[9px] border-r border-white/8 px-3 py-3 sm:px-4 sm:py-3.5">
+                                        <td className="rounded-l-[9px] border-r border-white/80 px-3 py-3 sm:px-4 sm:py-3.5">
                                             {row.feature}
                                         </td>
 
-                                        <td className="border-r border-white/8 px-3 py-3 sm:px-4 sm:py-3.5">
+                                        <td className="border-r border-white/80 px-3 py-3 sm:px-4 sm:py-3.5">
                                             <div className="flex items-center gap-1.5 sm:gap-2">
                                                 {row.icons.length > 0 ? (
                                                     row.icons.map((item) => (
@@ -194,7 +194,7 @@ export default function WhatToInclude() {
                                             </div>
                                         </td>
 
-                                        <td className="border-r border-white/8 px-3 py-3 text-[11px] text-white/90 sm:px-4 sm:py-3.5 sm:text-[12px] lg:text-[13px]">
+                                        <td className="border-r border-white/80 px-3 py-3 text-[11px] text-white/90 sm:px-4 sm:py-3.5 sm:text-[12px] lg:text-[13px]">
                                             {row.otherTools}
                                         </td>
 

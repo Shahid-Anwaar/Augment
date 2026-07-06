@@ -54,10 +54,10 @@ export const heroSecurityItems: SecurityItem[] = [
     width: 56,
     height: 56,
   },
-//   {
-//     name: "AICPA",
-//     src: "/external-images/img-278521d2.webp",
-//     width: 56,
-//     height: 56,
-//   },
+  {
+    name: "AICPA",
+    src: "/external-images/img-278521d2.webp",
+    width: 56,
+    height: 56,
+  },
 ];

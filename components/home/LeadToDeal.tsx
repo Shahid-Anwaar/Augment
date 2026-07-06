@@ -4,11 +4,13 @@ import { SolutionItem } from "@/data/data";
 
 type LeadToDealsSectionProps = {
   items: SolutionItem[];
+  handleIndexChange?: (index: number) => void;
   cardsRef?: RefObject<HTMLDivElement | null>;
 };
 
 export default function LeadToDealsSection({
   items,
+  handleIndexChange,
   cardsRef,
 }: LeadToDealsSectionProps) {
   return (
@@ -29,10 +31,11 @@ export default function LeadToDealsSection({
           ref={cardsRef}
           className={`mt-12 grid gap-4 sm:grid-cols-2  ${items.length !== 4 ? " lg:grid-cols-3" : " lg:grid-cols-4"}`}
         >
-          {items.map((item) => (
+          {items.map((item, index) => (
             <div
               key={item.id}
-              className="flex min-h-[210px] flex-col items-center justify-center rounded-[7px] bg-[#f4f1ee] px-6 py-10 text-center sm:min-h-[230px]"
+              onClick={() => handleIndexChange?.(index)}
+              className="flex cursor-pointer min-h-[210px] flex-col items-center justify-center rounded-[7px] bg-[#f4f1ee] hover:bg-[#e0dcd8] px-6 py-10 text-center sm:min-h-[230px]"
             >
               <div className="mb-3 inline-flex h-[44px] w-[44px] items-center justify-center rounded-[4px] bg-[#161616] text-white">
                 <Icon icon={item.icon} className="h-7 w-7" />

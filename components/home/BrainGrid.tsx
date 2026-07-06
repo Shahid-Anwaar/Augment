@@ -15,7 +15,7 @@ const BRAIN_CARDS: BrainCard[] = [
         description:
             "Brain² sees your tasks, docs, and conversations. It does not need a brief because it knows what is happening in real-time.",
         image:
-            "/external-images/img-c4952244.webp",
+            "/external-images/business-1.webp",
         alt: "Team working on tasks and documents",
     },
     {
@@ -24,7 +24,7 @@ const BRAIN_CARDS: BrainCard[] = [
         description:
             "Brain² picks the best AI model for each job. One subscription. Every frontier model running with full context.",
         image:
-            "/external-images/img-e8d22da5.webp",
+            "/external-images/business-2.webp",
         alt: "Artificial intelligence and software system",
     },
     {
@@ -33,7 +33,7 @@ const BRAIN_CARDS: BrainCard[] = [
         description:
             "Brain² learns how you and your team talk: your tone, your shorthand, your preferences.",
         image:
-            "/external-images/img-a0a262a4.webp",
+            "/external-images/business-3.webp",
         alt: "Team communication and collaboration",
     },
 ];
@@ -65,7 +65,7 @@ export default function BrainGrid({cards = BRAIN_CARDS, classes = "rounded-lg", 
                         alt={card.alt}
                         fill
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover opacity-75 grayscale"
+                        className="object-cover"
                     />
 
                     {/* Dark overlay like screenshot */}

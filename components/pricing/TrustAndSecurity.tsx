@@ -102,9 +102,9 @@ export default function TrustAndSecuritySection() {
             ))}
         </div> */}
 
-        <div className=" rounded-[18px] bg-gray-50 px-4 py-6 sm:rounded-[22px] sm:px-6 sm:py-8 md:px-8 lg:rounded-[24px] lg:px-10 lg:py-10">
+        <div className=" rounded-[18px] max-w-[1240px] mx-auto bg-gray-50 px-4 py-6 sm:rounded-[22px] sm:px-6 sm:py-8 md:px-8 lg:rounded-[24px] lg:px-10 lg:py-10">
             <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-10">
-                <div className="mx-auto max-w-[440px] text-center lg:mx-0 lg:text-left">
+                <div className="mx-auto  text-center lg:mx-0 lg:text-left">
                     <h2 className="stylish-family text-[32px] leading-[1] tracking-[-0.04em] text-black sm:text-[40px] md:text-[48px] lg:text-[54px]">
                         Security and safety
                     </h2>

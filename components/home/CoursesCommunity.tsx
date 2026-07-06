@@ -13,15 +13,13 @@ export default function CoursesCommunity() {
     ]
     return (
         <div className="overflow-hidden bg-black text-white">
-            <div className="section-container section-spacing text-center">
+            <div className="section-container section-spacing pb-0 text-center">
                 <h2 className="section-title mx-auto text-white">
                     Better Client Relationships. Data Backed Results. Predictable Business Growth.
                 </h2>
-
                 <p className="section-description mx-auto text-white/90">
                    Supreme Coach designs and builds the complete infrastructure behind your coaching practice  so you attract the right clients, deliver an exceptional experience, and grow a business that runs without you holding it together.
                 </p>
-
                 <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
                     <Link
                         href="/"

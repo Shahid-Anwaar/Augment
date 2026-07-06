@@ -54,7 +54,7 @@ export default function FAQSection({faqs}: {faqs: any}) {
 
   return (
     <section className="bg-[#f3f4f6]">
-      <div className="section-container py-8 md:py-10 lg:py-12">
+      <div className="section-container max-w-[1360px] py-8 md:py-10 lg:py-12">
         <div className="grid grid-cols-1 gap-y-8 md:grid-cols-[260px_minmax(0,1fr)] md:gap-x-10 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-x-19.5">
           <div>
             <h2 className="section-title max-w-[14rem] sm:max-w-[18rem] md:max-w-57.5">
