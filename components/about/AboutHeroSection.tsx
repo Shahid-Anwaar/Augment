@@ -141,7 +141,7 @@ export default function AboutHeroSection() {
         <div className="mx-auto w-full max-w-400 px-4 sm:px-5 md:px-6 lg:px-0">
           <div className="relative text-center">
             <CustomEmblaCarousel
-              CustomCard={(item, index, firstActiveItemIndex) => {
+              CustomCard={(item, index) => {
                 return (
                   <div
                     key={index}

@@ -1,12 +1,8 @@
 "use client";
-
 import { useState } from "react";
 import { Icon } from "@iconify/react";
 import CustomLink from "../custom/CustomLink";
 import CustomEmblaCarousel from "./CustomCarosal";
-import CompanyLogoCarousel from "./CompaniesSlider";
-import Image from "next/image";
-import { companyLogos } from "@/data/data";
 
 type TeamKey =
     | "projects"
@@ -38,7 +34,7 @@ type TeamSolution = {
 const TEAM_SOLUTIONS: TeamSolution[] = [
     {
         key: "projects",
-        tab: "Projects",
+        tab: "Programmes",
         bgColor: "bg-sky-200",
         titleBlack: ["Deliver projects on time,"],
         titleGray: "every time",
@@ -80,7 +76,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
     },
     {
         key: "marketing",
-        tab: "Marketing",
+        tab: "Communities",
         bgColor: "bg-pink-200",
         titleBlack: ["Maximize marketing's"],
         titleGray: "impact and results",
@@ -122,7 +118,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
     },
     {
         key: "product",
-        tab: "Product & Eng",
+        tab: "Events",
         bgColor: "bg-violet-200",
         titleBlack: ["Ship faster,"],
         titleGray: "more reliable software",
@@ -164,7 +160,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
     },
     {
         key: "it",
-        tab: "IT",
+        tab: "Sessions",
         bgColor: "bg-emerald-200",
         titleBlack: ["Create the systems,"],
         titleGray: "for scale",
@@ -206,7 +202,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
     },
     {
         key: "hr",
-        tab: "HR",
+        tab: "Goal Tracking",
         bgColor: "bg-orange-200",
         titleBlack: ["Build the process"],
         titleGray: "that power your people",
@@ -248,7 +244,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
     },
     {
         key: "leadership",
-        tab: "Leadership",
+        tab: "Engagement Tools",
         bgColor: "bg-yellow-200",
         titleBlack: ["Close the strategy–"],
         titleGray: "execution gap",
@@ -290,7 +286,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
     },
     {
         key: "all",
-        tab: "See all teams",
+        tab: "Automation & Workflows",
         bgColor: "bg-slate-200",
         titleBlack: ["One workspace"],
         titleGray: "for every team",
@@ -353,32 +349,38 @@ export default function TeamSolutionsSection() {
                     </p>
                 </div>
 
-                <div className="mx-auto relative mb-5 max-w-3xl bg-white">
-                    <div className="absolute flex justify-between inset-0 z-50">
-                        <div className="w-40 bg-linear-to-r via-white/90 from-white to-transparent" />
-                        <div className="w-40 bg-linear-to-l via-white/90 from-white to-transparent" />
+                <div className="mx-auto relative mb-5 sm:mb-6 max-w-5xl bg-white">
+                    <div className="absolute pointer-events-none flex justify-between inset-0 z-50">
+                        <div className="w-32 bg-linear-to-r via-white/90 from-white to-transparent" />
+                        <div className="w-32 bg-linear-to-l via-white/90 from-white to-transparent" />
                     </div>
                     <div className="mx-auto bg-white px-0">
                         <div className="mx-auto mt-0 max-w-[92%] w-full">
                             <CustomEmblaCarousel
-                                CustomCard={(item: any, index: number, activeIndex: number) => {
-                                    setActiveKey(allTabs[activeIndex]?.key);
+                                handleActiveItemIndexChange={(index: number) => {
+                                    setActiveKey(allTabs[index]?.key);
+                                }}
+                                CustomCard={(item: any, index: number, scrollToSelectedIndex) => {
                                     return (
                                         <div
                                             key={item.key + index}
-                                            className="box-border flex min-w-0 shrink-0 grow-0 basis-auto items-center justify-center px-1 "
+                                            className="box-border flex min-w-0 shrink-0 grow-0 basis-auto items-center justify-center px-2 "
                                         >
                                             <button
                                                 type="button"
-                                                // onClick={() => setActiveKey(item.key)}
+                                                onClick={() => {
+                                                    console.log(activeKey);
+                                                    setActiveKey(item?.key);
+                                                    scrollToSelectedIndex && scrollToSelectedIndex(index);
+                                                }}
                                                 className={[
                                                     "rounded-full border px-2.5 py-1.5 text-[10px] font-bold leading-none transition-all duration-200",
-                                                    "sm:px-5 sm:py-2.5 sm:text-[14px]",
+                                                    "sm:px-5 sm:py-3 sm:text-[14px]",
                                                     "max-w-full whitespace-nowrap",
                                                     "cursor-pointer border-black/30 text-black",
                                                     activeKey == item.key
                                                         ? "border-black/30 text-black/80 " + item.bgColor
-                                                        : "cursor-pointer border-black/30 bg-primary-300 text-black hover:bg-primary-400",
+                                                        : "cursor-pointer border-black/20 bg-[#F4F3F0] text-black hover:bg-[#e4e2dd]",
                                                 ].join(" ")}
                                             >
                                                 {item.tab}
@@ -397,7 +399,10 @@ export default function TeamSolutionsSection() {
                                     align: "center",
                                     skipSnaps: false,
                                 }}
-                                autoplayConfig={{ stopOnMouseEnter: false }}
+                                autoplayConfig={{
+                                    stopOnMouseEnter: false,
+                                    delay: 5000,
+                                }}
                                 wrapperClassName="min-h-0 bg-white"
                             />
                         </div>

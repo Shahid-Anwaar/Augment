@@ -20,12 +20,13 @@ type ContinuousPlayConfig = {
     stopOnMouseEnter?: boolean;
 };
 
-type MoveTo = "top" | "bottom" | "right" | "left";
+type MoveDirection = "top" | "bottom" | "right" | "left";
 
 type EmblaCarouselProps = {
     options?: EmblaOptionsType;
-    CustomCard?: (item: any, index: number, firstActiveItemIndex: number) => ReactNode;
+    CustomCard?: (item: any, index: number, scrollToSelectedIndex?: (index: number)=>void) => ReactNode;
     items?: any[];
+    onSpecificChoosed?: (n: number) => void,
     wrapperClassName?: string;
     CustomButtonWrapper?: (
         onPrevClickChoosed: () => void,
@@ -37,7 +38,8 @@ type EmblaCarouselProps = {
     isContinuousPlay?: boolean;
     autoplayConfig?: AutoplayConfig;
     continuousPlayConfig?: ContinuousPlayConfig;
-    moveTo?: MoveTo;
+    handleActiveItemIndexChange?: (index: number) => void;
+    moveDirection?: MoveDirection;
 };
 
 export default function CustomEmblaCarousel({
@@ -50,7 +52,8 @@ export default function CustomEmblaCarousel({
     isContinuousPlay = false,
     autoplayConfig = {},
     continuousPlayConfig = {},
-    moveTo,
+    handleActiveItemIndexChange,
+    moveDirection: moveTo,
 }: EmblaCarouselProps) {
     const [selectedSnap, setSelectedSnap] = useState(0);
 
@@ -132,7 +135,8 @@ export default function CustomEmblaCarousel({
 
     const updateIndexes = useCallback(() => {
         if (!emblaApi) return;
-        setSelectedSnap(emblaApi.selectedScrollSnap());
+        handleActiveItemIndexChange && handleActiveItemIndexChange(emblaApi.selectedScrollSnap())
+        // setSelectedSnap);
     }, [emblaApi]);
 
     useEffect(() => {
@@ -199,7 +203,7 @@ export default function CustomEmblaCarousel({
             >
                 <div className={`flex h-full cursor-grab ${isVertical ? "flex-col" : ""}`}>
                     {items.map((review, index) =>
-                        CustomCard(review, index, selectedSnap)
+                        CustomCard(review, index, onSpecificChoosed)
                     )}
                 </div>
             </div>

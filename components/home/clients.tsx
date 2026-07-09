@@ -136,7 +136,7 @@ export default function ClientsSection({ title, isShowCompanies = false }: { tit
           </h2>
 
           <CustomEmblaCarousel
-            CustomCard={(item, index, firstActiveItemIndex) => {
+            CustomCard={(item, index) => {
               return (
                 <div
                   key={index}

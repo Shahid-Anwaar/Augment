@@ -18,7 +18,7 @@ export default function ProductStories() {
                     </div>
 
                     <CustomEmblaCarousel
-                        CustomCard={(item, index, firstActiveItemIndex) => {
+                        CustomCard={(item, index) => {
                             return (
                                 <div
                                     key={index}
