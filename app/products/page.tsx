@@ -104,13 +104,19 @@ const BookCallSection = dynamic(
   }
 );
 
+const StickyStepSection = dynamic(
+  () => import("@/components/home/StickyStepSection"),
+  { 
+    loading: () => <CustomLoader minHeightClass="min-h-[80px]" /> 
+  }
+)
+
 export const metadata = productsMetadata;
 
 export default function ProductsPage() {
   return (
     <main className="relative bg-white text-black">
       <ProductsHeroSection />
-
       <div className="w-full bg-white pb-7">
         <div className="mx-auto max-w-full bg-white py-0">
           <div className="mx-auto bg-white px-0">
@@ -121,9 +127,7 @@ export default function ProductsPage() {
           </div>
         </div>
       </div>
-
       <BrainFeatureSection isDark={false} />
-
       <ProductFeaturesSection
         title="Course creation tools for higher student engagement"
         description="So we give you the tools to give them the best learning experience possible. Keep them coming back—and referring their friends, too."
@@ -133,7 +137,6 @@ export default function ProductsPage() {
         features={Firms_FEATURES}
         wrapperClassName="bg-white pb-0!"
       />
-
       <ProductFeaturesSection
         title="Simple to build—and keep growing"
         description="When you’re big on ambition and light on time, you need a platform that’s reliable and doesn't limit your creativity."
@@ -142,7 +145,6 @@ export default function ProductsPage() {
         features={Firms_FEATURES2}
         wrapperClassName="bg-white"
       />
-
       <ProductFeaturesSection
         title="Course creation tools for higher student engagement"
         description="So we give you the tools to give them the best learning experience possible. Keep them coming back—and referring their friends, too."
@@ -152,28 +154,19 @@ export default function ProductsPage() {
         features={Firms_FEATURES}
         wrapperClassName="bg-white pt-0!"
       />
-
       <FeaturesSection isShowBtn={false} />
-
       <ProductSalesHubSection />
-
-      <HowItWorksCard />
-
+      {/* <HowItWorksCard /> */}
+      <StickyStepSection />
       <IntegrationsSection
         title="It's your business, your way"
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
-
-      <ClientsSection title="Supreme Coach success stories write themselves" />
-
+      <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
       <StickySolutionsSection items={solutionItems} />
-
       <ProductTools />
-
       <WhatToInclude />
-
       <FAQSection faqs={productFaqs} />
-
       <BookCallSection
         title="Book a Demo with a Program Advisor"
         icon="solar:phone-linear"

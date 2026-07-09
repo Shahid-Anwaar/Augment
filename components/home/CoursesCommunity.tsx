@@ -2,6 +2,7 @@ import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import TrustBadgesSection from './TrustBadgesSeciton'
+import CustomLink from '../custom/CustomLink'
 
 export default function CoursesCommunity() {
     const tempArray = [
@@ -25,28 +26,18 @@ export default function CoursesCommunity() {
                 </p>
 
                 <div className="mt-4 flex flex-col items-center justify-center gap-2.5 sm:mt-5 sm:flex-row sm:flex-wrap sm:gap-3">
-                    <Link
+                    <CustomLink
                         href="/"
-                        className="group contained-btn inline-flex w-full max-w-[240px] justify-center px-5 py-2.5 text-[12px] sm:w-auto sm:max-w-none sm:px-10 sm:text-[14px]"
-                    >
-                        <span className="text-[0.9em] font-semibold uppercase tracking-[0.08em] sm:text-[0.98em] sm:tracking-[0.12em]">
-                            Book a Discovery Call
-                        </span>
-
-                        <Icon
-                            icon="solar:phone-linear"
-                            width="18"
-                            height="18"
-                            className="shrink-0 sm:h-[19px] sm:w-[19px]"
-                        />
-                    </Link>
-
-                    <Link
+                        text="Book a Discovery Call"
+                        variant="contained"
+                        showIcon
+                        icon="solar:phone-linear"
+                    />
+                    <CustomLink
                         href="/contact-sales"
-                        className="closed-btn inline-flex w-full max-w-[240px] justify-center px-5 py-2.5 text-[12px] sm:w-auto sm:max-w-none sm:px-12 sm:py-3 sm:text-[13px] lg:px-16 lg:text-[14px]"
-                    >
-                        Talk to Our Team
-                    </Link>
+                        variant="closed"
+                        text="Talk to Our Team"
+                    />
                 </div>
 
                 <div className="mt-6 sm:mt-8">

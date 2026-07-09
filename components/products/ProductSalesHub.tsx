@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CustomLink from "../custom/CustomLink";
 
 type SalesHubFeatureItem = {
     title: string;
@@ -10,33 +11,33 @@ type SalesHubFeatureItem = {
 };
 
 const SALES_HUB_FEATURES: SalesHubFeatureItem[] = [
-  {
-    title: "Payments",
-    description:
-      "One-time, instalment, or subscription attach any payment structure to any programme or offer. Stripe, PayPal, Google Pay, and Apple Pay all native. Clients pay their way. You get paid on time, automatically.",
-    image:
-      "/external-images/img-f04c8b1e.webp",
-    imageAlt: "Payments preview",
-    objClass: "",
-  },
-  {
-    title: "Tax-compliant",
-    description:
-      "Every invoice generated, formatted, and sent without you touching it. VAT applied correctly per client location. Corporate clients get one company-level invoice regardless of how many employees are enrolled.",
-    image:
-      "/external-images/img-a96842b1.webp",
-    imageAlt: "Tax-compliant invoicing preview",
-    objClass: "lg:-translate-y-28",
-  },
-  {
-    title: "BFM Dashboard",
-    description:
-      "MRR, lifetime client value, pipeline revenue, outstanding invoices, and revenue per programme every number in one real-time view. No spreadsheet. No accountant is required to understand it.",
-    image:
-      "/external-images/img-ae29ee70.webp",
-    imageAlt: "BFM dashboard preview",
-    objClass: "lg:-translate-y-14",
-  },
+    {
+        title: "Payments",
+        description:
+            "One-time, instalment, or subscription attach any payment structure to any programme or offer. Stripe, PayPal, Google Pay, and Apple Pay all native. Clients pay their way. You get paid on time, automatically.",
+        image:
+            "/external-images/img-f04c8b1e.webp",
+        imageAlt: "Payments preview",
+        objClass: "",
+    },
+    {
+        title: "Tax-compliant",
+        description:
+            "Every invoice generated, formatted, and sent without you touching it. VAT applied correctly per client location. Corporate clients get one company-level invoice regardless of how many employees are enrolled.",
+        image:
+            "/external-images/img-a96842b1.webp",
+        imageAlt: "Tax-compliant invoicing preview",
+        objClass: "lg:-translate-y-28",
+    },
+    {
+        title: "BFM Dashboard",
+        description:
+            "MRR, lifetime client value, pipeline revenue, outstanding invoices, and revenue per programme every number in one real-time view. No spreadsheet. No accountant is required to understand it.",
+        image:
+            "/external-images/img-ae29ee70.webp",
+        imageAlt: "BFM dashboard preview",
+        objClass: "lg:-translate-y-14",
+    },
 ];
 
 function SalesHubCard({ item, }: { item: SalesHubFeatureItem; }) {
@@ -97,12 +98,12 @@ export default function ProductSalesHubSection(
                 </div>
 
                 <div className="flex justify-center">
-                    <Link
+                    <CustomLink
                         href="/"
-                        className="contained-btn mt-3 px-8 py-3 sm:mt-10 capitalize!"
-                    >
-                        {btnText}
-                    </Link>
+                        text={btnText}
+                        variant="contained"
+                        className="mt-3 sm:mt-10"
+                    />
                 </div>
             </div>
         </section>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import CustomLoader from "@/components/custom/CustomLoader";
 import { securityItems } from "@/data/data";
 import { Icon } from "@iconify/react";
+import CustomLink from "../custom/CustomLink";
 
 type FooterLink = {
   label: string;
@@ -186,13 +187,12 @@ export default function Footer() {
               <p className="mt-2 text-[15px] font-medium leading-[1.4] tracking-[-0.025em] text-white sm:text-[16px] md:text-[17px]">
                 Use the contact form below.
               </p>
-
-              <Link
-                href="/contact-sales"
-                className="contained-btn mx-auto mt-6 inline-flex w-full max-w-[220px] justify-center px-4 sm:ml-auto sm:mr-0 sm:mt-7 sm:w-auto sm:px-8"
-              >
-                Contact Sales
-              </Link>
+              <CustomLink
+    href="/contact-sales"
+    text="Contact Sales"
+    variant="contained"
+    className="mt-6 sm:ml-auto sm:mr-0 sm:mt-7"
+/>
             </div>
           </div>
 

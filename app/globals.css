@@ -95,24 +95,29 @@ select {
    ========================================================= */
 
   /* Primary rounded CTA button */
-  .contained-btn {
-    @apply inline-flex max-w-full items-center justify-center gap-1.5 rounded-full border border-black bg-primary px-4 py-2.5 text-center text-[12px] font-semibold leading-none text-black transition-opacity duration-200 hover:bg-primary-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:gap-2 sm:px-7 sm:py-3 sm:text-[14px] lg:px-[34px] lg:text-[15px];
+  .btn-base {
+    @apply  w-auto h-10 lg:h-12 px-4 sm:px-7 lg:px-8.5 text-[12px] sm:text-[14px]  lg:text-[15px] gap-1.5 font-semibold leading-none transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50;
   }
-
-  /* Danger / delete action button */
-  .deleted-btn {
-    @apply inline-flex max-w-full items-center justify-center rounded-lg bg-red-700 px-3 py-2 text-center text-[12px] font-semibold leading-none text-white transition-colors hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 sm:px-4 sm:text-[14px] lg:text-[16px];
+  .contained-btn {
+    @apply inline-flex max-w-full items-center justify-center rounded-full border border-black bg-primary text-center text-black  hover:bg-primary-300;
   }
 
   /* Secondary outlined action button */
   .outlined-btn {
-    @apply inline-flex max-w-full items-center justify-center gap-1.5 rounded-full border border-black bg-white px-4 py-2.5 text-center text-[12px] font-semibold leading-none text-black transition-colors hover:bg-gray-300 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:px-5 sm:py-3 sm:text-[14px] lg:text-[15px];
+    @apply inline-flex max-w-full items-center justify-center rounded-full border border-black bg-white text-center text-black hover:bg-gray-300;
   }
 
   /* Neutral close / cancel button */
   .closed-btn {
-    @apply inline-flex max-w-full items-center justify-center rounded-full border border-white bg-transparent px-6 py-2.5 text-center text-[12px] font-semibold leading-none tracking-[0.04em] text-white transition-all duration-200 hover:border-black hover:bg-white hover:text-black disabled:cursor-not-allowed disabled:opacity-50 sm:px-12 sm:py-3 sm:text-[13px] lg:px-16 lg:text-[14px];
+    @apply inline-flex max-w-full items-center justify-center rounded-full border border-white bg-transparent text-center text-white hover:border-black hover:bg-white hover:text-black ;
   }
+
+  /* Danger / delete action button */
+  .deleted-btn {
+    @apply inline-flex max-w-full items-center justify-center rounded-full bg-red-700 px-3 py-2 text-center text-[12px] font-semibold leading-none text-white transition-colors hover:opacity-80 disabled:cursor-not-allowed disabled:opacity-50 sm:px-4 sm:text-[14px] lg:text-[16px];
+  }
+
+  
 
   .paragraph-text {
     @apply text-[15px] font-normal leading-[1.45] tracking-[-0.025em] text-black sm:text-[20px] md:text-[21px];

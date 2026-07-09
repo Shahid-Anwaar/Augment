@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import CustomLink from "../custom/CustomLink";
 
 type View = { title: string; description: string; image: string };
 
@@ -149,12 +150,12 @@ export default function ViewsSection(
                     </div>
                 </div>
 
-                <Link
-                    href="/demo"
-                    className="contained-btn mx-auto mt-4 inline-flex w-full max-w-[220px] items-center justify-center px-7 py-4 text-sm capitalize! sm:mt-5 sm:w-auto sm:max-w-none md:mt-6"
-                >
-                    Explore Demo
-                </Link>
+                <CustomLink
+    href="/demo"
+    text="Explore Demo"
+    variant="contained"
+    className="mt-4 sm:mt-5 md:mt-6"
+/>
             </div>
         </section>
     );

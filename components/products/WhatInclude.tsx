@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
+import CustomLink from "../custom/CustomLink";
 
 type IncludedRow = {
     feature: string;
@@ -228,9 +229,11 @@ export default function WhatToInclude() {
                     </div>
 
                     <div className="my-7 flex justify-center">
-                        <button className="closed-btn mx-auto px-4 py-2.5 text-[13px] xl:px-6 xl:text-[14px]">
-                            Start With Supreme Coach
-                        </button>
+                        <CustomLink
+                            href="/contact-sales"
+                            variant="closed"
+                            text=" Start With Supreme Coach"
+                        />
                     </div>
                 </div>
             </div>

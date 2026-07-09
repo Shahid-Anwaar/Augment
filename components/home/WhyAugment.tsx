@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { whyAugmentSlides } from "@/data/data";
+import CustomLink from "../custom/CustomLink";
 
 function SlideDots({
     total,
@@ -72,12 +73,12 @@ function TextBlock({
             </p>
 
             <div className="mt-16">
-                <Link
-                    href={buttonHref}
-                    className=" px-12 text-[15px] outlined-btn"
-                >
-                    {buttonLabel}
-                </Link>
+                
+                <CustomLink
+                          href={buttonHref}
+                            variant="outlined"
+                            text={buttonLabel}
+                        />
             </div>
         </div>
     );

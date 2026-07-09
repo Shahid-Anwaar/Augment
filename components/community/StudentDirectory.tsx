@@ -4,6 +4,7 @@ import { Student, students } from "@/data/data";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
+import CustomButton from "../custom/CustomButton";
 
 const INITIAL_COUNT = 12;
 
@@ -25,7 +26,7 @@ export default function StudentDirectory() {
         </h2>
 
         <div id="temp" className="relative mt-8 grid grid-cols-2 gap-4 sm:mt-10 sm:grid-cols-3 lg:grid-cols-4 lg:gap-12">
-          {!showAll &&<div className="absolute min-h-96 bottom-0 w-full bg-linear-to-b from-[#F3F4F6]/5 to-[#F3F4F6]/90 z-10" />}
+          {!showAll && <div className="absolute min-h-96 bottom-0 w-full bg-linear-to-b from-[#F3F4F6]/5 to-[#F3F4F6]/90 z-10" />}
           {visibleStudents.map((student) => {
 
             return (
@@ -35,23 +36,18 @@ export default function StudentDirectory() {
         </div>
 
         {students.length > INITIAL_COUNT && (
-          <div className={`flex relative z-20 justify-center ${showAll? " mt-8" : "-mt-12"}`} >
-            <button
-              type="button"
+          <div className={`flex relative z-20 justify-center ${showAll ? " mt-8" : "-mt-12"}`} >
+            <CustomButton
               onClick={() => {
                 if (showAll) {
                   document.getElementById("temp")?.scrollIntoView({ behavior: "smooth" });
                 }
                 setShowAll((prev) => !prev);
               }}
-              className="outlined-btn px-7 lg:px-20 capitalize!"
-            >
-              {showAll ? "See Less" : "See More"}
-              <Icon
-                icon={showAll ? "mdi:arrow-up" : "mdi:arrow-down"}
-                className="ml-2 h-5 w-5"
-              />
-            </button>
+              text={showAll ? "See Less" : "See More"}
+              variant="outlined"
+              icon={showAll ? "mdi:arrow-up" : "mdi:arrow-down"}
+            />
           </div>
         )}
       </div>

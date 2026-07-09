@@ -1,5 +1,6 @@
 import Image from "next/image";
 import BrainGrid from "./BrainGrid";
+import CustomLink from "../custom/CustomLink";
 
 const footerImage =
   "/external-images/img-52ea6f0c.webp";
@@ -65,12 +66,11 @@ export default function AiPoweredWorkSection() {
 
           {/* Button */}
           <div className="relative z-10 mt-7">
-            <button
-              type="button"
-              className="closed-btn"
-            >
-              Get started FREE
-            </button>
+            <CustomLink
+                            href="/contact-sales"
+                            variant="closed"
+                            text="Get started FREE"
+                        />
           </div>
 
           {/* Product image */}

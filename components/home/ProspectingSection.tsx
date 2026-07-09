@@ -3,6 +3,7 @@
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { SolutionItem } from "@/data/data";
+import CustomLink from "../custom/CustomLink";
 
 type ProspectingSectionProps = {
     items: SolutionItem[];
@@ -32,13 +33,15 @@ export default function ProspectingSection({
                         </h2>
 
                         <div className="mt-4 flex w-full flex-col items-stretch gap-2 sm:mt-8 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
-                            <button type="button" className="contained-btn w-full py-2 sm:w-auto">
-                                Contact Sales
-                            </button>
-
-                            <button type="button" className="outlined-btn w-full py-2 sm:w-auto">
-                                Learn More
-                            </button>
+                            <CustomLink
+                                href="/contact-sales"
+                                text="Contact Sales"
+                            />
+                            <CustomLink
+                                href="/products"
+                                variant="outlined"
+                                text="Learn More"
+                            />
                         </div>
 
                         <ul className="mt-5 space-y-2.5 sm:mt-10 sm:space-y-4">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { FeaturedItem, featuredItems, instructors, type InstructorItem } from "@/data/data";
+import CustomLink from "../custom/CustomLink";
 
 const CARD_WIDTH = 292;
 const CARD_GAP = 24;
@@ -267,12 +268,11 @@ export default function FeaturesSection({ isShowBtn = true }: { isShowBtn?: bool
         </div>
 
         {isShowBtn && <div className="mt-4 flex justify-center sm:mt-5 md:mt-6">
-          <Link
+          <CustomLink
             href="/products"
-            className="closed-btn mx-auto inline-flex w-full max-w-[220px] items-center justify-center px-8 sm:w-auto sm:max-w-none sm:px-14 lg:px-20"
-          >
-            Explore More
-          </Link>
+            variant="closed"
+            text="Explore More"
+          />
         </div>}
       </div>
     </section>

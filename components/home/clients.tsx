@@ -124,7 +124,7 @@ export function TestimonialCard({ item }: { item: TestimonialItem }) {
   );
 }
 
-export default function ClientsSection({ title, isShowCompanies = true }: { title: string, isShowCompanies?: boolean }) {
+export default function ClientsSection({ title, isShowCompanies = false }: { title: string, isShowCompanies?: boolean }) {
   return (
     <section className="overflow-hidden bg-[#f3f4f6]">
       <div className="section-container max-w-[1360px]">
@@ -140,7 +140,7 @@ export default function ClientsSection({ title, isShowCompanies = true }: { titl
               return (
                 <div
                   key={index}
-                  className="box-border min-w-0 shrink-0 grow-0 basis-full px-1"
+                  className="box-border min-w-0 shrink-0 grow-0 basis-full px-3 lg:px-12"
                 >
                   <TestimonialCard item={item} />
                 </div>
@@ -148,11 +148,11 @@ export default function ClientsSection({ title, isShowCompanies = true }: { titl
             }}
             isAutoplay={false}
             items={TESTIMONIALS}
-            options={{ loop: true, align: "start", skipSnaps: false }}
-            wrapperClassName="mt-16 min-h-0 bg-transparent sm:mt-18 lg:mt-20"
+            options={{ loop: true, align: "center", skipSnaps: false }}
+            wrapperClassName="mt-3 min-h-0 bg-transparent sm:mt-4 lg:mt-5"
             CustomButtonWrapper={(onPrevClick, onNextClick) => {
               return (
-                <div className="absolute -top-12 flex w-full items-center justify-center gap-3 sm:-top-14 sm:gap-4 lg:-top-16">
+                <div className="absolute inset-0 z-50 flex w-full items-center justify-between gap-3 sm:gap-4">
                   <button
                     type="button"
                     onClick={onPrevClick}

@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { DESKTOP_NAV_ITEMS } from "@/data/home";
+import CustomLink from "../custom/CustomLink";
 
 export default function HeaderSection() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -72,12 +73,11 @@ export default function HeaderSection() {
             </nav>
             <div className="hidden items-center gap-x-8 min-[1280px]:flex">
               <div className="flex h-auto items-center flex-wrap gap-2">
-                <Link
+                <CustomLink
                   href="/contact-sales"
-                  className={`group closed-btn mx-auto px-4 py-2.5 text-[13px] xl:px-6 xl:text-[14px]`}
-                >
-                  Contact Sales
-                </Link>
+                  variant="closed"
+                  text="Contact Sales"
+                />
                 <PrimaryCta href="/call" />
               </div>
             </div>
@@ -144,12 +144,12 @@ export default function HeaderSection() {
             </nav>
 
             <div className="border-t flex flex-wrap gap-3 justify-center border-white/10 items-center pt-4 sm:pt-5">
-              <Link
+              <CustomLink
                 href="/contact-sales"
-                className={`group closed-btn inline-flex w-auto px-4 py-2 text-[12px] sm:w-auto sm:px-5 sm:text-[13px]`}
-              >
-                Contact Sales
-              </Link>
+                variant="closed"
+                text="Contact Sales"
+              />
+
               <PrimaryCta href="/call" mobile />
             </div>
           </div>
@@ -167,20 +167,12 @@ function PrimaryCta({
   mobile?: boolean;
 }) {
   return (
-    <Link
+    <CustomLink
       href={href}
-      className={`group contained-btn  ${mobile
-        ? "inline-flex px-4 py-2 text-[12px] sm:w-auto sm:px-5 sm:text-[13px]"
-        : "mx-auto px-4 py-3 text-[13px] xl:px-6 xl:text-[14px]"
-        }`}
-    >
-        Book A Call  
-      <Icon
-        icon={"solar:phone-linear"}
-        width="19"
-        height="19"
-        className="shrink-0"
-      />
-    </Link>
+      text="Book A Call"
+      variant="contained"
+      showIcon
+      icon="solar:phone-linear"
+    />
   );
 }

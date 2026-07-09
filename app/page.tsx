@@ -5,6 +5,13 @@ import CustomLoader from "@/components/custom/CustomLoader";
 import { companyLogos, homeFaqs, solutionItems } from "@/data/data";
 import { homeMetadata } from "@/lib/seo";
 
+const StickyStepSection = dynamic(
+  () => import("@/components/home/StickyStepSection"),
+  { 
+    loading: () => <CustomLoader minHeightClass="min-h-[80px]" /> 
+  }
+)
+
 const CompanyLogoCarousel = dynamic(
   () => import("@/components/home/CompaniesSlider"),
   {
@@ -102,7 +109,9 @@ export default function Home() {
       <BrainFeatureSection isDark={false} />
       <FeaturesSection />
       <EmblaCarousel />
-      <HowItWorksCard classes="pt-0" />
+      <StickyStepSection />
+      {/* <HowItWorksCard classes="pt-0" /> */}
+
       <IntegrationsSection
         title="Your stack, connected. Configured on delivery not figured out later."
         description="Every integration Supreme Coach supports is set up, tested, and live before we hand over the keys. No documentation to follow. No API keys to paste. No hoping two platforms will finally sync. You open your business and everything already works."
