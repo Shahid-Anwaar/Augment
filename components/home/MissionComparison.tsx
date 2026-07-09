@@ -5,6 +5,7 @@ import {
   traditionalMbaItems,
   type ComparisonItem,
 } from "@/data/data";
+import CustomLink from "../custom/CustomLink";
 
 type ComparisonCardProps = {
   title: string;
@@ -93,12 +94,11 @@ function ComparisonCard({
 
       {!isDark && ctaHref && ctaLabel ? (
         <div className="mt-7 flex justify-center sm:mt-8 md:mt-10">
-          <Link
+          <CustomLink
             href={ctaHref}
-            className="contained-btn inline-flex w-full justify-center px-8 text-[14px] sm:w-auto sm:px-10 sm:text-[15px]"
-          >
-            {ctaLabel}
-          </Link>
+            text={ctaLabel}
+            variant="contained"
+          />
         </div>
       ) : null}
     </div>
@@ -115,7 +115,7 @@ export default function MissionComparisonSection() {
           </p>
 
           <h2 className="section-title mx-auto mt-3 text-white">
-           We're Challenging How Coaching Businesses Are Built
+            We're Challenging How Coaching Businesses Are Built
           </h2>
         </div>
 

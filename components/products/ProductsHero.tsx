@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "@iconify/react";
+import CustomLink from "../custom/CustomLink";
 
 export default function ProductsHeroSection() {
     return (
@@ -21,25 +22,18 @@ export default function ProductsHeroSection() {
                         </p>
 
                         <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:mt-8 lg:justify-start">
-                            <Link
+                            <CustomLink
                                 href="/"
-                                className="contained-btn px-6 py-3 capitalize!"
-                            >
-                                Book A Strategy Call
-                                <Icon
-                                    icon="solar:phone-linear"
-                                    width="19"
-                                    height="19"
-                                    className="shrink-0"
-                                />
-                            </Link>
-
-                            <Link
+                                text="Book A Strategy Call"
+                                variant="contained"
+                                showIcon
+                                icon="solar:phone-linear"
+                            />
+                            <CustomLink
                                 href="/pricing"
-                                className="outlined-btn px-6 py-3 capitalize!"
-                            >
-                                See Our Project Investment Levels
-                            </Link>
+                                variant="outlined"
+                                text=" See Our Project Investment Levels"
+                            />
                         </div>
                     </div>
 

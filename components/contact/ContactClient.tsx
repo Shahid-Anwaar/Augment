@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import CustomButton from "../custom/CustomButton";
 
 type UserType = "individual" | "firm" | "";
 
@@ -196,24 +197,23 @@ export default function ContactClientSection() {
                                 </span>
                             </button>
                             {error && (
-                            <div className="mt-8 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-[14px] font-medium text-red-600">
-                                {error}
-                            </div>
-                        )}
+                                <div className="mt-8 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-[14px] font-medium text-red-600">
+                                    {error}
+                                </div>
+                            )}
                         </div>
-                        
+
 
                         <div className="mt-8">
-                            <button
+                            <CustomButton
                                 type="button"
+                                text="OK"
+                                variant="contained"
                                 onClick={goNext}
-                                className="contained-btn rounded-lg px-5 py-2"
-                            >
-                                OK
-                            </button>
+                            />
                         </div>
 
-                        
+
                     </div>
 
                 )}
@@ -375,20 +375,15 @@ export default function ContactClientSection() {
                         </div>
 
                         <div className="mt-8 flex items-center gap-3">
-                            <button
+                            <CustomButton
                                 type="submit"
-                                className="contained-btn rounded-lg px-5 !py-2"
-                            >
-                                Submit
-                            </button>
-
-                            <button
-                                type="button"
+                                text="Submit"
+                            />
+                            <CustomButton
                                 onClick={goBack}
-                                className="outlined-btn rounded-lg px-5 !py-2"
-                            >
-                                Back
-                            </button>
+                                text="Back"
+                                variant="outlined"
+                            />
                         </div>
                     </form>
                 )}

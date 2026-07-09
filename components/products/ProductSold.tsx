@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CustomLink from "../custom/CustomLink";
 
 
 export default function ProductSold() {
@@ -9,12 +10,12 @@ export default function ProductSold() {
                     <h2 className="section-title mx-auto mt-5 text-white">
                         30M+ products have been sold using Supreme Coach
                     </h2>
-                    <Link
+                    <CustomLink
                         href="/"
-                        className="contained-btn mt-8 px-8 py-3 sm:mt-10 capitalize!"
-                    >
-                        Start for free
-                    </Link>
+                        text="Start for free"
+                        variant="contained"
+                        className="mt-8 sm:mt-10"
+                    />
                 </div>
             </div>
         </section>

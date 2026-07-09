@@ -82,6 +82,12 @@ const FAQSection = dynamic(
     loading: () => <CustomLoader />,
   }
 );
+const StickyStepSection = dynamic(
+  () => import("@/components/home/StickyStepSection"),
+  { 
+    loading: () => <CustomLoader minHeightClass="min-h-[80px]" /> 
+  }
+)
 
 export const metadata = forCoachesMetadata;
 
@@ -136,10 +142,11 @@ export default function CoachesPage() {
         subtitle="Supreme Coach handles every payment, every invoice, and every financial metric your business generates so you always know what's coming in, what's outstanding, and what your business is worth right now."
       />
       <FeaturesSection />
-      <HowItWorksCard
+      <StickyStepSection />
+      {/* <HowItWorksCard
         steps={coach_steps}
         cards={Coach_HOW_IT_WORKS_CARDS}
-      />
+      /> */}
       <IntegrationsSection
         title="It's your business, your way"
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."

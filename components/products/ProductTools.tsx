@@ -1,3 +1,4 @@
+import CustomLink from "../custom/CustomLink";
 import CustomProductCard from "./CustomSingleCard";
 
 const HOST_ITEMS = [
@@ -177,11 +178,7 @@ const SELL_ITEMS = [
 //                     <div className="pointer-events-none absolute left-1/2 top-[210px] h-[90px] -translate-x-1/2 border-l border-dashed border-black/60 xl:h-[110px]" /> */}
 
 //                     {/* Button */}
-//                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
-//                         <button className="contained-btn px-8 py-3 capitalize!">
-//                             Start for free
-//                         </button>
-//                     </div>
+//                    
 
 //                 </div>
 //             </div>
@@ -249,12 +246,11 @@ export default function ProductTools() {
                     </div>
 
                     <div className="mt-8 flex justify-center">
-                        <Link
+                        <CustomLink
                             href="/"
-                            className="contained-btn px-8 py-3 capitalize!"
-                        >
-                            Start for free
-                        </Link>
+                            text="Start for free"
+                            variant="contained"
+                        />
                     </div>
                 </div>
 

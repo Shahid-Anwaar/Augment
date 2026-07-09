@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { testimonials, type TestimonialItem } from "@/data/data";
 import { CustomTestimonialCard } from "./CustomTestimonialCard";
+import CustomLink from "../custom/CustomLink";
 
 const INITIAL_VISIBLE = 12;
 
@@ -85,15 +86,14 @@ export default function StudentTestimonialsSection() {
 
         {!showAll ? (
           <div className="relative bottom-7 flex justify-center lg:mt-0">
-            <button
-              type="button"
+            <CustomLink
+              // href="/pricing"
               onClick={() =>
                 setShowAll(true)
               }
-              className=" px-20 text-[15px] outlined-btn"
-            >
-              Load More
-            </button>
+              variant="outlined"
+              text="Load More"
+            />
           </div>
         ) : null}
       </div>

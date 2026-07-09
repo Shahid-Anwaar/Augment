@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import CustomLink from "../custom/CustomLink";
 
 const TEASER_WISTIA_ID = "2cf0n0g1bd";
 
@@ -17,7 +18,7 @@ export default function TeaserSection() {
             Learn from the Best in Business
           </h2> */}
           <p className="section-label">
-             TEASER
+            TEASER
           </p>
 
           <h2 className="mt-6 text-white section-title">
@@ -37,13 +38,11 @@ export default function TeaserSection() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <Link
+          <CustomLink
             href="/call"
-            target="_blank"
-            className="px-7 py-4 contained-btn"
-          >
-            Watch Free Class
-          </Link>
+            text="Watch Free Class"
+            variant="contained"
+          />
         </div>
       </div>
     </section>

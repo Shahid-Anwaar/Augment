@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CustomLink from "../custom/CustomLink";
 
 type ProductFeatureItem = {
     title: string;
@@ -78,13 +79,12 @@ export default function ProductFeaturesSection({
                                 </div>
                             ))}
                         </div>
-
-                        <Link
+                        <CustomLink
                             href="/"
-                            className="contained-btn mt-6 w-full px-8 py-3 capitalize! sm:mt-10 sm:w-auto"
-                        >
-                            {btnText}
-                        </Link>
+                            text={btnText}
+                            variant="contained"
+                            className="mt-6 sm:mt-10"
+                        />
                     </div>
                 </div>
             </div>

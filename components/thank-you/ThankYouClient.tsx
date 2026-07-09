@@ -1,7 +1,6 @@
 "use client";
-
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import CustomLink from "../custom/CustomLink";
 
 export default function ThankYouClient() {
   const [name, setName] = useState("");
@@ -28,13 +27,12 @@ export default function ThankYouClient() {
           Your contact request has been received successfully. Our team will
           review your details and contact you soon.
         </p>
-
-        <Link
+        <CustomLink
           href="/"
-          className="mt-8 contained-btn px-7 py-4"
-        >
-          Back to Home
-        </Link>
+          text="Back to Home"
+          variant="contained"
+          className="mt-8"
+        />
       </div>
     </main>
   );

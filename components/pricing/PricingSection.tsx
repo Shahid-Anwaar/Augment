@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Icon } from "@iconify/react";
+import CustomLink from "../custom/CustomLink";
 
 type PricingTab = "coaches" | "forms";
 
@@ -394,16 +395,16 @@ export default function PricingSection() {
                                         </p>
                                     )}
                                 </div>
-
-                                <button
-                                    type="button"
-                                    className={`mt-5 w-full sm:mt-6 ${plan.popular
-                                        ? "contained-btn"
-                                        : "outlined-btn hover:bg-primary"
-                                        }`}
-                                >
-                                    {plan.buttonText}
-                                </button>
+                                <CustomLink
+                                    // href="/pricing"
+                                    onClick={() => { }}
+                                    className="mt-5 w-full"
+                                    variant={plan.popular
+                                        ? "contained"
+                                        : "outlined"
+                                    }
+                                    text={plan.buttonText}
+                                />
 
                                 <ul className="mt-6 space-y-2 sm:mt-8 sm:space-y-3">
                                     {plan.features.map((feature, index) => (

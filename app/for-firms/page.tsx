@@ -85,6 +85,12 @@ const FAQSection = dynamic(
     loading: () => <CustomLoader />,
   }
 );
+const StickyStepSection = dynamic(
+  () => import("@/components/home/StickyStepSection"),
+  { 
+    loading: () => <CustomLoader minHeightClass="min-h-[80px]" /> 
+  }
+)
 
 export const metadata = forFirmsMetadata;
 
@@ -131,10 +137,11 @@ export default function FirmsPage() {
         features={Firm_SALES_HUB_FEATURES}
         classes="grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-5 xl:gap-7"
       />
-      <HowItWorksCard
+      <StickyStepSection />
+      {/* <HowItWorksCard
         steps={firm_steps}
         cards={Firm_HOW_IT_WORKS_CARDS}
-      />
+      /> */}
       <IntegrationsSection
         title="It's your business, your way"
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."

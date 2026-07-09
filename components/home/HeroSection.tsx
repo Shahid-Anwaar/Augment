@@ -6,6 +6,7 @@ import { HERO_SLIDES, HeroSlide } from "@/data/data";
 import CustomEmblaCarousel from "./CustomCarosal";
 import { FEATURES, heroSecurityItems } from "@/data/home";
 import Image from "next/image";
+import CustomLink from "../custom/CustomLink";
 
 type HeroFeature = {
   label: string;
@@ -87,28 +88,21 @@ export default function AugmentHeroSection({
           </ul>
 
           <div className="mx-auto mt-5 flex w-full max-w-88 flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center lg:mx-0 lg:justify-start">
-            <Link
+            <CustomLink
               href={primaryButtonHref}
-              className="group flex w-full items-center justify-center px-6 contained-btn sm:w-auto sm:min-w-65"
-            >
-              {primaryButtonText}
-              <Icon
-                icon={primaryButtonIcon}
-                width="19"
-                height="19"
-                className="shrink-0"
-              />
-            </Link>
-
-            <Link
+              text={primaryButtonText}
+              variant="contained"
+              showIcon
+              icon={primaryButtonIcon}
+            />
+            <CustomLink
               href={secondaryButtonHref}
-              className="flex w-full items-center justify-center px-6 closed-btn sm:w-auto sm:min-w-65"
-            >
-              {secondaryButtonText}
-            </Link>
+              variant="closed"
+              text={secondaryButtonText}
+            />
           </div>
 
-          <div className="mt-5 lg:w-full flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between lg:pr-3">
+          <div className="mt-5 lg:w-full lg:max-w-120 flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between lg:pr-3">
             {securityItems.map((item, index) => (
               <div
                 key={item.name}

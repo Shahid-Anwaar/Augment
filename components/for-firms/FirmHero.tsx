@@ -6,6 +6,7 @@ import { HERO_SLIDES, HeroSlide, securityItems } from "@/data/data";
 import CustomEmblaCarousel from "../home/CustomCarosal";
 import { FEATURES, heroSecurityItems } from "@/data/home";
 import Image from "next/image";
+import CustomLink from "../custom/CustomLink";
 
 export default function FirmHeroSection() {
     return (
@@ -41,25 +42,19 @@ export default function FirmHeroSection() {
                     </ul>
 
                     <div className="mx-auto mt-7 flex w-full max-w-88 flex-col items-center gap-3 sm:mt-8 sm:max-w-none sm:flex-row sm:justify-center">
-                        <Link
+                        <CustomLink
                             href="/team"
-                            className="group flex w-full items-center justify-center px-6 contained-btn sm:w-auto sm:min-w-65"
-                        >
-                            Talk to Our Team
-                            <Icon
-                                icon={"mingcute:arrow-right-fill"}
-                                width="19"
-                                height="19"
-                                className="shrink-0"
-                            />
-                        </Link>
+                            text="Talk to Our Team"
+                            variant="contained"
+                            showIcon
+                            icon="mingcute:arrow-right-fill"
+                        />
 
-                        <Link
+                        <CustomLink
                             href="/contact-sales"
-                            className="flex w-full items-center justify-center px-6 closed-btn sm:w-auto sm:min-w-65"
-                        >
-                            See What's Included
-                        </Link>
+                            variant="closed"
+                            text="See What's Included"
+                        />
                     </div>
 
                     <div className="mt-8 flex justify-center gap-x-3 lg:gap-x-5 gap-y-5 sm:gap-x-10">

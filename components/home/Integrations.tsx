@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@iconify/react";
+import CustomLink from "../custom/CustomLink";
 
 type IntegrationItem = {
     name: string;
@@ -150,7 +151,7 @@ const MD_LAYOUT: GridLayout = {
     placements: [
         { row: 1, cols: [1, 2, 3, 4, 5, 6] },
         { row: 2, cols: [1, 2, 3, 4, 5, 6] },
-        { row: 3, cols: [ 2, 3, 4, 5,] },
+        { row: 3, cols: [2, 3, 4, 5,] },
     ],
     tileBoxClassName: "h-[46px] w-[46px]",
     iconClassName: "h-6 w-6",
@@ -297,12 +298,11 @@ export default function IntegrationsSection({ title, description, btnText = "Exp
                 </div>
 
                 <div className="mt-3 flex justify-center xl:mt-0 xl:relative xl:bottom-14 z-20">
-                    <Link
+                    <CustomLink
                         href="/products#what-included"
-                        className="outlined-btn px-7 capitalize!"
-                    >
-                        {btnText}
-                    </Link>
+                        variant="outlined"
+                        text={btnText}
+                    />
                 </div>
             </div>
         </section>
