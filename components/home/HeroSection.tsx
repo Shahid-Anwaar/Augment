@@ -154,7 +154,7 @@ export default function AugmentHeroSection({
 
               <CustomEmblaCarousel
                 isAutoplay={true}
-                moveTo="left"
+                moveDirection="left"
                 CustomCard={(item, index) => {
                   return (
                     <div

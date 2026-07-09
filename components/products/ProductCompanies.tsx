@@ -111,7 +111,7 @@ export default function ProductsCompaniesSection() {
         <section className="overflow-hidden border-y border-black/8 bg-white">
             <div className="mx-auto w-full max-w-full bg-white">
                 <CustomEmblaCarousel
-                    CustomCard={(item, index, firstActiveItemIndex) => {
+                    CustomCard={(item, index) => {
                         return (
                             <div
                                 key={index}

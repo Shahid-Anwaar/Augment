@@ -112,7 +112,6 @@ const StickyStepSection = dynamic(
 )
 
 export const metadata = productsMetadata;
-
 export default function ProductsPage() {
   return (
     <main className="relative bg-white text-black">

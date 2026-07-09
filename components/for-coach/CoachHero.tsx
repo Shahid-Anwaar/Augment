@@ -180,7 +180,7 @@ export default function CoachHeroSection({
                             <div className="grid h-[620px] grid-cols-3 gap-3 overflow-hidden xl:h-[700px] xl:gap-4 2xl:h-[760px]">
                                 <CustomEmblaCarousel
                                     isContinuousPlay
-                                    moveTo="top"
+                                    moveDirection="top"
                                     continuousPlayConfig={{
                                         speed: 0.9,
                                         // stopOnMouseEnter: false,
@@ -202,7 +202,7 @@ export default function CoachHeroSection({
 
                                 <CustomEmblaCarousel
                                     isContinuousPlay
-                                    moveTo="bottom"
+                                    moveDirection="bottom"
                                     continuousPlayConfig={{
                                         speed: 0.9,
                                         // stopOnMouseEnter: false,
@@ -224,7 +224,7 @@ export default function CoachHeroSection({
 
                                 <CustomEmblaCarousel
                                     isContinuousPlay
-                                    moveTo="top"
+                                    moveDirection="top"
                                     continuousPlayConfig={{
                                         speed: 0.9,
                                         // stopOnMouseEnter: false,
