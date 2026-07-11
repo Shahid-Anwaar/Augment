@@ -23,7 +23,7 @@ export default function ProspectingSection({
     return (
         <section className="w-full overflow-hidden bg-white">
             <div
-                className={`section-container pt-4 transition-all duration-1000 sm:pt-12 lg:pt-16 ${isLoading ? "opacity-10" : "opacity-100"
+                className={`section-container max-w-[1360px] pt-4 transition-all duration-1000 sm:pt-12 lg:pt-16 ${isLoading ? "opacity-10" : "opacity-100"
                     }`}
             >
                 <div className="grid min-w-0 items-center gap-5 pt-3 sm:gap-10 sm:pt-16 md:grid-cols-[1fr_0.9fr] md:gap-12 lg:pt-20 xl:gap-20">

@@ -5,6 +5,7 @@ import { Icon } from "@iconify/react";
 import CustomEmblaCarousel from "./CustomCarosal";
 import CompanyLogoCarousel from "./CompaniesSlider";
 import { companyLogos } from "@/data/data";
+import ArrowButton from "../custom/CustomArrowBtn";
 
 export type TestimonialItem = {
   id: number;
@@ -152,25 +153,22 @@ export default function ClientsSection({ title, isShowCompanies = false }: { tit
             wrapperClassName="mt-3 min-h-0 bg-transparent sm:mt-4 lg:mt-5"
             CustomButtonWrapper={(onPrevClick, onNextClick) => {
               return (
-                <div className="absolute inset-0 z-50 flex w-full items-center justify-between gap-3 sm:gap-4">
-                  <button
-                    type="button"
-                    onClick={onPrevClick}
-                    aria-label="Previous testimonial"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#bdb5aa] bg-[#ded8ce] text-black transition-transform duration-300 hover:scale-[1.04] hover:bg-black hover:text-white sm:h-11 sm:w-11"
-                  >
-                    <Icon icon="lucide:arrow-left" className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={onNextClick}
-                    aria-label="Next testimonial"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#bdb5aa] bg-[#ded8ce] text-black transition-transform duration-300 hover:scale-[1.04] hover:bg-black hover:text-white sm:h-11 sm:w-11"
-                  >
-                    <Icon icon="lucide:arrow-right" className="h-4.5 w-4.5 sm:h-5 sm:w-5" />
-                  </button>
-                </div>
+                  <div className="">
+                    <div className="absolute flex items-center inset-y-0 -left-5 lg:-left-20">
+                      <ArrowButton
+                        direction="left"
+                        mode="light"
+                        onClick={onPrevClick}
+                      />
+                    </div>
+                    <div className="absolute flex items-center inset-y-0 -right-5 lg:-right-20 ">
+                       <ArrowButton
+                      direction="right"
+                      mode="light"
+                      onClick={onNextClick}
+                    />
+                    </div>
+                  </div>
               );
             }}
           />

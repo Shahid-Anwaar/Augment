@@ -94,7 +94,7 @@ export const metadata = homeMetadata;
 export default function Home() {
   return (
     <main className="relative bg-white text-black">
-      <AugmentHeroSection />
+      {/* <AugmentHeroSection />
       <div className="w-full bg-black">
         <div className="mx-auto max-w-full bg-white py-4">
           <div className="mx-auto bg-white px-0">
@@ -104,7 +104,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
       <TeamSolutionsSection />
       <BrainFeatureSection isDark={false} />
       <FeaturesSection />

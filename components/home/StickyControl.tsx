@@ -119,7 +119,7 @@ export default function StickySolutionsSection({
   if (!items.length) return null;
 
   return (
-    <div className=" bg-white">
+    <div className=" bg-white mx-auto max-w-[1360px]">
       <LeadToDealsSection items={items} handleIndexChange={handleIndexChange} cardsRef={leadCardsRef} />
 
       <CompactSolutionTabs
