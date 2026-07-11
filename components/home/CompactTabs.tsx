@@ -29,7 +29,7 @@ export default function CompactSolutionTabs({
         top: `${stickyTop}px`,
       }}
     >
-      <div className="mx-auto w-full max-w-[1560px] px-4 sm:px-6 md:px-10 lg:px-12">
+      <div className="mx-auto w-full max-w-[1360px] px-4 sm:px-6 md:px-10 lg:px-12">
         <div
           className={`flex gap-2 overflow-x-auto py-2 pr-2 lg:grid lg:overflow-visible lg:py-0 lg:pr-0 lg:gap-4 ${
             items.length !== 4 ? "lg:grid-cols-3" : "lg:grid-cols-4"

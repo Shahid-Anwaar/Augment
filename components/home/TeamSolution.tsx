@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 import CustomLink from "../custom/CustomLink";
 import CustomEmblaCarousel from "./CustomCarosal";
+import Image from "next/image";
 
 type TeamKey =
     | "projects"
@@ -13,12 +14,6 @@ type TeamKey =
     | "leadership"
     | "all";
 
-type AgentCard = {
-    icon: string;
-    iconBg: string;
-    text: string;
-};
-
 type TeamSolution = {
     key: TeamKey;
     tab: string;
@@ -27,8 +22,8 @@ type TeamSolution = {
     description: string;
     replaces: string[];
     bullets: string[];
-    agents: AgentCard[];
     bgColor: string;
+    image: string;
 };
 
 const TEAM_SOLUTIONS: TeamSolution[] = [
@@ -51,28 +46,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Bring strategic initiatives to life",
             "Detect and mitigate project risks",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:woman-technologist-light",
-                iconBg: "bg-cyan-100",
-                text: "Intake Agent standardizes project kickoff",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-light",
-                iconBg: "bg-orange-100",
-                text: "Assign Agent determines task owners",
-            },
-            {
-                icon: "fluent-emoji:woman-office-worker-medium-light",
-                iconBg: "bg-pink-100",
-                text: "PM Agent tracks deliverables + timelines",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-yellow-100",
-                text: "Live Answers Agent keeps everyone informed",
-            },
-        ],
+        image: "/external-images/img-b1de1c49.webp"
     },
     {
         key: "marketing",
@@ -93,28 +67,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Coordinate + run seamless events",
             "Eliminate content + creative bottlenecks",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:woman-technologist-light",
-                iconBg: "bg-cyan-100",
-                text: "Brief Agent creates campaign briefs",
-            },
-            {
-                icon: "fluent-emoji:woman-artist-light",
-                iconBg: "bg-pink-100",
-                text: "Content Agent drafts promo copy",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-medium",
-                iconBg: "bg-green-100",
-                text: "Brand Agent applies guidelines",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-orange-100",
-                text: "Live Intel Agent updates core docs",
-            },
-        ],
+        image: "/external-images/img-f4152475.webp",
     },
     {
         key: "product",
@@ -135,28 +88,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Identify + resolve bugs",
             "Integrate with AI coders",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:man-technologist-medium-dark",
-                iconBg: "bg-indigo-100",
-                text: "PRD Agent creates docs from voice notes",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-light",
-                iconBg: "bg-yellow-100",
-                text: "Triage Agent prioritizes bugs",
-            },
-            {
-                icon: "fluent-emoji:woman-technologist-light",
-                iconBg: "bg-orange-100",
-                text: "Live Answers Agent keeps everyone informed",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-yellow-100",
-                text: "Codegen Agent produces quality code",
-            },
-        ],
+        image: "/external-images/img-2aeeec10.webp",
     },
     {
         key: "it",
@@ -177,28 +109,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Run tight asset management",
             "Streamline contracts + procurement",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:man-technologist-medium-dark",
-                iconBg: "bg-indigo-100",
-                text: "Assets Agent tracks inventory",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-light",
-                iconBg: "bg-yellow-100",
-                text: "RFP Agent manages reqs docs",
-            },
-            {
-                icon: "fluent-emoji:woman-artist-light",
-                iconBg: "bg-pink-100",
-                text: "Contracts Agent standardizes terms",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-orange-100",
-                text: "Live Intel Agent identifies redundancies",
-            },
-        ],
+        image: "/external-images/img-b13eb5e9.webp",
     },
     {
         key: "hr",
@@ -219,28 +130,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Roll out effective training programs",
             "Keep a pulse on employee NPS",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:woman-technologist-light",
-                iconBg: "bg-cyan-100",
-                text: "Onboarding Agent monitors progress + feedback",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-light",
-                iconBg: "bg-orange-100",
-                text: "Pulse Check Agent collects employee sentiment",
-            },
-            {
-                icon: "fluent-emoji:woman-office-worker-medium-light",
-                iconBg: "bg-pink-100",
-                text: "Trainer Agent analyzes course performance",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-yellow-100",
-                text: "Live Answers Agent provides real-time info",
-            },
-        ],
+        image: "/external-images/img-e0178c8f.webp",
     },
     {
         key: "leadership",
@@ -261,28 +151,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Drive organizational focus with tighter alignment",
             "Enforce accountability and ownership with ultimate visibility",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:woman-technologist-light",
-                iconBg: "bg-cyan-100",
-                text: "Goal Reminder Agent removes tedious check-ins",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-light",
-                iconBg: "bg-orange-100",
-                text: "Alignment Agent ensures cross-functional cohesion",
-            },
-            {
-                icon: "fluent-emoji:woman-office-worker-medium-light",
-                iconBg: "bg-pink-100",
-                text: "Key Results Agent suggest relevant KPIs",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-yellow-100",
-                text: "Status Update Agent gives always-on visibility",
-            },
-        ],
+        image: "/external-images/img-ee160e5e.webp",
     },
     {
         key: "all",
@@ -303,28 +172,7 @@ const TEAM_SOLUTIONS: TeamSolution[] = [
             "Automate repeatable team workflows",
             "Keep everyone aligned with live context",
         ],
-        agents: [
-            {
-                icon: "fluent-emoji:woman-technologist-light",
-                iconBg: "bg-cyan-100",
-                text: "Workspace Agent keeps all teams aligned",
-            },
-            {
-                icon: "fluent-emoji:man-office-worker-light",
-                iconBg: "bg-orange-100",
-                text: "Automation Agent handles repetitive work",
-            },
-            {
-                icon: "fluent-emoji:woman-office-worker-medium-light",
-                iconBg: "bg-pink-100",
-                text: "Knowledge Agent organizes company docs",
-            },
-            {
-                icon: "fluent-emoji:man-technologist-light",
-                iconBg: "bg-yellow-100",
-                text: "Live Answers Agent gives instant context",
-            },
-        ],
+        image: "/external-images/img-01819536.webp",
     },
 ];
 
@@ -338,7 +186,7 @@ export default function TeamSolutionsSection() {
 
     return (
         <section className="bg-white overflow-hidden">
-            <div className="section-container max-w-[1360px]">
+            <div className="section-container max-w-[1240px]">
                 <div className="text-center">
                     <h2 className="section-title mx-auto text-black">
                         AI solutions for every team
@@ -350,7 +198,7 @@ export default function TeamSolutionsSection() {
                 </div>
 
                 <div className="mx-auto relative mb-5 sm:mb-6 max-w-5xl bg-white">
-                    <div className="absolute pointer-events-none flex justify-between inset-0 z-50">
+                    <div className="absolute pointer-events-none flex justify-between inset-0 z-10">
                         <div className="w-32 bg-linear-to-r via-white/90 from-white to-transparent" />
                         <div className="w-32 bg-linear-to-l via-white/90 from-white to-transparent" />
                     </div>
@@ -464,8 +312,21 @@ export default function TeamSolutionsSection() {
                             </div>
                         </div>
 
-                        {/* Right cards */}
                         <div className="mx-auto w-full max-w-[510px] min-w-0">
+                            <div className="relative aspect-[510/420] w-full overflow-hidden rounded-[18px]">
+                                <Image
+                                    src={activeTeam.image}
+                                    alt={`${activeTeam.tab || "Team"} illustration`}
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, 510px"
+                                    className="object-cover"
+                                    priority
+                                />
+                            </div>
+                        </div>
+
+                        {/* Right cards */}
+                        {/* <div className="mx-auto w-full max-w-[510px] min-w-0">
                             <div className="space-y-2.5 sm:space-y-3">
                                 {activeTeam.agents.map((agent) => (
                                     <div
@@ -495,12 +356,8 @@ export default function TeamSolutionsSection() {
                                 ))}
                             </div>
 
-                            <CustomLink
-                                className="mt-4"
-                                text="Explore solution"
-                                icon="lucide:arrow-right"
-                            />
-                        </div>
+                            
+                        </div> */}
                     </div>
                 </div>
             </div>

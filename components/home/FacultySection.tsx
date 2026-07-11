@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Icon } from "@iconify/react";
 import { FeaturedItem, featuredItems, instructors, type InstructorItem } from "@/data/data";
 import CustomLink from "../custom/CustomLink";
+import ArrowButton from "../custom/CustomArrowBtn";
 
 const CARD_WIDTH = 292;
 const CARD_GAP = 24;
@@ -84,29 +85,29 @@ function InstructorCard({
   );
 }
 
-function ArrowButton({
-  direction,
-  onClick,
-}: {
-  direction: "left" | "right";
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={direction === "left" ? "Previous instructors" : "Next instructors"}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/65 bg-[#5a5a5a]/55 text-white backdrop-blur-sm transition-all duration-200 hover:bg-[#6a6a6a]/70 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
-    >
-      <Icon
-        icon={direction === "left" ? "lucide:arrow-left" : "lucide:arrow-right"}
-        width="28"
-        height="28"
-        className="h-4.5 w-4.5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
-      />
-    </button>
-  );
-}
+// function ArrowButton({
+//   direction,
+//   onClick,
+// }: {
+//   direction: "left" | "right";
+//   onClick: () => void;
+// }) {
+//   return (
+//     <button
+//       type="button"
+//       onClick={onClick}
+//       aria-label={direction === "left" ? "Previous instructors" : "Next instructors"}
+//       className="flex h-10 w-10 items-center justify-center rounded-full border border-white/65 bg-[#5a5a5a]/55 text-white backdrop-blur-sm transition-all duration-200 hover:bg-[#6a6a6a]/70 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+//     >
+//       <Icon
+//         icon={direction === "left" ? "lucide:arrow-left" : "lucide:arrow-right"}
+//         width="28"
+//         height="28"
+//         className="h-4.5 w-4.5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
+//       />
+//     </button>
+//   );
+// }
 
 export default function FeaturesSection({ isShowBtn = true }: { isShowBtn?: boolean }) {
   const total = featuredItems.length;

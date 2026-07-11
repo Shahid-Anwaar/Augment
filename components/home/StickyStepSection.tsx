@@ -124,6 +124,37 @@ const STICKY_CARDS = [
     ],
     secondaryButton: "Learn more about building plays",
   },
+  {
+  key: "optimization",
+  label: "OPTIMIZATION",
+  title: "Improve workflow with",
+  highlightedTitle: "continuous insights",
+  description:
+    "Track results across every campaign, identify what is working, and automatically refine your targeting, messaging, and workflows.",
+  bgClass: "bg-[#f1f0ff]",
+  textClass: "text-[#1f1459]",
+  highlightClass: "text-[#635bff]",
+  badgeClass: "bg-[#635bff]",
+  buttonClass: "bg-[#635bff] hover:bg-[#5048e5]",
+  image: "/external-images/img-b1de1c49.webp",
+  icons: [
+    "simple-icons:hubspot",
+    "simple-icons:salesforce",
+    "simple-icons:googleanalytics",
+  ],
+  points: [
+    
+    {
+      brand: "Salesforce",
+      text: "kept CRM records accurate with automated enrichment and performance tracking.",
+    },
+    {
+      brand: "Google Analytics",
+      text: "connected campaign activity with real-time engagement and conversion insights.",
+    },
+  ],
+  secondaryButton: "Explore performance insights",
+},
 ];
 
 export default function StickyStepSection() {
