@@ -59,7 +59,7 @@ export default function AugmentHeroSection({
     >
       <div className="relative mx-auto flex flex-col bg-black pt-24 sm:pt-16 lg:flex-row lg:items-center pb-2 maximum-width">
         <div className="relative z-30 text-center text-white lg:col-span-5 lg:text-left xl:col-span-5">
-          <p className="section-label section-label-border">
+          <p className="section-label section-label-border lg:mb-5">
             For Coaches & Firms
           </p>
           <h1 className="section-title hero-title mx-auto text-white  lg:mx-0">
@@ -70,7 +70,7 @@ export default function AugmentHeroSection({
             {description}
           </p>
 
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-2.5 sm:gap-x-5 lg:mt-5 lg:gap-x-8 xl:gap-x-10 lg:justify-start">
+          <ul className="mt-4 lg:mt-7 flex flex-wrap items-center justify-center gap-x-3 gap-y-2.5 sm:gap-x-5 lg:gap-x-8 xl:gap-x-10 lg:justify-start">
             {features.map((item) => (
               <li
                 key={item.label}
@@ -87,7 +87,7 @@ export default function AugmentHeroSection({
             ))}
           </ul>
 
-          <div className="mx-auto mt-5 flex w-full max-w-88 flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center lg:mx-0 lg:justify-start">
+          <div className="mx-auto mt-5 lg:mt-7 flex w-full max-w-88 flex-col items-center gap-3 sm:max-w-none sm:flex-row sm:justify-center lg:mx-0 lg:justify-start">
             <CustomLink
               href={primaryButtonHref}
               text={primaryButtonText}
@@ -102,7 +102,7 @@ export default function AugmentHeroSection({
             />
           </div>
 
-          <div className="mt-5 lg:w-full lg:max-w-120 flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between lg:pr-3">
+          <div className="mt-5 lg:mt-7 lg:w-full lg:max-w-120 flex justify-center gap-x-5 md:gap-x-7 lg:gap-x-8 xl:gap-x-10 lg:justify-between lg:pr-3">
             {securityItems.map((item, index) => (
               <div
                 key={item.name}

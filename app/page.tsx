@@ -120,7 +120,7 @@ export default function Home() {
         title="Trusted by growing companies"
         isShowCompanies={false}
       />
-      <StickySolutionsSection items={solutionItems} />
+      {/* <StickySolutionsSection items={solutionItems} /> */}
       <BookCallSection
         title="Book a Discovery Call With Our Team"
         icon="solar:phone-linear"
