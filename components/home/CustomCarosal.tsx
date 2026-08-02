@@ -24,7 +24,7 @@ type MoveDirection = "top" | "bottom" | "right" | "left";
 
 type EmblaCarouselProps = {
     options?: EmblaOptionsType;
-    CustomCard?: (item: any, index: number, scrollToSelectedIndex?: (index: number)=>void) => ReactNode;
+    CustomCard?: (item: any, index: number, scrollToSelectedIndex?: (index: number) => void) => ReactNode;
     items?: any[];
     onSpecificChoosed?: (n: number) => void,
     wrapperClassName?: string;
@@ -40,6 +40,7 @@ type EmblaCarouselProps = {
     continuousPlayConfig?: ContinuousPlayConfig;
     handleActiveItemIndexChange?: (index: number) => void;
     moveDirection?: MoveDirection;
+    selectedIndex?: number;
 };
 
 export default function CustomEmblaCarousel({
@@ -54,9 +55,8 @@ export default function CustomEmblaCarousel({
     continuousPlayConfig = {},
     handleActiveItemIndexChange,
     moveDirection: moveTo,
+    selectedIndex
 }: EmblaCarouselProps) {
-    const [selectedSnap, setSelectedSnap] = useState(0);
-
     const resolvedMoveTo = moveTo ?? "left";
 
     const isVertical = resolvedMoveTo === "top" || resolvedMoveTo === "bottom";
@@ -191,6 +191,13 @@ export default function CustomEmblaCarousel({
             emblaApi.off("reInit", updateIndexes);
         };
     }, [emblaApi, updateIndexes]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        if (selectedIndex === undefined) return;
+
+        emblaApi.scrollTo(selectedIndex);
+    }, [emblaApi, selectedIndex]);
 
     return (
         <div className={`w-full relative text-white ${isVertical ? "h-full min-h-0" : ""}`}>
