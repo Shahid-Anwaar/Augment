@@ -50,7 +50,7 @@ export default function BrainGrid({cards = BRAIN_CARDS, classes = "rounded-lg", 
     <article
       key={card.id}
       className={`relative min-h-[360px] overflow-hidden border-b last:border-b-0 sm:min-h-[390px] md:min-h-[430px] md:border-b-0 md:border-r md:last:border-r-0 ${
-        isDark ? "bg-black border-white/10" : "bg-gray-50/80 border-black/10"
+        isDark ? "bg-black border-white/10" : "bg-white border-black/10"
       }`}
     >
       {/* Text */}

@@ -162,7 +162,7 @@ export default function ProductsPage() {
         description="Imagine all the tools you know and love in one place. Connect with third-party integrations—including MailChimp, Zapier, Kit, Google Analytics, and dozens more."
       />
       <ClientsSection title="Supreme Coach success stories write themselves" isShowCompanies={false} />
-      <StickySolutionsSection items={solutionItems} />
+      {/* <StickySolutionsSection items={solutionItems} /> */}
       <ProductTools />
       <WhatToInclude />
       <FAQSection faqs={productFaqs} />

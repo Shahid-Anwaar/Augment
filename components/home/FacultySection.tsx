@@ -1,42 +1,87 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Icon } from "@iconify/react";
-import { FeaturedItem, featuredItems, instructors, type InstructorItem } from "@/data/data";
+import { type FeaturedItem, featuredItems } from "@/data/data";
 import CustomLink from "../custom/CustomLink";
 import ArrowButton from "../custom/CustomArrowBtn";
+import CustomCarosal from "./CustomCarosal";
 
-const CARD_WIDTH = 292;
 const CARD_GAP = 24;
-const STEP = CARD_WIDTH + CARD_GAP;
 
-function InstructorLogo({
-  logoIcon,
-  company,
-}: {
-  logoIcon?: string;
-  company: string;
-}) {
-  if (logoIcon) {
-    return (
-      <div className="flex h-9 items-end text-white sm:h-10 lg:h-11">
-        <Icon icon={logoIcon} width="44" height="44" className="h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11" />
-      </div>
-    );
-  }
+// function InstructorLogo({
+//   logoIcon,
+//   company,
+// }: {
+//   logoIcon?: string;
+//   company: string;
+// }) {
+//   if (logoIcon) {
+//     return (
+//       <div className="flex h-9 items-end text-white sm:h-10 lg:h-11">
+//         <Icon icon={logoIcon} width="44" height="44" className="h-9 w-9 sm:h-10 sm:w-10 lg:h-11 lg:w-11" />
+//       </div>
+//     );
+//   }
 
-  return company ? (
-    <div className="flex h-9 items-end sm:h-10 lg:h-11">
-      <span className="text-[18px] font-semibold tracking-[-0.03em] text-white sm:text-[20px] lg:text-[22px]">
-        {company}
-      </span>
-    </div>
-  ) : (
-    <div className="h-9 sm:h-10 lg:h-11" />
-  );
-}
+//   return company ? (
+//     <div className="flex h-9 items-end sm:h-10 lg:h-11">
+//       <span className="text-[18px] font-semibold tracking-[-0.03em] text-white sm:text-[20px] lg:text-[22px]">
+//         {company}
+//       </span>
+//     </div>
+//   ) : (
+//     <div className="h-9 sm:h-10 lg:h-11" />
+//   );
+// }
+
+// function InstructorCard({
+//   item,
+//   cardWidth,
+// }: {
+//   item: FeaturedItem;
+//   cardWidth: number;
+// }) {
+//   return (
+//     <article
+//       style={{ width: `${cardWidth}px` }}
+//       className="group relative h-[340px] shrink-0 overflow-hidden rounded-[16px] bg-[#111] sm:h-[380px] sm:rounded-[18px] md:h-[400px] lg:h-105"
+//     >
+//       <Image
+//         src={item.image}
+//         alt={item.title}
+//         fill
+//         sizes="(max-width: 639px) 240px, (max-width: 767px) 260px, (max-width: 1023px) 280px, 292px"
+//         className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+//       />
+
+//       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.0)_0%,rgba(23,23,23,0.0)_32%,rgba(23,23,23,1)_80%)]" />
+
+//       {/* {item.badge ? (
+//         <div className="absolute left-3 right-3 top-3 rounded-lg border border-white/15 bg-black/35 px-3 py-2 text-center text-[11px] font-medium uppercase tracking-[0.06em] text-white/95 backdrop-blur-md sm:left-4 sm:right-4 sm:top-4 sm:rounded-xl sm:px-4 sm:text-[13px] lg:text-[14px]">
+//           {item.badge}
+//         </div>
+//       ) : null} */}
+
+//       <div className="absolute inset-x-0 bottom-0 px-3 pb-4 sm:px-4 sm:pb-5">
+//         <h3 className="text-nowrap text-[29px] font-normal leading-[1.1] tracking-[-0.04em] text-white sm:text-[32px]">
+//           <span className="text-wrap">{item.title}</span>
+//           <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
+//             →
+//           </span>
+//         </h3>
+//         <div className="divider my-2.5 bg-white/40 sm:my-3"></div>
+
+//         <div>
+//           <p className="mt-2 text-[12px] font-semibold leading-[1.2] tracking-[0.04em] text-white sm:text-[14px]">
+//             {item.description}
+//           </p>
+//         </div>
+//       </div>
+//     </article>
+//   );
+// }
 
 function InstructorCard({
   item,
@@ -47,77 +92,57 @@ function InstructorCard({
 }) {
   return (
     <article
-      style={{ width: `${cardWidth}px` }}
-      className="group relative h-[340px] shrink-0 overflow-hidden rounded-[16px] bg-[#111] sm:h-[380px] sm:rounded-[18px] md:h-[400px] lg:h-105"
+      // style={{ width: `${cardWidth}px` }}
+      className="overflow-hidden rounded-3xl w-[95%] mx-auto bg-[#F5F5FA] text-black"
     >
-      <Image
-        src={item.image}
-        alt={item.title}
-        fill
-        sizes="(max-width: 639px) 240px, (max-width: 767px) 260px, (max-width: 1023px) 280px, 292px"
-        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-      />
+      <div className="flex h-[420px]">
+        {/* Left Content */}
+        <div className="flex w-1/2 flex-col justify-center p-8">
+          {/* {item.badge && (
+            <span className="mb-5 w-fit rounded-full bg-[#635BFF] px-4 py-1 text-xs font-semibold uppercase tracking-wider text-white">
+              {item.badge}
+            </span>
+          )} */}
 
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.0)_0%,rgba(23,23,23,0.0)_32%,rgba(23,23,23,1)_80%)]" />
+          <h3 className="text-5xl font-semibold leading-tight tracking-[-0.04em]">
+            {item.title}
+          </h3>
 
-      {/* {item.badge ? (
-        <div className="absolute left-3 right-3 top-3 rounded-lg border border-white/15 bg-black/35 px-3 py-2 text-center text-[11px] font-medium uppercase tracking-[0.06em] text-white/95 backdrop-blur-md sm:left-4 sm:right-4 sm:top-4 sm:rounded-xl sm:px-4 sm:text-[13px] lg:text-[14px]">
-          {item.badge}
-        </div>
-      ) : null} */}
-
-      <div className="absolute inset-x-0 bottom-0 px-3 pb-4 sm:px-4 sm:pb-5">
-        <h3 className="text-nowrap text-[29px] font-normal leading-[1.1] tracking-[-0.04em] text-white sm:text-[32px]">
-          <span className="text-wrap">{item.title}</span>
-          <span className="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-            →
-          </span>
-        </h3>
-        <div className="divider my-2.5 bg-white/40 sm:my-3"></div>
-
-        <div>
-          <p className="mt-2 text-[12px] font-semibold leading-[1.2] tracking-[0.04em] text-white sm:text-[14px]">
+          <p className="mt-6 text-lg leading-8 text-[#555]">
             {item.description}
           </p>
+          <div className="mt-4 sm:mt-5 md:mt-8 flex gap-4">
+          <CustomLink
+            href="/products"
+            // variant="outlined"
+            text="Learn More"
+          />
+          <CustomLink
+            href="/products"
+            variant="outlined"
+            text="Explore More"
+          />
+        </div>
+        </div>
+
+        {/* Right Image */}
+        <div className="relative w-1/2">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
     </article>
   );
 }
 
-// function ArrowButton({
-//   direction,
-//   onClick,
-// }: {
-//   direction: "left" | "right";
-//   onClick: () => void;
-// }) {
-//   return (
-//     <button
-//       type="button"
-//       onClick={onClick}
-//       aria-label={direction === "left" ? "Previous instructors" : "Next instructors"}
-//       className="flex h-10 w-10 items-center justify-center rounded-full border border-white/65 bg-[#5a5a5a]/55 text-white backdrop-blur-sm transition-all duration-200 hover:bg-[#6a6a6a]/70 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
-//     >
-//       <Icon
-//         icon={direction === "left" ? "lucide:arrow-left" : "lucide:arrow-right"}
-//         width="28"
-//         height="28"
-//         className="h-4.5 w-4.5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7"
-//       />
-//     </button>
-//   );
-// }
-
 export default function FeaturesSection({ isShowBtn = true }: { isShowBtn?: boolean }) {
-  const total = featuredItems.length;
-  const loopedItems = useMemo(
-    () => [...featuredItems, ...featuredItems, ...featuredItems],
-    []
-  );
-
   const DEFAULT_CARD_WIDTH = 292;
   const DEFAULT_CARD_GAP = CARD_GAP;
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
 
   const [cardWidth, setCardWidth] = useState(DEFAULT_CARD_WIDTH);
   const [cardGap, setCardGap] = useState(DEFAULT_CARD_GAP);
@@ -146,135 +171,125 @@ export default function FeaturesSection({ isShowBtn = true }: { isShowBtn?: bool
     return () => window.removeEventListener("resize", updateMetrics);
   }, []);
 
-  const STEP = cardWidth + cardGap;
-
-  const [currentIndex, setCurrentIndex] = useState(total);
-  const [withTransition, setWithTransition] = useState(true);
-
-  const startX = useRef<number | null>(null);
-  const isMovingRef = useRef(false);
-
-  const goNext = useCallback(() => {
-    if (isMovingRef.current) return;
-    isMovingRef.current = true;
-    setWithTransition(true);
-    setCurrentIndex((prev) => prev + 1);
-  }, []);
-
-  const goPrev = useCallback(() => {
-    if (isMovingRef.current) return;
-    isMovingRef.current = true;
-    setWithTransition(true);
-    setCurrentIndex((prev) => prev - 1);
-  }, []);
-
-  const finishSilentReset = useCallback(() => {
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        setWithTransition(true);
-        isMovingRef.current = false;
-      });
-    });
-  }, []);
-
-  const handleTransitionEnd = useCallback(
-    (e: React.TransitionEvent<HTMLDivElement>) => {
-      if (e.target !== e.currentTarget) return;
-      if (e.propertyName !== "transform") return;
-
-      if (currentIndex >= total * 2) {
-        setWithTransition(false);
-        setCurrentIndex((prev) => prev - total);
-        finishSilentReset();
-        return;
-      }
-
-      if (currentIndex < total) {
-        setWithTransition(false);
-        setCurrentIndex((prev) => prev + total);
-        finishSilentReset();
-        return;
-      }
-
-      isMovingRef.current = false;
-    },
-    [currentIndex, finishSilentReset, total]
-  );
-
-  const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (isMovingRef.current) return;
-    startX.current = e.touches[0].clientX;
-  };
-
-  const onTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (startX.current === null) return;
-
-    const endX = e.changedTouches[0].clientX;
-    const delta = endX - startX.current;
-
-    if (delta > 50) goPrev();
-    if (delta < -50) goNext();
-
-    startX.current = null;
-  };
-
   return (
     <section className="overflow-hidden bg-black">
-      <div className="mx-auto w-full max-w-400 px-0 pb-14 pt-10 sm:pb-16 sm:pt-12 md:pb-20 md:pt-16">
+      <div className="mx-auto w-full max-w-320 px-0 pb-14 pt-10 sm:pb-16 sm:pt-12 md:pb-20 md:pt-16">
         <div className="px-4 text-center">
           <p className="section-label">FEATURES</p>
 
-          <h2 className="section-title mt-3 mx-auto text-white">
+          <h2 className="section-title my-3 mx-auto text-white">
             Everything Your Coaching Business Needs. Nothing It Doesn't.
           </h2>
+        </div>
+
+        <div className="mx-auto relative mb-5 sm:mb-6 max-w-5xl bg-black">
+          <div className="absolute pointer-events-none flex justify-between inset-0 z-10">
+            <div className="w-32 bg-linear-to-r via-black/90 from-black to-transparent" />
+            <div className="w-32 bg-linear-to-l via-black/90 from-black to-transparent" />
+          </div>
+          <div className="mx-auto bg-black px-0">
+            <div className="mx-auto mt-0 max-w-[92%] w-full">
+              <CustomCarosal
+                selectedIndex={activeItemIndex}
+                handleActiveItemIndexChange={(index: number) => {
+                  console.log("ttttttttt", index);
+                  setActiveItemIndex(index);
+                  // setActiveKey(allTabs[index]?.key);
+                }}
+                CustomCard={(item: any, index: number, scrollToSelectedIndex) => {
+                  return (
+                    <div
+                      key={item.key + index}
+                      className="box-border flex min-w-0 shrink-0 grow-0 basis-auto items-center justify-center px-2 "
+                    >
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setActiveItemIndex(index);
+                          scrollToSelectedIndex && scrollToSelectedIndex(index);
+                        }}
+                        className={[
+                          "rounded-full border px-2.5 py-1.5 text-[10px] font-bold leading-none transition-all duration-200",
+                          "sm:px-5 sm:py-3 sm:text-[14px]",
+                          "max-w-full whitespace-nowrap transition-all duration-1000",
+                          activeItemIndex === index
+                            ? "border-white/30 bg-primary text-black"
+                            : "border-white/30 text-white/80 cursor-pointer bg-transparent hover:bg-white/10",
+                        ].join(" ")}
+                      >
+                        {item.title}
+                      </button>
+                    </div>
+                  );
+                }}
+                // isContinuousPlay={true}
+                // continuousPlayConfig={{
+                //     speed: 0.6
+                // }}
+                isAutoplay={true}
+                items={featuredItems}
+                options={{
+                  loop: true,
+                  align: "center",
+                  skipSnaps: false,
+                }}
+                autoplayConfig={{
+                  stopOnMouseEnter: false,
+                  delay: 5000,
+                }}
+                wrapperClassName="min-h-0 bg-black"
+              />
+            </div>
+          </div>
         </div>
 
         <div className="relative mt-4 sm:mt-5 md:mt-6">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-6 bg-[linear-gradient(90deg,#000_0%,rgba(0,0,0,0)_100%)] sm:w-10 md:w-16" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-6 bg-[linear-gradient(270deg,#000_0%,rgba(0,0,0,0)_100%)] sm:w-10 md:w-16" />
 
-          <div className="absolute left-2 top-1/2 z-20 -translate-y-1/2 sm:left-4 md:left-6">
-            <ArrowButton direction="left" onClick={goPrev} />
-          </div>
-
-          <div className="absolute right-2 top-1/2 z-20 -translate-y-1/2 sm:right-4 md:right-6">
-            <ArrowButton direction="right" onClick={goNext} />
-          </div>
-
-          <div
-            className="overflow-hidden px-4 sm:px-5 md:px-4"
-            onTouchStart={onTouchStart}
-            onTouchEnd={onTouchEnd}
-          >
-            <div
-              onTransitionEnd={handleTransitionEnd}
-              className={[
-                "flex will-change-transform",
-                withTransition ? "transition-transform duration-500 ease-out" : "",
-              ].join(" ")}
-              style={{
-                gap: `${cardGap}px`,
-                transform: `translate3d(-${currentIndex * STEP}px,0,0)`,
-              }}
-            >
-              {loopedItems.map((item, index) => (
+          <CustomCarosal
+            items={featuredItems}
+            options={{ loop: true, align: "center", containScroll: "trimSnaps" }}
+            wrapperClassName="px-4 sm:px-5 md:px-4"
+            selectedIndex={activeItemIndex}
+            handleActiveItemIndexChange={(index: number) => {
+              console.log("ttttttttt", index);
+              setActiveItemIndex(index);
+              // setActiveKey(allTabs[index]?.key);
+            }}
+            CustomCard={(item) => (
+              <div
+                key={item.id}
+                className="flex-shrink-0 w-full"
+                style={{ marginRight: `${cardGap}px` }}
+              >
                 <InstructorCard
-                  key={`${item.id}-${index}`}
                   item={item}
-                  cardWidth={cardWidth}
+                  cardWidth={1200} // no longer used
                 />
-              ))}
-            </div>
-          </div>
+              </div>
+            )}
+            CustomButtonWrapper={(onPrevClick, onNextClick, onSpe) => (
+              <>
+                <div className="absolute left-2 top-1/2 z-20 -translate-y-1/2 sm:left-4 md:left-6">
+                  <ArrowButton direction="left" onClick={onPrevClick} />
+                </div>
+
+                <div className="absolute right-2 top-1/2 z-20 -translate-y-1/2 sm:right-4 md:right-6">
+                  <ArrowButton direction="right" onClick={onNextClick} />
+                </div>
+              </>
+            )}
+          />
         </div>
 
-        {isShowBtn && <div className="mt-4 flex justify-center sm:mt-5 md:mt-6">
+        {/* {isShowBtn && <div className="mt-4 flex justify-center sm:mt-5 md:mt-6">
           <CustomLink
             href="/products"
             variant="closed"
             text="Explore More"
           />
-        </div>}
+        </div>} */}
       </div>
     </section>
   );
